@@ -13,8 +13,8 @@ document.addEventListener('DOMContentLoaded', () => {
   initMediaGallery();
   initModals();
   initContactForm();
-  initLiveEditor();
-  initTacticalSimulator();
+  
+  initAiEngineerTerminal();
 });
 
 /* ==========================================================================
@@ -441,118 +441,6 @@ function initContactForm() {
 }
 
 /* ==========================================================================
-   10. LIVE IN-BROWSER EDITOR
-   ========================================================================== */
-function initLiveEditor() {
-  const toggleBtn = document.getElementById('liveEditToggle');
-  const drawer = document.getElementById('editDrawer');
-  const closeBtn = document.getElementById('drawerClose');
-  const saveBtn = document.getElementById('saveEditsBtn');
-  const resetBtn = document.getElementById('resetEditsBtn');
-
-  if (!toggleBtn || !drawer) return;
-
-  toggleBtn.addEventListener('click', () => {
-    drawer.classList.toggle('open');
-    populateEditorFields();
-  });
-
-  if (closeBtn) {
-    closeBtn.addEventListener('click', () => drawer.classList.remove('open'));
-  }
-
-  // Load custom edits from localStorage on page startup
-  applySavedEdits();
-
-  if (saveBtn) {
-    saveBtn.addEventListener('click', () => {
-      const edits = {
-        name: document.getElementById('editName').value,
-        status: document.getElementById('editStatus').value,
-        bio: document.getElementById('editBio').value,
-        about: document.getElementById('editAbout').value,
-        email: document.getElementById('editEmail').value,
-        phone: document.getElementById('editPhone').value,
-        linkedin: document.getElementById('editLinkedin').value
-      };
-
-      localStorage.setItem('nermin_portfolio_custom_data', JSON.stringify(edits));
-      applySavedEdits();
-      drawer.classList.remove('open');
-      showToast("Bütün dəyişikliklər uğurla yadda saxlanıldı!");
-    });
-  }
-
-  if (resetBtn) {
-    resetBtn.addEventListener('click', () => {
-      if (confirm("Bütün fərdi dəyişiklikləri sıfırlayıb orijinal vəziyyətə qaytarmaq istəyirsiniz?")) {
-        localStorage.removeItem('nermin_portfolio_custom_data');
-        location.reload();
-      }
-    });
-  }
-}
-
-function populateEditorFields() {
-  const currentName = document.querySelector('.hero-title')?.innerText || "Nərmin Həmidzadə";
-  const currentStatus = document.querySelector('.hero-status span:last-child')?.innerText || "";
-  const currentBio = document.querySelector('.hero-bio')?.innerText || "";
-  const currentAbout = document.querySelector('.about-bio-text p:first-child')?.innerText || "";
-
-  if (document.getElementById('editName')) document.getElementById('editName').value = currentName;
-  if (document.getElementById('editStatus')) document.getElementById('editStatus').value = currentStatus;
-  if (document.getElementById('editBio')) document.getElementById('editBio').value = currentBio;
-  if (document.getElementById('editAbout')) document.getElementById('editAbout').value = currentAbout;
-  if (document.getElementById('editEmail')) document.getElementById('editEmail').value = "hemidzadenernin@gmail.com";
-  if (document.getElementById('editPhone')) document.getElementById('editPhone').value = "+994 50 448 93 39";
-  if (document.getElementById('editLinkedin')) document.getElementById('editLinkedin').value = "linkedin.com/in/nərmin-həmidzadə";
-}
-
-function applySavedEdits() {
-  const saved = localStorage.getItem('nermin_portfolio_custom_data');
-  if (!saved) return;
-
-  try {
-    const data = JSON.parse(saved);
-    if (data.name) {
-      document.querySelectorAll('.dyn-name').forEach(el => el.textContent = data.name);
-    }
-    if (data.status) {
-      const statusEl = document.querySelector('.hero-status span:last-child');
-      if (statusEl) statusEl.textContent = data.status;
-    }
-    if (data.bio) {
-      const bioEl = document.querySelector('.hero-bio');
-      if (bioEl) bioEl.textContent = data.bio;
-    }
-    if (data.about) {
-      const aboutEl = document.querySelector('.dyn-about-p1');
-      if (aboutEl) aboutEl.textContent = data.about;
-    }
-    if (data.email) {
-      document.querySelectorAll('.dyn-email').forEach(el => {
-        el.textContent = data.email;
-        if (el.tagName === 'A') el.href = `mailto:${data.email}`;
-      });
-    }
-    if (data.phone) {
-      document.querySelectorAll('.dyn-phone').forEach(el => {
-        el.textContent = data.phone;
-        if (el.tagName === 'A') el.href = `tel:${data.phone.replace(/\s+/g, '')}`;
-      });
-    }
-    if (data.linkedin) {
-      document.querySelectorAll('.dyn-linkedin').forEach(el => {
-        el.textContent = data.linkedin;
-        if (el.tagName === 'A') el.href = data.linkedin.startsWith('http') ? data.linkedin : `https://${data.linkedin}`;
-      });
-    }
-  } catch (e) {
-    console.error("Error applying saved edits:", e);
-  }
-}
-
-/* ==========================================================================
    11. TOAST HELPER
    ========================================================================== */
 function showToast(message) {
@@ -565,4 +453,191 @@ function showToast(message) {
   toast.innerHTML = `<span>✓</span> <span>${message}</span>`;
   toast.classList.add('show');
   setTimeout(() => toast.classList.remove('show'), 3500);
+}
+
+
+/* ==========================================================================
+   AI ENGINEER TERMINAL & INTERACTIVE NEURAL SYNAPSE CANVAS
+   ========================================================================== */
+function initAiEngineerTerminal() {
+  const tabs = document.querySelectorAll('.ai-tab-btn');
+  const screens = document.querySelectorAll('.ai-screen');
+
+  if (!tabs.length || !screens.length) return;
+
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      tabs.forEach(t => t.classList.remove('active'));
+      screens.forEach(s => s.classList.remove('active'));
+
+      tab.classList.add('active');
+      const screenId = tab.getAttribute('data-ai-screen');
+      const targetScreen = document.getElementById(screenId);
+      if (targetScreen) targetScreen.classList.add('active');
+    });
+  });
+
+  // Start Neural Canvas Simulation
+  initNeuralCanvas();
+}
+
+function initNeuralCanvas() {
+  const canvas = document.getElementById('neuralCanvas');
+  if (!canvas) return;
+  const ctx = canvas.getContext('2d');
+  if (!ctx) return;
+
+  let width = canvas.width;
+  let height = canvas.height;
+
+  // Responsive canvas sizing
+  function resizeCanvas() {
+    const rect = canvas.getBoundingClientRect();
+    if (rect.width > 0) {
+      canvas.width = rect.width;
+      canvas.height = 210;
+      width = canvas.width;
+      height = canvas.height;
+    }
+  }
+  resizeCanvas();
+  window.addEventListener('resize', resizeCanvas);
+
+  // Network Layers Architecture
+  // Layer 0: Inputs (Sensors / Drones)
+  // Layer 1: Feature Extraction (CNN)
+  // Layer 2: Attention / Transformer (Deep Learning)
+  // Layer 3: Decision / Outputs (Target Lock)
+  const layerCounts = [4, 6, 6, 3];
+  const layerLabels = ['SENSORS', 'CONV', 'ATTENTION', 'OUTPUT'];
+  let nodes = [];
+  let connections = [];
+  let signals = [];
+
+  function buildNetwork() {
+    nodes = [];
+    connections = [];
+    signals = [];
+
+    const layerGap = (width - 70) / (layerCounts.length - 1);
+    
+    layerCounts.forEach((count, lIdx) => {
+      const x = 35 + lIdx * layerGap;
+      const nodeGap = (height - 50) / (count + 1);
+      for (let nIdx = 0; nIdx < count; nIdx++) {
+        const y = 25 + (nIdx + 1) * nodeGap;
+        nodes.push({
+          x: x,
+          y: y,
+          layer: lIdx,
+          radius: lIdx === 0 || lIdx === layerCounts.length - 1 ? 5.5 : 4.5,
+          pulse: Math.random() * Math.PI * 2,
+          color: lIdx === 0 ? '#38bdf8' : lIdx === 3 ? '#10b981' : '#a855f7'
+        });
+      }
+    });
+
+    // Create synapse connections between adjacent layers
+    for (let i = 0; i < nodes.length; i++) {
+      for (let j = 0; j < nodes.length; j++) {
+        if (nodes[j].layer === nodes[i].layer + 1) {
+          connections.push({
+            from: nodes[i],
+            to: nodes[j],
+            alpha: 0.15 + Math.random() * 0.15
+          });
+        }
+      }
+    }
+  }
+
+  buildNetwork();
+
+  // Mouse hover interaction
+  let mouse = { x: -100, y: -100 };
+  canvas.addEventListener('mousemove', (e) => {
+    const rect = canvas.getBoundingClientRect();
+    mouse.x = e.clientX - rect.left;
+    mouse.y = e.clientY - rect.top;
+  });
+  canvas.addEventListener('mouseleave', () => {
+    mouse.x = -100;
+    mouse.y = -100;
+  });
+
+  // Spawn periodic electrical signals
+  setInterval(() => {
+    if (connections.length > 0 && document.visibilityState === 'visible') {
+      const conn = connections[Math.floor(Math.random() * connections.length)];
+      signals.push({
+        conn: conn,
+        progress: 0,
+        speed: 0.02 + Math.random() * 0.02,
+        color: Math.random() > 0.5 ? '#38bdf8' : '#10b981'
+      });
+      if (signals.length > 40) signals.shift();
+    }
+  }, 90);
+
+  let animationFrameId;
+  function animate() {
+    ctx.clearRect(0, 0, width, height);
+
+    // 1. Draw connections (synapses)
+    connections.forEach(conn => {
+      ctx.beginPath();
+      ctx.moveTo(conn.from.x, conn.from.y);
+      ctx.lineTo(conn.to.x, conn.to.y);
+      ctx.strokeStyle = `rgba(56, 189, 248, ${conn.alpha})`;
+      ctx.lineWidth = 1;
+      ctx.stroke();
+    });
+
+    // 2. Draw live signals traversing synapses
+    for (let i = signals.length - 1; i >= 0; i--) {
+      const s = signals[i];
+      s.progress += s.speed;
+      if (s.progress >= 1) {
+        signals.splice(i, 1);
+        continue;
+      }
+      const curX = s.conn.from.x + (s.conn.to.x - s.conn.from.x) * s.progress;
+      const curY = s.conn.from.y + (s.conn.to.y - s.conn.from.y) * s.progress;
+
+      ctx.beginPath();
+      ctx.arc(curX, curY, 2.5, 0, Math.PI * 2);
+      ctx.fillStyle = s.color;
+      ctx.shadowColor = s.color;
+      ctx.shadowBlur = 8;
+      ctx.fill();
+      ctx.shadowBlur = 0;
+    }
+
+    // 3. Draw nodes
+    nodes.forEach(node => {
+      node.pulse += 0.04;
+      const dist = Math.hypot(node.x - mouse.x, node.y - mouse.y);
+      const isHovered = dist < 28;
+      const r = node.radius + Math.sin(node.pulse) * 0.8 + (isHovered ? 2.5 : 0);
+
+      // Node outer glow
+      ctx.beginPath();
+      ctx.arc(node.x, node.y, r + 4, 0, Math.PI * 2);
+      ctx.fillStyle = isHovered ? 'rgba(56, 189, 248, 0.35)' : 'rgba(56, 189, 248, 0.08)';
+      ctx.fill();
+
+      // Node core
+      ctx.beginPath();
+      ctx.arc(node.x, node.y, r, 0, Math.PI * 2);
+      ctx.fillStyle = isHovered ? '#ffffff' : node.color;
+      ctx.shadowColor = node.color;
+      ctx.shadowBlur = isHovered ? 15 : 6;
+      ctx.fill();
+      ctx.shadowBlur = 0;
+    });
+
+    animationFrameId = requestAnimationFrame(animate);
+  }
+
+  animate();
 }

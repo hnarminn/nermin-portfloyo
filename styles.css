@@ -4,36 +4,36 @@
    ========================================================================== */
 
 :root {
-  /* Colors */
-  --bg-deep: #07090e;
-  --bg-surface: #0d121f;
-  --bg-surface-elevated: #141b2d;
-  --bg-card: rgba(18, 25, 42, 0.75);
-  --bg-card-hover: rgba(26, 36, 60, 0.85);
+  /* Colors - Pure Obsidian & Jet Black Canva Dark */
+  --bg-deep: #030407;
+  --bg-surface: #07090e;
+  --bg-surface-elevated: #0d1017;
+  --bg-card: rgba(10, 13, 20, 0.88);
+  --bg-card-hover: rgba(16, 20, 30, 0.96);
   
-  --border-subtle: rgba(255, 255, 255, 0.08);
-  --border-focus: rgba(0, 242, 254, 0.4);
-  --border-glow: rgba(0, 242, 254, 0.25);
+  --border-subtle: rgba(255, 255, 255, 0.06);
+  --border-focus: rgba(56, 189, 248, 0.45);
+  --border-glow: rgba(56, 189, 248, 0.2);
   
-  --text-main: #f3f6fc;
+  --text-main: #f8fafc;
   --text-muted: #94a3b8;
   --text-dim: #64748b;
   
   /* Vibrant Accents */
-  --accent-cyan: #00f2fe;
-  --accent-blue: #4facfe;
-  --accent-purple: #7f00ff;
-  --accent-violet: #e100ff;
-  --accent-gold: #f5af19;
-  --accent-amber: #e5a93c;
+  --accent-cyan: #38bdf8;
+  --accent-blue: #0284c7;
+  --accent-purple: #8b5cf6;
+  --accent-violet: #d946ef;
+  --accent-gold: #f59e0b;
+  --accent-amber: #d97706;
   --accent-emerald: #10b981;
   
   /* Gradients */
-  --grad-cyan-blue: linear-gradient(135deg, #00f2fe 0%, #4facfe 100%);
-  --grad-purple-pink: linear-gradient(135deg, #7f00ff 0%, #e100ff 100%);
-  --grad-gold: linear-gradient(135deg, #f5af19 0%, #f12711 100%);
-  --grad-card: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.01) 100%);
-  --grad-glow: radial-gradient(circle at 50% 50%, rgba(0, 242, 254, 0.15) 0%, transparent 70%);
+  --grad-cyan-blue: linear-gradient(135deg, #38bdf8 0%, #0284c7 100%);
+  --grad-purple-pink: linear-gradient(135deg, #8b5cf6 0%, #d946ef 100%);
+  --grad-gold: linear-gradient(135deg, #f59e0b 0%, #ef4444 100%);
+  --grad-card: linear-gradient(135deg, rgba(255, 255, 255, 0.04) 0%, rgba(255, 255, 255, 0.01) 100%);
+  --grad-glow: radial-gradient(circle at 50% 50%, rgba(56, 189, 248, 0.12) 0%, transparent 70%);
 
   /* Typography */
   --font-main: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
@@ -703,41 +703,70 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* ==========================================================================
-   CANVA DARK TACTICAL SIMULATOR (PUA DRONES & AI CHATBOT)
+   CANVA DARK AI ENGINEER TERMINAL & INTERACTIVE NEURAL MATRIX
    ========================================================================== */
-.tactical-simulator-card {
+.ai-engineer-card {
   width: 100%;
-  max-width: 480px;
-  background: #080b11;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  max-width: 500px;
+  background: #05070c;
+  border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: var(--radius-lg);
-  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.8), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.9), inset 0 1px 0 rgba(255, 255, 255, 0.06);
   overflow: hidden;
   position: relative;
   font-family: var(--font-main);
 }
 
-.sim-header-bar {
+.ai-card-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0.85rem 1.2rem;
-  background: rgba(255, 255, 255, 0.02);
+  background: #080b12;
   border-bottom: 1px solid rgba(255, 255, 255, 0.07);
 }
 
-.sim-title {
-  font-family: var(--font-mono);
-  font-size: 0.72rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  color: #38bdf8;
+.ai-term-controls {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.ctrl-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.dot-red { background: #ff5f56; }
+.dot-yellow { background: #ffbd2e; }
+.dot-green { background: #27c93f; }
+
+.ai-header-title {
   display: flex;
   align-items: center;
   gap: 0.5rem;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
 }
 
-.sim-status-live {
+.shield-badge {
+  color: #38bdf8;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+.pipe-sep {
+  color: #475569;
+}
+
+.sub-title {
+  color: #94a3b8;
+  font-weight: 500;
+}
+
+.ai-status-pill {
   display: flex;
   align-items: center;
   gap: 0.4rem;
@@ -747,353 +776,370 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 600;
 }
 
-.live-radar-dot {
+.live-pulse-dot {
   width: 7px;
   height: 7px;
   border-radius: 50%;
   background: #10b981;
-  box-shadow: 0 0 8px #10b981;
+  box-shadow: 0 0 10px #10b981;
   animation: pulseGreen 1.5s infinite;
 }
 
 /* Tab Selector Pills */
-.sim-mode-tabs {
+.ai-mode-tabs {
   display: flex;
   gap: 0.4rem;
-  padding: 0.8rem 1.2rem 0 1.2rem;
-  background: #080b11;
+  padding: 0.8rem 1.2rem 0;
+  background: #05070c;
 }
 
-.sim-tab-btn {
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+.ai-tab-btn {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.07);
   color: var(--text-muted);
   font-family: var(--font-mono);
   font-size: 0.72rem;
   font-weight: 600;
-  padding: 0.45rem 0.85rem;
-  border-radius: var(--radius-sm);
+  padding: 0.45rem 0.8rem;
+  border-radius: 8px;
   cursor: pointer;
-  transition: all var(--transition-fast);
+  transition: all 0.2s ease;
   display: flex;
   align-items: center;
   gap: 0.4rem;
 }
 
-.sim-tab-btn:hover {
-  color: #fff;
-  border-color: rgba(255, 255, 255, 0.2);
-  background: rgba(255, 255, 255, 0.08);
+.ai-tab-btn:hover {
+  background: rgba(255, 255, 255, 0.07);
+  color: var(--text-main);
+  border-color: rgba(255, 255, 255, 0.15);
 }
 
-.sim-tab-btn.active {
+.ai-tab-btn.active {
   background: rgba(56, 189, 248, 0.12);
-  border-color: #38bdf8;
   color: #38bdf8;
-  box-shadow: 0 0 15px rgba(56, 189, 248, 0.15);
+  border-color: rgba(56, 189, 248, 0.4);
+  box-shadow: 0 0 14px rgba(56, 189, 248, 0.15);
 }
 
-/* Screens Viewport */
-.sim-viewport {
-  padding: 1.2rem;
-  min-height: 250px;
+/* Viewport Area */
+.ai-viewport {
   position: relative;
+  min-height: 275px;
+  background: #030408;
+  padding: 1rem 1.2rem;
 }
 
-.sim-screen {
+.ai-screen {
   display: none;
-  animation: fadeIn 0.3s ease;
+  animation: fadeInScreen 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.sim-screen.active {
+.ai-screen.active {
   display: block;
 }
 
-/* Mode 1: PUA Radar View */
-.radar-display-box {
-  background: #040609;
-  border: 1px solid rgba(56, 189, 248, 0.2);
-  border-radius: var(--radius-md);
-  padding: 1rem;
-  position: relative;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
+@keyframes fadeInScreen {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
-.radar-scope-wrap {
-  width: 165px;
-  height: 165px;
-  margin: 0 auto;
+/* Screen 1: Neural Canvas */
+.neural-canvas-container {
   position: relative;
-  border-radius: 50%;
-  border: 1px solid rgba(56, 189, 248, 0.3);
-  background: radial-gradient(circle, rgba(14, 165, 233, 0.12) 0%, transparent 75%);
+  width: 100%;
+}
+
+#neuralCanvas {
+  width: 100%;
+  height: 210px;
+  display: block;
+  border-radius: 10px;
+  background: radial-gradient(circle at center, #080d16 0%, #030408 85%);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  cursor: crosshair;
+}
+
+.neural-overlay-stats {
   display: flex;
+  gap: 0.45rem;
+  justify-content: space-between;
+  margin-top: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.n-stat-pill {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  padding: 0.35rem 0.6rem;
+  border-radius: 6px;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  display: flex;
+  gap: 0.4rem;
   align-items: center;
-  justify-content: center;
-  box-shadow: inset 0 0 20px rgba(14, 165, 233, 0.15);
 }
 
-.radar-ring-mid {
+.n-stat-k { color: #64748b; font-weight: 500; }
+.n-stat-v { color: #38bdf8; font-weight: 700; }
+.n-stat-v.highlight-green { color: #10b981 !important; }
+
+/* Screen 2: Optical HUD */
+.vision-hud-container {
+  position: relative;
+  height: 260px;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #020306;
+  border: 1px solid rgba(56, 189, 248, 0.25);
+}
+
+.hud-grid-overlay {
   position: absolute;
-  width: 110px;
-  height: 110px;
-  border-radius: 50%;
-  border: 1px dashed rgba(56, 189, 248, 0.25);
+  inset: 0;
+  background-image: 
+    linear-gradient(rgba(56, 189, 248, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(56, 189, 248, 0.04) 1px, transparent 1px);
+  background-size: 22px 22px;
 }
 
-.radar-ring-inner {
-  position: absolute;
-  width: 55px;
-  height: 55px;
-  border-radius: 50%;
-  border: 1px solid rgba(56, 189, 248, 0.2);
-}
-
-.radar-axis-h {
+.hud-scan-beam {
   position: absolute;
   left: 0;
   right: 0;
-  height: 1px;
-  background: rgba(56, 189, 248, 0.15);
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #38bdf8, transparent);
+  box-shadow: 0 0 10px #38bdf8;
+  animation: hudScanBeam 3s linear infinite;
+  z-index: 5;
 }
 
-.radar-axis-v {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  width: 1px;
-  background: rgba(56, 189, 248, 0.15);
+@keyframes hudScanBeam {
+  0% { top: 0; opacity: 0.2; }
+  50% { opacity: 0.8; }
+  100% { top: 100%; opacity: 0.2; }
 }
 
-.radar-sweep-beam {
+.hud-center-crosshair {
   position: absolute;
-  inset: 0;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 48px;
+  height: 48px;
+  border: 1px dashed rgba(56, 189, 248, 0.35);
   border-radius: 50%;
-  background: conic-gradient(from 0deg, rgba(56, 189, 248, 0.45) 0deg, transparent 60deg);
-  animation: radarSweep 4s linear infinite;
+  pointer-events: none;
 }
 
-.radar-drone-target {
+.hud-corner {
   position: absolute;
-  top: 40px;
-  right: 45px;
-  width: 9px;
-  height: 9px;
-  border-radius: 50%;
-  background: #f59e0b;
-  box-shadow: 0 0 10px #f59e0b;
+  width: 12px;
+  height: 12px;
+  border-color: #38bdf8;
+  border-style: solid;
+  pointer-events: none;
+}
+.hud-corner.top-left { top: 8px; left: 8px; border-width: 2px 0 0 2px; }
+.hud-corner.top-right { top: 8px; right: 8px; border-width: 2px 2px 0 0; }
+.hud-corner.btm-left { bottom: 44px; left: 8px; border-width: 0 0 2px 2px; }
+.hud-corner.btm-right { bottom: 44px; right: 8px; border-width: 0 2px 2px 0; }
+
+.hud-bbox {
+  position: absolute;
+  font-family: var(--font-mono);
   z-index: 4;
 }
 
-.radar-drone-target::after {
-  content: '';
-  position: absolute;
-  inset: -6px;
-  border-radius: 50%;
-  border: 1px solid #f59e0b;
-  animation: targetPing 2s infinite ease-out;
+.bbox-1 {
+  top: 24px;
+  left: 45px;
+  animation: bboxDrift1 6s ease-in-out infinite alternate;
 }
 
-.radar-drone-label {
-  position: absolute;
-  top: 28px;
-  right: 58px;
-  font-family: var(--font-mono);
-  font-size: 0.65rem;
+.bbox-2 {
+  bottom: 50px;
+  right: 35px;
+  animation: bboxDrift2 7s ease-in-out infinite alternate;
+}
+
+@keyframes bboxDrift1 {
+  0% { transform: translate(0, 0); }
+  100% { transform: translate(25px, 15px); }
+}
+
+@keyframes bboxDrift2 {
+  0% { transform: translate(0, 0); }
+  100% { transform: translate(-20px, -12px); }
+}
+
+.hud-bbox-box {
+  width: 135px;
+  height: 64px;
+  border: 1.5px solid #38bdf8;
+  background: rgba(56, 189, 248, 0.06);
+  box-shadow: 0 0 10px rgba(56, 189, 248, 0.2);
+}
+
+.hud-bbox-tag {
+  background: #38bdf8;
+  color: #020306;
+  font-size: 0.6rem;
   font-weight: 700;
-  color: #f59e0b;
-  white-space: nowrap;
+  padding: 2px 5px;
+  display: inline-flex;
+  gap: 0.3rem;
+  border-radius: 2px 2px 0 0;
 }
 
-.telemetry-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 0.5rem;
-  background: rgba(255, 255, 255, 0.02);
-  border-radius: var(--radius-sm);
-  padding: 0.65rem;
-  border: 1px solid rgba(255, 255, 255, 0.05);
+.hud-bbox-coords {
+  font-size: 0.6rem;
+  color: #38bdf8;
+  margin-top: 2px;
+  font-weight: 600;
 }
 
-.tele-item {
-  font-family: var(--font-mono);
-  font-size: 0.68rem;
+.hud-bottom-telemetry {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  padding: 0.45rem 0.9rem;
+  background: rgba(4, 7, 14, 0.88);
+  backdrop-filter: blur(6px);
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  z-index: 6;
+}
+
+.tele-col {
+  display: flex;
+  flex-direction: column;
 }
 
 .tele-lbl {
-  color: var(--text-dim);
   font-size: 0.58rem;
-  text-transform: uppercase;
+  color: #64748b;
+  font-family: var(--font-mono);
+  font-weight: 600;
 }
 
 .tele-val {
-  color: #fff;
-  font-weight: 700;
-  margin-top: 1px;
-}
-
-/* Mode 2: AudioBot Chat Visualizer */
-.audiobot-display-box {
-  background: #040609;
-  border: 1px solid rgba(127, 0, 255, 0.25);
-  border-radius: var(--radius-md);
-  padding: 1rem;
-  display: flex;
-  flex-direction: column;
-  gap: 0.8rem;
-}
-
-.waveform-wrap {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 4px;
-  height: 42px;
-}
-
-.wave-bar {
-  width: 4px;
-  height: 10px;
-  background: linear-gradient(to top, #7f00ff, #00f2fe);
-  border-radius: 3px;
-  animation: soundBarWave 1.2s infinite ease-in-out alternate;
-}
-
-.wave-bar:nth-child(2) { animation-delay: 0.15s; }
-.wave-bar:nth-child(3) { animation-delay: 0.3s; }
-.wave-bar:nth-child(4) { animation-delay: 0.45s; }
-.wave-bar:nth-child(5) { animation-delay: 0.2s; }
-.wave-bar:nth-child(6) { animation-delay: 0.35s; }
-.wave-bar:nth-child(7) { animation-delay: 0.1s; }
-.wave-bar:nth-child(8) { animation-delay: 0.25s; }
-.wave-bar:nth-child(9) { animation-delay: 0.4s; }
-.wave-bar:nth-child(10) { animation-delay: 0.18s; }
-
-.dialogue-stream {
-  display: flex;
-  flex-direction: column;
-  gap: 0.6rem;
-}
-
-.msg-bubble-user {
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  padding: 0.5rem 0.75rem;
-  border-radius: 8px 8px 2px 8px;
-  color: #cbd5e1;
-  align-self: flex-end;
-  max-width: 90%;
-  font-size: 0.76rem;
-}
-
-.msg-bubble-bot {
-  background: rgba(0, 242, 254, 0.08);
-  border: 1px solid rgba(0, 242, 254, 0.2);
-  padding: 0.5rem 0.75rem;
-  border-radius: 8px 8px 8px 2px;
-  color: #e2e8f0;
-  align-self: flex-start;
-  max-width: 92%;
-  font-size: 0.76rem;
-}
-
-/* Mode 3: OpenCV Target Tracking */
-.opencv-display-box {
-  background: #040609;
-  border: 1px solid rgba(16, 185, 129, 0.25);
-  border-radius: var(--radius-md);
-  padding: 1rem;
-}
-
-.tracking-reticle-wrap {
-  width: 100%;
-  height: 140px;
-  border: 1px dashed rgba(16, 185, 129, 0.3);
-  border-radius: var(--radius-sm);
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: radial-gradient(circle, rgba(16, 185, 129, 0.08) 0%, transparent 70%);
-}
-
-.target-bounding-box {
-  width: 80px;
-  height: 80px;
-  border: 1.5px solid #10b981;
-  position: relative;
-  box-shadow: 0 0 15px rgba(16, 185, 129, 0.3);
-}
-
-.target-bounding-box::before {
-  content: 'BATUR-01 // 97.4%';
-  position: absolute;
-  top: -18px;
-  left: 0;
+  font-size: 0.72rem;
+  color: #f8fafc;
   font-family: var(--font-mono);
-  font-size: 0.6rem;
-  color: #10b981;
   font-weight: 700;
 }
 
-/* Bottom Card Specs Strip */
-.sim-footer-specs {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 0.6rem;
-  padding: 0.85rem 1.2rem;
-  background: rgba(255, 255, 255, 0.02);
-  border-top: 1px solid rgba(255, 255, 255, 0.06);
+.tele-val.lock-color {
+  color: #10b981 !important;
 }
 
-.spec-badge-clean {
+/* Screen 3: Code Editor */
+.code-editor-container {
+  background: #020306;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 10px;
+  overflow: hidden;
+  font-family: var(--font-mono);
+}
+
+.code-editor-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 0.85rem;
+  background: #060910;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  font-size: 0.68rem;
+  color: #94a3b8;
+}
+
+.code-env-badge {
+  color: #10b981;
+  font-size: 0.62rem;
+  background: rgba(16, 185, 129, 0.1);
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+.code-body {
+  padding: 0.8rem 1rem;
+  margin: 0;
+  font-size: 0.72rem;
+  line-height: 1.5;
+  color: #cbd5e1;
+  overflow-x: auto;
+  background: #020306;
+}
+
+.c-comment { color: #64748b; font-style: italic; }
+.c-kw { color: #f43f5e; font-weight: 600; }
+.c-fn { color: #38bdf8; }
+.c-str { color: #10b981; }
+.c-num { color: #fbbf24; }
+
+.code-live-console {
+  padding: 0.45rem 1rem;
+  background: #04060c;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  font-size: 0.66rem;
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  font-size: 0.78rem;
-  color: #cbd5e1;
 }
 
-.spec-badge-clean span:first-child {
+.console-prompt {
   color: #38bdf8;
+  font-weight: 800;
+}
+
+.console-text {
+  color: #38bdf8;
+  animation: pulseOpacity 2s infinite;
+}
+
+@keyframes pulseOpacity {
+  0%, 100% { opacity: 0.8; }
+  50% { opacity: 1; }
+}
+
+/* Bottom Badges Strip */
+.ai-footer-specs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem;
+  padding: 0.85rem 1.2rem;
+  background: #05070c;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.ai-spec-pill {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
   font-family: var(--font-mono);
-  font-weight: 700;
   font-size: 0.72rem;
 }
 
-/* Hide floating badge */
-.floating-badge {
+.spec-k {
+  color: #38bdf8;
+  font-weight: 700;
+  font-size: 0.68rem;
+}
+
+.spec-v {
+  color: #cbd5e1;
+  font-weight: 500;
+}
+
+/* Floating badge and live edit removal */
+.floating-badge,
+.live-edit-wrapper,
+.edit-drawer {
   display: none !important;
 }
-
-/* Subtle unobtrusive Live Edit button */
-.live-edit-wrapper {
-  position: fixed;
-  bottom: 1.2rem;
-  right: 1.2rem;
-  z-index: 990;
-}
-
-.live-edit-btn {
-  background: rgba(14, 18, 28, 0.85);
-  color: var(--text-dim);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
-  padding: 0.4rem 0.8rem;
-  font-size: 0.7rem;
-  border-radius: var(--radius-full);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
-}
-
-.live-edit-btn:hover {
-  color: #fff;
-  border-color: rgba(255, 255, 255, 0.25);
-  transform: translateY(-2px);
-}
-
 
 /* ==========================================================================
    METRICS & STATS STRIP
@@ -2195,30 +2241,9 @@ textarea.form-control {
 /* ==========================================================================
    LIVE EDIT DRAWER & FLOATING TOGGLE
    ========================================================================== */
-.live-edit-wrapper {
-  position: fixed;
-  bottom: 2rem;
-  right: 2rem;
-  z-index: 1000;
-}
+.live-edit-wrapper { display: none !important; }
 
-.live-edit-btn {
-  background: var(--grad-gold);
-  color: #07090e;
-  border: none;
-  border-radius: var(--radius-full);
-  padding: 0.75rem 1.4rem;
-  font-family: var(--font-mono);
-  font-size: 0.8rem;
-  font-weight: 700;
-  letter-spacing: 0.05em;
-  display: flex;
-  align-items: center;
-  gap: 0.6rem;
-  cursor: pointer;
-  box-shadow: 0 8px 25px rgba(245, 175, 25, 0.4);
-  transition: all var(--transition-bounce);
-}
+.live-edit-btn { display: none !important; }
 
 .live-edit-btn:hover {
   transform: scale(1.06);
