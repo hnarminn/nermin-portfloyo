@@ -3,877 +3,1469 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Nərmin Həmidzadə — Portfolio</title>
+  <title>Nərmin Həmidzadə | Robototexnika Mühəndisi & Data Analitik</title>
+  
+  <!-- Meta tags for SEO & Social Sharing -->
+  <meta name="description" content="Nərmin Həmidzadə - Robototexnika və Mexatronika Mühəndisliyi tələbəsi (ADNSU), Data Analitik, AI & Computer Vision tədqiqatçısı, Omnitrix komanda rəhbəri və WRC 1/4 finalistı.">
+  <meta name="keywords" content="Nərmin Həmidzadə, Narmin Hamidzada, ADNSU, Robototexnika, Mexatronika, Data Analitika, Power BI, Python, OpenCV, WRC Bots Combat, ETİM">
+  <meta name="author" content="Nərmin Həmidzadə">
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="Nərmin Həmidzadə | Peşəkar Portfolio">
+  <meta property="og:description" content="Robototexnika, Süni İntellekt, Embedded Sistemlər və Data Analitika sahəsində innovativ layihələr.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="avatar.png">
+
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --bg0: #0a0a0a;
-      --bg1: #111111;
-      --bg2: #181818;
-      --bg3: #222222;
-      --border: rgba(255,255,255,0.07);
-      --border2: rgba(255,255,255,0.13);
-      --text: #e8e4dc;
-      --muted: #6b6860;
-      --muted2: #9a958f;
-      --gold: #c9a84c;
-      --gold2: #a07830;
-      --gold-dim: rgba(201,168,76,0.12);
-      --gold-dim2: rgba(201,168,76,0.06);
-    }
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
-    body { font-family: 'Inter', sans-serif; background: var(--bg0); color: var(--text); overflow-x: hidden; }
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
-    /* EDIT MODE TOGGLE */
-    .edit-toggle {
-      position: fixed; bottom: 2rem; right: 2rem; z-index: 1000;
-      display: flex; flex-direction: column; align-items: flex-end; gap: 0.6rem;
-    }
-    .edit-btn {
-      background: var(--gold); color: #0a0a0a;
-      border: none; cursor: pointer;
-      padding: 0.6rem 1.2rem;
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.7rem; letter-spacing: 0.1em;
-      text-transform: uppercase; font-weight: 500;
-      transition: background 0.2s, transform 0.2s;
-    }
-    .edit-btn:hover { background: var(--gold2); color: #fff; transform: translateY(-2px); }
-    .edit-panel {
-      display: none;
-      background: var(--bg2);
-      border: 1px solid var(--border2);
-      padding: 1.5rem;
-      width: 280px;
-      max-height: 80vh;
-      overflow-y: auto;
-    }
-    .edit-panel.open { display: block; }
-    .edit-panel h3 {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.65rem; letter-spacing: 0.15em;
-      text-transform: uppercase; color: var(--gold);
-      margin-bottom: 1rem;
-    }
-    .edit-field { margin-bottom: 1rem; }
-    .edit-field label {
-      display: block; font-size: 0.65rem;
-      letter-spacing: 0.1em; text-transform: uppercase;
-      color: var(--muted2); margin-bottom: 0.4rem;
-      font-family: 'JetBrains Mono', monospace;
-    }
-    .edit-field input, .edit-field textarea {
-      width: 100%; background: var(--bg3);
-      border: 1px solid var(--border2); color: var(--text);
-      font-family: 'Inter', sans-serif;
-      font-size: 0.82rem; padding: 0.5rem 0.7rem;
-      outline: none; resize: vertical;
-      transition: border-color 0.2s;
-    }
-    .edit-field input:focus, .edit-field textarea:focus { border-color: var(--gold); }
-    .edit-save {
-      width: 100%; background: var(--gold); color: #0a0a0a;
-      border: none; cursor: pointer; padding: 0.6rem;
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.7rem; letter-spacing: 0.1em;
-      text-transform: uppercase; margin-top: 0.5rem;
-      transition: background 0.2s;
-    }
-    .edit-save:hover { background: var(--gold2); color: #fff; }
-
-    /* NAV */
-    nav {
-      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-      display: flex; justify-content: space-between; align-items: center;
-      padding: 1.4rem 4rem;
-      background: rgba(10,10,10,0.9);
-      backdrop-filter: blur(24px);
-      border-bottom: 1px solid var(--border);
-    }
-    .nav-logo {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.85rem; letter-spacing: 0.15em;
-      color: var(--gold); text-decoration: none;
-    }
-    .nav-links { display: flex; gap: 2rem; list-style: none; }
-    .nav-links a {
-      font-size: 0.75rem; letter-spacing: 0.1em;
-      text-transform: uppercase; color: var(--muted2);
-      text-decoration: none; transition: color 0.3s;
-    }
-    .nav-links a:hover { color: var(--text); }
-
-    /* HERO */
-    .hero {
-      min-height: 100vh;
-      display: flex; align-items: flex-end;
-      padding: 0 4rem 5rem;
-      position: relative; overflow: hidden;
-    }
-    .hero-bg {
-      position: absolute; inset: 0;
-      background:
-        radial-gradient(ellipse 60% 50% at 70% 40%, rgba(201,168,76,0.06) 0%, transparent 70%),
-        radial-gradient(ellipse 40% 60% at 20% 70%, rgba(201,168,76,0.03) 0%, transparent 60%);
-    }
-    .hero-grid-lines {
-      position: absolute; inset: 0; opacity: 0.03;
-      background-image:
-        linear-gradient(rgba(255,255,255,0.6) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,0.6) 1px, transparent 1px);
-      background-size: 60px 60px;
-    }
-    .hero-content { position: relative; z-index: 2; max-width: 800px; }
-    .hero-label {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.68rem; letter-spacing: 0.22em;
-      text-transform: uppercase; color: var(--gold);
-      margin-bottom: 1.8rem;
-      opacity: 0; animation: up 0.8s 0.2s forwards;
-    }
-    .hero-name {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(4rem, 9vw, 9rem);
-      font-weight: 400; line-height: 0.9;
-      letter-spacing: -0.02em;
-      color: var(--text);
-      opacity: 0; animation: up 0.9s 0.4s forwards;
-    }
-    .hero-name span { color: var(--gold); font-style: italic; }
-    .hero-sub {
-      font-size: 1rem; font-weight: 300;
-      color: var(--muted2); margin-top: 2rem; line-height: 1.7;
-      max-width: 480px;
-      opacity: 0; animation: up 0.8s 0.6s forwards;
-    }
-    .hero-actions {
-      display: flex; gap: 1rem; margin-top: 3rem;
-      opacity: 0; animation: up 0.8s 0.8s forwards;
-    }
-    .btn-gold {
-      padding: 0.85rem 2rem;
-      background: var(--gold); color: #0a0a0a;
-      font-size: 0.72rem; letter-spacing: 0.12em;
-      text-transform: uppercase; text-decoration: none;
-      font-weight: 500; border: none; cursor: pointer;
-      font-family: 'Inter', sans-serif;
-      transition: background 0.3s, transform 0.2s;
-    }
-    .btn-gold:hover { background: var(--gold2); color: #fff; transform: translateY(-2px); }
-    .btn-outline {
-      padding: 0.85rem 2rem;
-      background: transparent; color: var(--text);
-      font-size: 0.72rem; letter-spacing: 0.12em;
-      text-transform: uppercase; text-decoration: none;
-      border: 1px solid var(--border2); cursor: pointer;
-      font-family: 'Inter', sans-serif;
-      transition: border-color 0.3s, transform 0.2s;
-    }
-    .btn-outline:hover { border-color: var(--gold); color: var(--gold); transform: translateY(-2px); }
-
-    @keyframes up {
-      from { opacity: 0; transform: translateY(28px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    /* SECTIONS */
-    section { padding: 7rem 4rem; }
-    .sec-label {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.65rem; letter-spacing: 0.2em;
-      text-transform: uppercase; color: var(--gold);
-      margin-bottom: 0.8rem;
-    }
-    .sec-title {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(2.2rem, 4.5vw, 3.8rem);
-      font-weight: 400; line-height: 1.1;
-      letter-spacing: -0.02em; color: var(--text);
-    }
-    .sec-title em { font-style: italic; color: var(--gold); }
-
-    /* ABOUT */
-    #about { background: var(--bg1); }
-    .about-wrap {
-      display: grid; grid-template-columns: 1fr 1fr;
-      gap: 5rem; margin-top: 4rem;
-    }
-    .about-text {
-      font-size: 1rem; font-weight: 300;
-      color: var(--muted2); line-height: 1.85;
-    }
-    .about-text p + p { margin-top: 1.2rem; }
-    .about-stats { display: flex; flex-direction: column; gap: 1px; background: var(--border); }
-    .astat {
-      background: var(--bg1);
-      padding: 1.8rem 2rem;
-      display: flex; align-items: baseline; gap: 1.2rem;
-      transition: background 0.3s;
-    }
-    .astat:hover { background: var(--bg2); }
-    .astat-num {
-      font-family: 'Playfair Display', serif;
-      font-size: 2.8rem; color: var(--gold); line-height: 1;
-    }
-    .astat-text { font-size: 0.85rem; color: var(--muted2); font-weight: 300; }
-
-    /* SKILLS */
-    #skills { background: var(--bg0); }
-    .skills-wrap {
-      margin-top: 4rem;
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1px; background: var(--border);
-    }
-    .sk {
-      background: var(--bg0);
-      padding: 2.5rem 2rem;
-      transition: background 0.3s;
-      position: relative;
-    }
-    .sk::after {
-      content: '';
-      position: absolute; bottom: 0; left: 2rem; right: 2rem;
-      height: 1px; background: var(--gold);
-      transform: scaleX(0); transition: transform 0.4s;
-    }
-    .sk:hover { background: var(--bg2); }
-    .sk:hover::after { transform: scaleX(1); }
-    .sk-num {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.6rem; color: var(--muted);
-      letter-spacing: 0.12em; margin-bottom: 1rem;
-    }
-    .sk-name {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.3rem; color: var(--text);
-      margin-bottom: 1rem;
-    }
-    .sk-items { display: flex; flex-wrap: wrap; gap: 0.4rem; }
-    .sk-tag {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.62rem; letter-spacing: 0.08em;
-      text-transform: uppercase;
-      border: 1px solid var(--border2); color: var(--muted2);
-      padding: 0.22rem 0.6rem;
-      transition: border-color 0.3s, color 0.3s;
-    }
-    .sk-tag:hover { border-color: var(--gold); color: var(--gold); }
-
-    /* PROJECTS */
-    #projects { background: var(--bg1); }
-    .proj-list { margin-top: 4rem; }
-    .proj-item {
-      display: grid;
-      grid-template-columns: 70px 1fr 40px;
-      gap: 2rem; align-items: start;
-      padding: 2rem 0;
-      border-top: 1px solid var(--border);
-      cursor: default;
-      transition: padding-left 0.3s;
-    }
-    .proj-item:last-child { border-bottom: 1px solid var(--border); }
-    .proj-item:hover { padding-left: 1rem; }
-    .proj-yr {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.65rem; color: var(--muted);
-      letter-spacing: 0.1em; padding-top: 0.4rem;
-    }
-    .proj-name {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.7rem; color: var(--text); margin-bottom: 0.5rem;
-    }
-    .proj-desc {
-      font-size: 0.88rem; color: var(--muted2);
-      font-weight: 300; line-height: 1.65;
-    }
-    .proj-tags { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-top: 0.8rem; }
-    .proj-tag {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.6rem; letter-spacing: 0.1em; text-transform: uppercase;
-      border: 1px solid rgba(201,168,76,0.25); color: var(--gold);
-      padding: 0.18rem 0.55rem;
-    }
-    .proj-arr {
-      font-size: 1.2rem; color: var(--border2);
-      padding-top: 0.4rem;
-      transition: color 0.3s, transform 0.3s;
-    }
-    .proj-item:hover .proj-arr { color: var(--gold); transform: translate(3px,-3px); }
-
-    /* GALLERY */
-    #gallery { background: var(--bg0); }
-
-    /* Gallery category group */
-    .gal-category { margin-top: 3rem; }
-    .gal-cat-label {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.62rem; letter-spacing: 0.18em;
-      text-transform: uppercase; color: var(--gold);
-      margin-bottom: 1rem;
-      display: flex; align-items: center; gap: 1rem;
-    }
-    .gal-cat-label::after {
-      content: ''; flex: 1; height: 1px; background: var(--border2);
-    }
-
-    .gal-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1px; background: var(--border);
-    }
-    .gal-grid.two-col { grid-template-columns: repeat(2, 1fr); }
-    .gal-grid.four-col { grid-template-columns: repeat(4, 1fr); }
-
-    .gal-slot {
-      background: var(--bg1);
-      aspect-ratio: 4/3;
-      display: flex; flex-direction: column;
-      align-items: center; justify-content: center;
-      gap: 0.6rem; cursor: pointer;
-      position: relative; overflow: hidden;
-      transition: background 0.3s;
-    }
-    .gal-slot:hover { background: var(--bg2); }
-    .gal-slot input[type="file"] {
-      position: absolute; inset: 0;
-      opacity: 0; cursor: pointer; width: 100%; height: 100%;
-    }
-    .gal-plus { font-size: 1.4rem; color: var(--muted); }
-    .gal-txt {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.6rem; letter-spacing: 0.12em;
-      text-transform: uppercase; color: var(--muted);
-      text-align: center; padding: 0 1rem;
-    }
-    .gal-slot img, .gal-slot video {
-      position: absolute; inset: 0;
-      width: 100%; height: 100%; object-fit: cover;
-    }
-    .gal-rm {
-      position: absolute; top: 0.5rem; right: 0.5rem;
-      width: 22px; height: 22px;
-      background: rgba(10,10,10,0.85);
-      color: var(--gold); border: none; cursor: pointer;
-      font-size: 0.7rem;
-      display: none; align-items: center; justify-content: center;
-      z-index: 5; font-family: 'JetBrains Mono', monospace;
-    }
-    .gal-slot:hover .gal-rm { display: flex; }
-
-    /* lightbox */
-    .lightbox {
-      position: fixed; inset: 0; z-index: 999;
-      background: rgba(0,0,0,0.93);
-      display: none; align-items: center; justify-content: center;
-    }
-    .lightbox.open { display: flex; }
-    .lightbox img, .lightbox video {
-      max-width: 90vw; max-height: 90vh;
-      object-fit: contain;
-    }
-    .lb-close {
-      position: absolute; top: 1.5rem; right: 2rem;
-      font-size: 2rem; color: var(--muted2); cursor: pointer;
-      background: none; border: none;
-      transition: color 0.2s;
-    }
-    .lb-close:hover { color: var(--gold); }
-
-    /* EDUCATION */
-    #education { background: var(--bg1); }
-    .edu-grid {
-      display: grid; grid-template-columns: 1fr 1fr;
-      gap: 1px; background: var(--border);
-      margin-top: 4rem;
-    }
-    .edu-card {
-      background: var(--bg1);
-      padding: 2.5rem;
-      transition: background 0.3s;
-      border-top: 2px solid transparent;
-    }
-    .edu-card:hover { background: var(--bg2); border-top-color: var(--gold); }
-    .edu-yr {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.65rem; color: var(--gold);
-      letter-spacing: 0.12em; margin-bottom: 1rem;
-    }
-    .edu-deg {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.35rem; color: var(--text); margin-bottom: 0.4rem;
-    }
-    .edu-sch { font-size: 0.88rem; color: var(--muted2); font-weight: 300; }
-    .edu-note { font-size: 0.78rem; color: var(--gold); margin-top: 1rem; font-style: italic; }
-    .certs { margin-top: 3rem; }
-    .cert-grid {
-      display: grid; grid-template-columns: 1fr 1fr;
-      gap: 0.8rem; margin-top: 1.5rem;
-    }
-    .cert-item {
-      display: flex; align-items: center; gap: 0.8rem;
-      padding: 1rem 1.2rem;
-      border: 1px solid var(--border);
-      font-size: 0.82rem; color: var(--muted2);
-      transition: border-color 0.3s;
-    }
-    .cert-item:hover { border-color: var(--gold); }
-    .cert-dot { width: 5px; height: 5px; background: var(--gold); border-radius: 50%; flex-shrink: 0; }
-
-    /* CONTACT */
-    #contact { background: var(--bg0); display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start; }
-    .contact-info { margin-top: 2rem; display: flex; flex-direction: column; gap: 0; }
-    .ci-item {
-      display: flex; align-items: center; gap: 1.2rem;
-      padding: 1.2rem 0;
-      border-bottom: 1px solid var(--border);
-      color: var(--text); text-decoration: none;
-      font-size: 0.9rem; font-weight: 300;
-      transition: color 0.3s;
-    }
-    .ci-item:hover { color: var(--gold); }
-    .ci-label {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.6rem; letter-spacing: 0.15em;
-      text-transform: uppercase; color: var(--gold);
-      width: 55px; flex-shrink: 0;
-    }
-    .form-wrap { margin-top: 2rem; display: flex; flex-direction: column; gap: 1.2rem; }
-    .f-label {
-      display: block;
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.6rem; letter-spacing: 0.15em;
-      text-transform: uppercase; color: var(--muted2);
-      margin-bottom: 0.5rem;
-    }
-    .f-input {
-      width: 100%; background: transparent;
-      border: none; border-bottom: 1px solid var(--border2);
-      color: var(--text); font-family: 'Inter', sans-serif;
-      font-size: 0.9rem; font-weight: 300;
-      padding: 0.6rem 0; outline: none;
-      transition: border-color 0.3s;
-    }
-    .f-input:focus { border-color: var(--gold); }
-    .f-input::placeholder { color: var(--muted); }
-    textarea.f-input { resize: none; height: 80px; }
-    .f-submit {
-      width: 100%; background: var(--gold); color: #0a0a0a;
-      border: none; cursor: pointer; padding: 0.9rem;
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.7rem; letter-spacing: 0.12em;
-      text-transform: uppercase; font-weight: 500;
-      transition: background 0.3s;
-    }
-    .f-submit:hover { background: var(--gold2); color: #fff; }
-
-    /* FOOTER */
-    footer {
-      background: var(--bg0);
-      border-top: 1px solid var(--border);
-      padding: 1.8rem 4rem;
-      display: flex; justify-content: space-between; align-items: center;
-    }
-    .fc { font-size: 0.72rem; color: var(--muted); letter-spacing: 0.04em; }
-    .fd { font-family: 'JetBrains Mono', monospace; font-size: 0.68rem; color: var(--gold); letter-spacing: 0.1em; }
-
-    /* REVEAL */
-    .reveal { opacity: 0; transform: translateY(36px); transition: opacity 0.85s ease, transform 0.85s ease; }
-    .reveal.on { opacity: 1; transform: none; }
-
-    /* RESPONSIVE */
-    @media (max-width: 900px) {
-      nav { padding: 1.2rem 2rem; }
-      .nav-links { display: none; }
-      .hero { padding: 0 2rem 4rem; }
-      section { padding: 5rem 2rem; }
-      .about-wrap, .edu-grid, #contact { grid-template-columns: 1fr; gap: 3rem; }
-      .skills-wrap { grid-template-columns: 1fr 1fr; }
-      .gal-grid { grid-template-columns: 1fr 1fr; }
-      .gal-grid.four-col { grid-template-columns: 1fr 1fr; }
-      .cert-grid { grid-template-columns: 1fr; }
-      footer { flex-direction: column; gap: 0.5rem; padding: 1.5rem 2rem; text-align: center; }
-      .proj-item { grid-template-columns: 60px 1fr; }
-      .proj-arr { display: none; }
-    }
-    @media (max-width: 560px) {
-      .skills-wrap, .gal-grid, .gal-grid.two-col, .gal-grid.four-col { grid-template-columns: 1fr; }
-    }
-  </style>
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-  <!-- NAV -->
-  <nav>
-    <a href="#" class="nav-logo">NH_</a>
-    <ul class="nav-links">
-      <li><a href="#about">Haqqımda</a></li>
-      <li><a href="#skills">Bacarıqlar</a></li>
-      <li><a href="#projects">Layihələr</a></li>
-      <li><a href="#gallery">Qalereya</a></li>
-      <li><a href="#education">Təhsil</a></li>
-      <li><a href="#contact">Əlaqə</a></li>
-    </ul>
+  <!-- Ambient Animated Lighting & Grid -->
+  <div class="bg-ambient">
+    <div class="ambient-blob blob-1"></div>
+    <div class="ambient-blob blob-2"></div>
+    <div class="ambient-blob blob-3"></div>
+  </div>
+  <div class="grid-overlay"></div>
+
+  <!-- Scroll Progress Indicator -->
+  <div class="scroll-progress-bar"></div>
+
+  <!-- ==========================================================================
+       NAVIGATION BAR
+       ========================================================================== -->
+  <nav class="site-nav">
+    <div class="container nav-container">
+      <a href="#home" class="nav-brand">
+        <div class="brand-badge">NH</div>
+        <span class="brand-text">Nərmin Həmidzadə</span>
+      </a>
+
+      <ul class="nav-menu">
+        <li><a href="#about" class="nav-link">Haqqımda</a></li>
+        <li><a href="#experience" class="nav-link">Təcrübə</a></li>
+        <li><a href="#projects" class="nav-link">Layihələr</a></li>
+        <li><a href="#skills" class="nav-link">Bacarıqlar</a></li>
+        <li><a href="#education" class="nav-link">Təhsil & Sertifikatlar</a></li>
+        <li><a href="#gallery" class="nav-link">Qalereya</a></li>
+        <li><a href="#contact" class="nav-link">Əlaqə</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <button class="btn btn-secondary trigger-cv-modal" style="padding: 0.55rem 1.1rem; font-size: 0.85rem;">
+          📄 CV-yə Bax
+        </button>
+        <a href="#contact" class="btn btn-primary" style="padding: 0.55rem 1.1rem; font-size: 0.85rem;">
+          Əlaqə Saxla
+        </a>
+        <button class="mobile-toggle" aria-label="Menyu aç">☰</button>
+      </div>
+    </div>
   </nav>
 
-  <!-- HERO -->
-  <div class="hero" id="home">
-    <div class="hero-bg"></div>
-    <div class="hero-grid-lines"></div>
-    <div class="hero-content">
-      <p class="hero-label" id="h-label">Robototexnika & Mexatronika · Data Analitika · ADNSU</p>
-      <h1 class="hero-name" id="h-name">Nərmin<br><span>Həmidzadə</span></h1>
-      <p class="hero-sub" id="h-bio">Robototexnika mühəndisliyi tələbəsi. Embedded sistemlər, data analitika və süni intellekt sahələrində özünü inkişaf etdirən.</p>
-      <div class="hero-actions">
-        <a href="#projects" class="btn-gold">Layihələrə bax</a>
-        <a href="#contact" class="btn-outline">Əlaqə saxla</a>
-      </div>
-    </div>
-  </div>
-
-  <!-- ABOUT -->
-  <section id="about">
-    <div class="reveal">
-      <p class="sec-label">01 — Haqqımda</p>
-      <h2 class="sec-title">Texnologiya ilə<br><em>gələcəyi qururam</em></h2>
-    </div>
-    <div class="about-wrap reveal">
-      <div class="about-text" id="about-text">
-        <p>Mən Nərmin Həmidzadə, Azərbaycan Dövlət Neft və Sənaye Universitetində Robototexnika və Mexatronika mühəndisliyi ixtisası üzrə təhsil alıram. Təhsilimlə yanaşı robototexniki sistemlər, data analitika, süni intellekt və embedded sistemlər kimi mühüm sahələr üzrə biliklər əldə edib öyrənməyə çalışıram.</p>
-        <p>Embedded sistemlər və data analitika sahələri mənim əsas maraq istiqamətlərimdir.</p>
-        <p>Məsuliyyətli, analitik düşüncəyə malik və komanda işində aktiv iştirak edən biriyəm. Məqsədim analitik bacarıqlarımı mühəndislik biliklərimlə birləşdirərək texnologiya və innovasiya sahəsində real dəyər yaradan layihələrdə iştirak etməkdir. Hər böyük nailiyyət bir addım və güclü iradə ilə başlayır.</p>
-        <p>Uşaqlıqdan şahmatla peşəkar səviyyədə məşğul olmuşam — bu idman növü mənə strateji düşünmə, səbr və planlı qərarvermə bacarığı qazandırıb.</p>
-      </div>
-      <div class="about-stats">
-        <div class="astat"><div class="astat-num">2025</div><div class="astat-text">WRC Dünya Robot Çempionatı iştirakçısı</div></div>
-        <div class="astat"><div class="astat-num">810</div><div class="astat-text">MO-211 Microsoft Excel Expert bal — 1000 üzərindən</div></div>
-        <div class="astat"><div class="astat-num">4+</div><div class="astat-text">Sertifikat və tamamlanmış proqram</div></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- SKILLS -->
-  <section id="skills">
-    <div class="reveal">
-      <p class="sec-label">02 — Bacarıqlar</p>
-      <h2 class="sec-title">Nə ilə<br><em>işləyirəm</em></h2>
-    </div>
-    <div class="skills-wrap reveal">
-      <div class="sk"><div class="sk-num">01</div><div class="sk-name">Data Analitika</div><div class="sk-items"><span class="sk-tag">Power BI</span><span class="sk-tag">Excel</span><span class="sk-tag">SQL</span><span class="sk-tag">Python</span></div>
-        <p style="font-size:0.78rem;color:var(--muted2);font-weight:300;margin-top:0.9rem;line-height:1.6">"Zirvədəsən" təqaüdü ilə Apex Business School-da Data Analitika təlimini bitirmişəm. Şirkətlərin datalarını analiz edib vizuallaşdırma işləri aparmışam.</p>
-      </div>
-      <div class="sk"><div class="sk-num">02</div><div class="sk-name">Python & Məlumat</div><div class="sk-items"><span class="sk-tag">Pandas</span><span class="sk-tag">NumPy</span><span class="sk-tag">Təmizləmə</span><span class="sk-tag">Modelləşdirmə</span></div>
-        <p style="font-size:0.78rem;color:var(--muted2);font-weight:300;margin-top:0.9rem;line-height:1.6">Məlumatların təhlili, təmizlənməsi, modelləşdirilməsi və vizuallaşdırılması üzərində praktiki bacarıqlarımı inkişaf etdirirəm.</p>
-      </div>
-      <div class="sk"><div class="sk-num">03</div><div class="sk-name">Sertifikatlar</div><div class="sk-items"><span class="sk-tag">MO-211</span><span class="sk-tag">Excel Expert</span><span class="sk-tag">PL-300</span><span class="sk-tag">LFS101</span></div>
-        <p style="font-size:0.78rem;color:var(--muted2);font-weight:300;margin-top:0.9rem;line-height:1.6">Microsoft Excel Expert (MO-211) — 810/1000. The Linux Foundation LFS101. Hal-hazırda PL-300 Power BI sertifikatına hazırlaşıram.</p>
-      </div>
-      <div class="sk"><div class="sk-num">04</div><div class="sk-name">Robototexnika</div><div class="sk-items"><span class="sk-tag">Linux</span><span class="sk-tag">OpenCV</span><span class="sk-tag">Proqramlaşdırma</span></div>
-        <p style="font-size:0.78rem;color:var(--muted2);font-weight:300;margin-top:0.9rem;line-height:1.6">Müdafiə Sənayesi Nazirliyinin ETİM mərkəzində "Milli mühəndis hazırlığı" proqramında robotexnika sistemlərinin proqramlaşdırılması üzrə 3-4 ay praktiki təlim keçmişəm.</p>
-      </div>
-      <div class="sk"><div class="sk-num">05</div><div class="sk-name">Embedded & AI</div><div class="sk-items"><span class="sk-tag">Machine Learning</span><span class="sk-tag">Image Processing</span><span class="sk-tag">Ubuntu</span></div>
-        <p style="font-size:0.78rem;color:var(--muted2);font-weight:300;margin-top:0.9rem;line-height:1.6">Linux (Ubuntu), OpenCV, machine learning, image processing sahələrində real təcrübə. AI və data analitikaya aid startup layihələrə iştirak gözlənilir.</p>
-      </div>
-      <div class="sk"><div class="sk-num">06</div><div class="sk-name">WRC 2025</div><div class="sk-items"><span class="sk-tag">Bots Combat</span><span class="sk-tag">Komanda</span><span class="sk-tag">Dünya Çempionatı</span></div>
-        <p style="font-size:0.78rem;color:var(--muted2);font-weight:300;margin-top:0.9rem;line-height:1.6">2025-ci ildə WRC Dünya Robot Çempionatında Bots Combat kateqoriyasında komanda ilə robotun proqramlaşdırılması və qurulmasında iştirak etmişəm.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- PROJECTS -->
-  <section id="projects">
-    <div class="reveal">
-      <p class="sec-label">03 — Layihələr</p>
-      <h2 class="sec-title">Əsas<br><em>işlərim</em></h2>
-    </div>
-    <div class="proj-list reveal">
-      <div class="proj-item">
-        <div class="proj-yr">2025</div>
-        <div>
-          <div class="proj-name">WRC Dünya Robot Çempionatı</div>
-          <div class="proj-desc">Bots Combat kateqoriyasında komanda ilə birlikdə robotun proqramlaşdırılması və qurulmasında iştirak. Beynəlxalq yarışda praktiki mühəndislik təcrübəsi.</div>
-          <div class="proj-tags"><span class="proj-tag">Robotika</span><span class="proj-tag">Proqramlaşdırma</span><span class="proj-tag">Komanda</span></div>
+  <!-- ==========================================================================
+       HERO SECTION
+       ========================================================================== -->
+  <section class="hero-section" id="home">
+    <div class="container hero-grid">
+      <div class="hero-content">
+        <div class="hero-status">
+          <span class="status-dot"></span>
+          <span>Aktiv Layihələr və Əməkdaşlıq üçün Açıqdır</span>
         </div>
-        <div class="proj-arr">↗</div>
-      </div>
-      <div class="proj-item">
-        <div class="proj-yr">2024–2025</div>
-        <div>
-          <div class="proj-name">ETİM — Milli Mühəndis Hazırlığı</div>
-          <div class="proj-desc">Müdafiə Sənayesi Nazirliyinin ETİM mərkəzində 3-4 ay robotexnika sistemlərinin proqramlaşdırılması üzrə praktiki təlim. Linux, OpenCV, machine learning, image processing.</div>
-          <div class="proj-tags"><span class="proj-tag">Linux</span><span class="proj-tag">OpenCV</span><span class="proj-tag">ML</span><span class="proj-tag">Embedded</span></div>
+
+        <h1 class="hero-title">
+          Salam, mən <br>
+          <span class="gradient-text dyn-name">Nərmin Həmidzadə</span>
+        </h1>
+
+        <div class="hero-subtitle">
+          <span class="dynamic-subtitle">Robototexnika və Mexatronika Mühəndisi</span>
         </div>
-        <div class="proj-arr">↗</div>
-      </div>
-      <div class="proj-item">
-        <div class="proj-yr">2024</div>
-        <div>
-          <div class="proj-name">Apex Business School — Data Analitika</div>
-          <div class="proj-desc">"Zirvədəsən" təqaüd proqramının qalibi olaraq Data Analitika təlimini uğurla başa vurmuşam. Şirkətlərin datalarını analiz edib vizuallaşdırma işləri aparmışam.</div>
-          <div class="proj-tags"><span class="proj-tag">Power BI</span><span class="proj-tag">Python</span><span class="proj-tag">SQL</span><span class="proj-tag">Excel</span></div>
+
+        <p class="hero-bio">
+          Azərbaycan Dövlət Neft və Sənaye Universitetinin (ADNSU) tələbəsi, Omnitrix komanda rəhbəri və WRC Dünya Robot Çempionatı 1/4 finalisti. Süni intellekt, robototexnika, görüntü emalı (OpenCV) və data analitikasını inteqrasiya edərək sənayedə real dəyər yaradan texnoloji həllər qururam.
+        </p>
+
+        <div class="hero-buttons">
+          <a href="#projects" class="btn btn-primary">
+            🚀 Layihələrimə Bax
+          </a>
+          <button class="btn btn-secondary trigger-cv-modal">
+            📄 CV-ni Aç / Endir
+          </button>
+          <a href="#contact" class="btn btn-secondary">
+            💬 Əlaqə
+          </a>
         </div>
-        <div class="proj-arr">↗</div>
-      </div>
-      <div class="proj-item">
-        <div class="proj-yr">Tezliklə</div>
-        <div>
-          <div class="proj-name">AI & Data Analitika Startup Layihələri</div>
-          <div class="proj-desc">AI və data analitikaya aid bir neçə startup layihəsində iştirak gözlənilir. Analitik bacarıqları mühəndislik bilikləri ilə birləşdirən real-dünya həlləri.</div>
-          <div class="proj-tags"><span class="proj-tag">AI</span><span class="proj-tag">Data</span><span class="proj-tag">Startup</span></div>
+
+        <div class="hero-socials">
+          <span>Sosial profillər:</span>
+          <div class="hero-socials-list">
+            <a href="https://www.linkedin.com/in/n%C9%99rmin-h%C9%99midzad%C9%99" target="_blank" class="btn-icon" title="LinkedIn">
+              <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+            </a>
+            <a href="https://github.com/hnarminn" target="_blank" class="btn-icon" title="GitHub">
+              <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+            </a>
+            <a href="mailto:hemidzadenernin@gmail.com" class="btn-icon" title="Email">
+              <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M0 3v18h24v-18h-24zm21.518 2l-9.518 7.713-9.518-7.713h19.036zm-19.518 14v-11.817l10 8.104 10-8.104v11.817h-20z"/></svg>
+            </a>
+            <a href="https://wa.me/994504489339" target="_blank" class="btn-icon" title="WhatsApp">
+              <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+            </a>
+          </div>
         </div>
-        <div class="proj-arr">↗</div>
+      </div>
+
+      <!-- Hero Visual Showcase -->
+      <div class="hero-visual-wrapper">
+        <div class="floating-badge fb-1">
+          <span class="fb-icon">🤖</span>
+          <div>
+            <div class="fb-title">WRC Dünya Çempionatı</div>
+            <div class="fb-val">1/4 Finalist (Bots Combat)</div>
+          </div>
+        </div>
+
+        <div class="hero-card">
+          <div class="profile-avatar-wrap">
+            <img src="avatar.png" alt="Nərmin Həmidzadə" class="profile-avatar" onerror="this.src='https://avatars.githubusercontent.com/u/167617717?v=4'">
+            <div class="profile-badge-float" title="Verified Engineering">✓</div>
+          </div>
+
+          <div class="profile-info">
+            <h2 class="profile-name dyn-name">Nərmin Həmidzadə</h2>
+            <p class="profile-role">Robototexnika & Data Analitika</p>
+          </div>
+
+          <div class="profile-specs-grid">
+            <div class="profile-spec-item">
+              <div class="spec-lbl">Təhsil</div>
+              <div class="spec-val">ADNSU (2023-2027)</div>
+            </div>
+            <div class="profile-spec-item">
+              <div class="spec-lbl">Məkan / Yaş</div>
+              <div class="spec-val">Bakı • 19 yaş</div>
+            </div>
+            <div class="profile-spec-item">
+              <div class="spec-lbl">Liderlik</div>
+              <div class="spec-val">Omnitrix Team Lead</div>
+            </div>
+            <div class="profile-spec-item">
+              <div class="spec-lbl">Excel Expert</div>
+              <div class="spec-val">810 / 1000 MOS</div>
+            </div>
+          </div>
+
+          <div class="profile-skills-pills">
+            <span class="skill-pill-sm">Python</span>
+            <span class="skill-pill-sm">Power BI</span>
+            <span class="skill-pill-sm">OpenCV</span>
+            <span class="skill-pill-sm">Deep Learning</span>
+            <span class="skill-pill-sm">SQL</span>
+            <span class="skill-pill-sm">Linux Ubuntu</span>
+            <span class="skill-pill-sm">Şahmat</span>
+          </div>
+        </div>
+
+        <div class="floating-badge fb-2">
+          <span class="fb-icon">🏆</span>
+          <div>
+            <div class="fb-title">Nailiyyət</div>
+            <div class="fb-val">UrbanLab 13 & Zirvə Qalibi</div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- GALLERY -->
-  <section id="gallery">
-    <div class="reveal">
-      <p class="sec-label">04 — Qalereya</p>
-      <h2 class="sec-title">Şəkillər &<br><em>Videolar</em></h2>
-    </div>
-
-    <!-- GROUP 1: WRC Robot Çempionatı -->
-    <div class="gal-category reveal">
-      <div class="gal-cat-label">🤖 Dünya Robot Çempionatı — WRC</div>
-      <div class="gal-grid" id="gal-wrc"></div>
-    </div>
-
-    <!-- GROUP 2: Data & AI -->
-    <div class="gal-category reveal">
-      <div class="gal-cat-label">📊 Data Analitika & AI / Image Processing</div>
-      <div class="gal-grid two-col" id="gal-data"></div>
-    </div>
-
-    <!-- GROUP 3: Sertifikatlar -->
-    <div class="gal-category reveal">
-      <div class="gal-cat-label">🏅 Sertifikatlar</div>
-      <div class="gal-grid two-col" id="gal-certs"></div>
-    </div>
-
-    <!-- GROUP 4: Videolar -->
-    <div class="gal-category reveal">
-      <div class="gal-cat-label">🎬 Videolar</div>
-      <div class="gal-grid" id="gal-videos"></div>
-    </div>
-  </section>
-
-  <!-- EDUCATION -->
-  <section id="education">
-    <div class="reveal">
-      <p class="sec-label">05 — Təhsil</p>
-      <h2 class="sec-title">Akademik<br><em>yolum</em></h2>
-    </div>
-    <div class="edu-grid reveal">
-      <div class="edu-card">
-        <div class="edu-yr">2012 — 2023</div>
-        <div class="edu-deg">Tam Orta Təhsil</div>
-        <div class="edu-sch">S. Mehəmmov adına 106 saylı Tam Orta Məktəb</div>
+  <!-- ==========================================================================
+       METRICS & STATS STRIP
+       ========================================================================== -->
+  <section class="stats-strip">
+    <div class="container stats-grid">
+      <div class="stat-card">
+        <div class="stat-number gradient-text" data-target="810" data-suffix="/1000">0</div>
+        <div class="stat-label">Microsoft Excel Expert (MOS-211) Balı</div>
       </div>
-      <div class="edu-card">
-        <div class="edu-yr">2023 — 2027</div>
-        <div class="edu-deg">Robototexnika və Mexatronika Mühəndisliyi</div>
-        <div class="edu-sch">Azərbaycan Dövlət Neft və Sənaye Universiteti — İnformasiya Texnologiyaları və İdarəetmə Fakültəsi</div>
-        <div class="edu-note">✦ Hal-hazırda davam edir</div>
+      <div class="stat-card">
+        <div class="stat-number gradient-text-purple" data-target="4" data-prefix="Top ">0</div>
+        <div class="stat-label">WRC 1/4 Finalisti (Bots Combat)</div>
       </div>
-    </div>
-    <div class="certs reveal">
-      <p class="sec-label">Sertifikasiyalar</p>
-      <div class="cert-grid">
-        <div class="cert-item"><div class="cert-dot"></div>MO-211 Microsoft Excel Expert — 810/1000</div>
-        <div class="cert-item"><div class="cert-dot"></div>The Linux Foundation — LFS101</div>
-        <div class="cert-item"><div class="cert-dot"></div>Apex Business School — Data Analitika</div>
-        <div class="cert-item"><div class="cert-dot"></div>WRC Dünya Robot Çempionatı — 2024</div>
+      <div class="stat-card">
+        <div class="stat-number gradient-text-gold" data-target="2" data-suffix="+ Qalibiyyət">0</div>
+        <div class="stat-label">Zirvə Təqaüdü & UrbanLab 13 Qalibi</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number gradient-text" data-target="9" data-suffix="+ Layihə">0</div>
+        <div class="stat-label">AI, Robototexnika & Data Layihələri</div>
       </div>
     </div>
   </section>
 
-  <!-- CONTACT -->
-  <section id="contact">
-    <div class="reveal">
-      <p class="sec-label">06 — Əlaqə</p>
-      <h2 class="sec-title">Birlikdə<br><em>işləyək</em></h2>
-      <div class="contact-info">
-        <a href="mailto:hemidzadenernin@gmail.com" class="ci-item"><span class="ci-label">Email</span>hemidzadenernin@gmail.com</a>
-        <a href="https://www.linkedin.com/in/nərmin-həmidzadə-a8a939294" target="_blank" class="ci-item"><span class="ci-label">LinkedIn</span>linkedin.com/in/nərmin-həmidzadə</a>
-        <div class="ci-item"><span class="ci-label">Yer</span>Bakı, Azərbaycan</div>
+  <!-- ==========================================================================
+       ABOUT ME SECTION
+       ========================================================================== -->
+  <section class="about-section" id="about">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag">01 • Haqqımda</div>
+        <h2 class="section-title">Mühəndislik, Analitika & <span class="gradient-text">Strateji Baxış</span></h2>
+        <p class="section-subtitle">Gələcəyin texnologiyalarını bu günün nizam-intizamı və cəsarəti ilə inşa edirəm.</p>
       </div>
-    </div>
-    <div class="reveal">
-      <p class="sec-label" style="visibility:hidden">_</p>
-      <h2 class="sec-title" style="font-size:1.8rem; color: var(--muted2)">Mesaj göndər</h2>
-      <div class="form-wrap">
-        <div><label class="f-label">Adınız</label><input type="text" class="f-input" placeholder="Adınızı daxil edin"></div>
-        <div><label class="f-label">Email</label><input type="email" class="f-input" placeholder="email@nümunə.com"></div>
-        <div><label class="f-label">Mövzu</label><input type="text" class="f-input" placeholder="Əməkdaşlıq, Layihə..."></div>
-        <div><label class="f-label">Mesaj</label><textarea class="f-input" rows="4" placeholder="Məlumat yazın..."></textarea></div>
-        <button class="f-submit" onclick="alert('Mesajınız göndərildi!')">Göndər →</button>
+
+      <div class="about-layout">
+        <div class="about-bio-text">
+          <p class="dyn-about-p1">
+            Mən Nərmin Həmidzadə, 12 iyun 2006-cı ildə Bakı şəhərində anadan olmuşam (19 yaş). 2023-cü ildən Azərbaycan Dövlət Neft və Sənaye Universitetində (ADNSU) İnformasiya Texnologiyaları və İdarəetmə fakültəsində <strong>Robototexnika və Mexatronika Mühəndisliyi</strong> ixtisası üzrə ali təhsil alıram.
+          </p>
+
+          <p>
+            Təhsilimlə yanaşı robototexniki sistemlərin kompüter modelləşdirilməsi, süni intellekt, verilənlər bazası sistemləri, PLC və rəqəmsal siqnalların işlənməsi kimi mühüm sahələri dərindən mənimsəmişəm. <strong>Embedded sistemlər</strong> və <strong>data analitika</strong> mənim ən böyük maraq və fəaliyyət orbitimdir.
+          </p>
+
+          <div class="about-quote-box">
+            "Hər böyük nailiyyət bir addım və güclü iradə ilə başlayır."
+            <span>— Nərmin Həmidzadə</span>
+          </div>
+
+          <p>
+            <strong>♟️ Şahmat və Strateji Təfəkkür:</strong> Uşaqlıqdan şahmatla peşəkar səviyyədə məşğul olmuşam və müxtəlif turnirlərdə uğurlar qazanmışam. Bu idman növü mənə soyuqqanlı təhlil, səbir, dərin analitik baxış və mürəkkəb mühəndislik sistemlərində hər gedişi qabaqcadan planlaşdırmaq bacarığı qazandırıb.
+          </p>
+        </div>
+
+        <!-- Interactive Tabs -->
+        <div class="about-tabs-container">
+          <div class="tab-nav">
+            <button class="tab-btn active" data-tab="tab-interests">Əsas Maraqlarım</button>
+            <button class="tab-btn" data-tab="tab-philosophy">Mühəndis Fəlsəfəm</button>
+            <button class="tab-btn" data-tab="tab-chess">Şahmat & Analitika</button>
+          </div>
+
+          <div class="tab-content active" id="tab-interests">
+            <div class="tab-item-list">
+              <div class="tab-feature">
+                <div class="tab-icon-box">🤖</div>
+                <div>
+                  <h4 class="tab-feature-title">Robototexnika & Hardware İnteqrasiyası</h4>
+                  <p class="tab-feature-desc">Sensorların oxunması, motor nəzarəti, PLC alqoritmləri, WRC Bots Combat kateqoriyasında döyüş robotlarının mexaniki və proqram təminatı qurulması.</p>
+                </div>
+              </div>
+
+              <div class="tab-feature">
+                <div class="tab-icon-box">📊</div>
+                <div>
+                  <h4 class="tab-feature-title">Data Analitika & Biznes İntellekti (BI)</h4>
+                  <p class="tab-feature-desc">Power BI, Python (Pandas, NumPy), Excel və SQL vasitəsilə böyük verilənlərin təmizlənməsi, vizual dashboardların yaradılması və data əsaslı qərarlar.</p>
+                </div>
+              </div>
+
+              <div class="tab-feature">
+                <div class="tab-icon-box">🧠</div>
+                <div>
+                  <h4 class="tab-feature-title">Computer Vision & Süni İntellekt</h4>
+                  <p class="tab-feature-desc">OpenCV ilə təsvirlərin emalı, Deep Learning (ANN, CNN, backpropagation), CVAT ilə data etiketlənməsi və LLM/NLP modellərinin tətbiqi.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="tab-content" id="tab-philosophy">
+            <div class="tab-item-list">
+              <div class="tab-feature">
+                <div class="tab-icon-box">🎯</div>
+                <div>
+                  <h4 class="tab-feature-title">Nəticəyönümlü Məsuliyyət</h4>
+                  <p class="tab-feature-desc">Hər bir layihədə dəqiqlik, detallara xüsusi diqqət və tapşırığı ən yüksək standartda tamamlamaq başlıca prinsipimdir.</p>
+                </div>
+              </div>
+
+              <div class="tab-feature">
+                <div class="tab-icon-box">👥</div>
+                <div>
+                  <h4 class="tab-feature-title">Komanda İşi & Liderlik</h4>
+                  <p class="tab-feature-desc">ADNSU və İRİA-nın Omnitrix komandasında rəhbər kimi komanda üzvləri arasında effektiv kommunikasiya və çevik MVP inkişafı təcrübəsi.</p>
+                </div>
+              </div>
+
+              <div class="tab-feature">
+                <div class="tab-icon-box">⚡</div>
+                <div>
+                  <h4 class="tab-feature-title">Sürətli Adaptasiya & Davamlı İnkişaf</h4>
+                  <p class="tab-feature-desc">Yeni texnologiyaları, kitabxanaları və proqramlaşdırma dillərini sürətlə öyrənərək real mühitdə dərhal tətbiq etmə bacarığı.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="tab-content" id="tab-chess">
+            <div class="tab-item-list">
+              <div class="tab-feature">
+                <div class="tab-icon-box">♟️</div>
+                <div>
+                  <h4 class="tab-feature-title">Strateji Proqnozlaşdırma</h4>
+                  <p class="tab-feature-desc">Şahmat lövhəsində olduğu kimi, sistem arxitekturasında da potensial xətaları bir neçə addım qabaqcadan görmək bacarığı.</p>
+                </div>
+              </div>
+
+              <div class="tab-feature">
+                <div class="tab-icon-box">⏳</div>
+                <div>
+                  <h4 class="tab-feature-title">Səbir & Təzyiq Altında Qərarvermə</h4>
+                  <p class="tab-feature-desc">WRC çempionatında və hakatonlarda sıx vaxt və yüksək rəqabət şəraitində optimal qərarlar qəbul etmək vərdişi.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- FOOTER -->
-  <footer>
-    <div class="fc">© 2025 Nərmin Həmidzadə. Bütün hüquqlar qorunur.</div>
-    <div class="fd">nermin.az</div>
+  <!-- ==========================================================================
+       EXPERIENCE & LEADERSHIP TIMELINE
+       ========================================================================== */
+  <section class="experience-section" id="experience">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag">02 • Təcrübə & Fəaliyyət</div>
+        <h2 class="section-title">Liderlik & <span class="gradient-text">Real Təcrübə</span></h2>
+        <p class="section-subtitle">İnkubasiya proqramları, dövlət layihələri və beynəlxalq mühəndislik yarışları.</p>
+      </div>
+
+      <div class="timeline">
+        <!-- Item 1: Omnitrix Team Lead -->
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <div class="timeline-header">
+              <div>
+                <h3 class="timeline-role">Omnitrix Komanda Rəhbəri (Team Lead)</h3>
+                <div class="timeline-company">ADNSU Startup və TTO & İnnovasiya və Rəqəmsal İnkişaf Agentliyi (İRİA)</div>
+              </div>
+              <div class="timeline-badge">2026 • 6 ay</div>
+            </div>
+            <ul class="timeline-bullets">
+              <li>Süni İntellekt (AI) və Data Analitika istiqamətində innovativ layihəyə rəhbərlik etdim.</li>
+              <li>İstifadəçilərlə təbii səslə ünsiyyət quran AI əsaslı Voice Chatbot həllinin konseptual memarlığını və funksional tələblərini formalaşdırdım.</li>
+              <li>Startup ideyasının bazar araşdırması, biznes dəyərinin ölçülməsi və MVP (Minimum Viable Product) prototipinin komanda ilə hazırlanmasını idarə etdim.</li>
+            </ul>
+            <div class="timeline-tags">
+              <span class="t-tag">Team Leadership</span>
+              <span class="t-tag">Voice AI</span>
+              <span class="t-tag">Data Analytics</span>
+              <span class="t-tag">MVP Development</span>
+              <span class="t-tag">İRİA</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 2: UrbanLab 13 Winner -->
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <div class="timeline-header">
+              <div>
+                <h3 class="timeline-role">UrbanLab 13 Qalibi (Tədqiqatçı & Analitik)</h3>
+                <div class="timeline-company">World Urban Forum (WUF)</div>
+              </div>
+              <div class="timeline-badge">2026</div>
+            </div>
+            <ul class="timeline-bullets">
+              <li>Süni intellekt dəstəyi ilə Bakı şəhərinin real küçə məkanlarının inkluziv urbanistika standartlarına uyğun yenidən dizaynı layihəsini təqdim etdim.</li>
+              <li>Şəhər planlaşdırılması prosesində data əsaslı analiz və qərarvermə üzrə yüksək nəticə göstərərək qalib olduq.</li>
+            </ul>
+            <div class="timeline-tags">
+              <span class="t-tag">Urban Analytics</span>
+              <span class="t-tag">AI Design</span>
+              <span class="t-tag">Inclusive Architecture</span>
+              <span class="t-tag">World Urban Forum</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 3: ETİM Defense Ministry -->
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <div class="timeline-header">
+              <div>
+                <h3 class="timeline-role">Milli Mühəndis Hazırlığı Mütəxəssisi</h3>
+                <div class="timeline-company">Müdafiə Sənayesi Nazirliyi — Elmi-Tədqiqat və İnnovasiya Mərkəzi (ETİM)</div>
+              </div>
+              <div class="timeline-badge">2026 • 5 ay</div>
+            </div>
+            <ul class="timeline-bullets">
+              <li>Milli Mühəndis Hazırlığı Proqramının qalibi olaraq robototexnika sistemlərinin proqramlaşdırılması üzrə intensiv praktiki təlim keçdim.</li>
+              <li>Linux (Ubuntu), OpenCV ilə görüntü emalı (Computer Vision), Deep Learning (ANN, CNN, backpropagation) və model optimizasiyası üzrə real təcrübə qazandım.</li>
+              <li>NLP və LLM modellərinin data preprocessing və tətbiqi sahəsində praktiki bilikləri inkişaf etdirdim.</li>
+            </ul>
+            <div class="timeline-tags">
+              <span class="t-tag">Linux Ubuntu</span>
+              <span class="t-tag">OpenCV</span>
+              <span class="t-tag">Deep Learning (CNN/ANN)</span>
+              <span class="t-tag">LLM & NLP</span>
+              <span class="t-tag">ETİM</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 4: WRC World Robot Championship -->
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <div class="timeline-header">
+              <div>
+                <h3 class="timeline-role">World Robot Championship (WRC) — 1/4 Finalisti</h3>
+                <div class="timeline-company">Bots Combat Kateqoriyası</div>
+              </div>
+              <div class="timeline-badge">2024 - 2025</div>
+            </div>
+            <ul class="timeline-bullets">
+              <li>Komanda ilə birlikdə döyüş robotunun dizaynı, mexaniki yığılması və proqramlaşdırılmasında birbaşa iştirak etdim.</li>
+              <li>Robotun hərəkət alqoritmlərinin optimallaşdırılması, sensor kalibrasiyası və poliqon testlərini apardım.</li>
+              <li>Gərgin rəqabət şəraitində komandamız yarışda 1/4 final mərhələsinə yüksəldi.</li>
+            </ul>
+            <div class="timeline-tags">
+              <span class="t-tag">WRC</span>
+              <span class="t-tag">Robotics Engineering</span>
+              <span class="t-tag">Bots Combat</span>
+              <span class="t-tag">Motion Algorithms</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 5: Election Observer -->
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <div class="timeline-header">
+              <div>
+                <h3 class="timeline-role">Müşahidəçi (Monitorinq və Hesabatlılıq)</h3>
+                <div class="timeline-company">Azərbaycan Respublikası Bələdiyyə Seçkiləri</div>
+              </div>
+              <div class="timeline-badge">2025</div>
+            </div>
+            <ul class="timeline-bullets">
+              <li>Seçki prosesinin şəffaflığının monitorinqini həyata keçirdim.</li>
+              <li>Obyektivlik, yüksək diqqətlilik və məsuliyyət prinsipləri ilə hesabatlandırma apardım.</li>
+            </ul>
+            <div class="timeline-tags">
+              <span class="t-tag">Monitorinq</span>
+              <span class="t-tag">Hesabatlılıq</span>
+              <span class="t-tag">Detallara Diqqət</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       FEATURED PROJECTS SECTION
+       ========================================================================== -->
+  <section class="projects-section" id="projects">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag">03 • Layihələr & Mühəndislik</div>
+        <h2 class="section-title">İnnovasiya & <span class="gradient-text">Kod Arxitekturası</span></h2>
+        <p class="section-subtitle">Robototexnika, süni intellekt, data vizuallaşdırma və RAG sistemləri üzrə real işlərim.</p>
+      </div>
+
+      <!-- Category Filter Tabs -->
+      <div class="project-filters">
+        <button class="filter-btn active" data-filter="all">Hamısı</button>
+        <button class="filter-btn" data-filter="robotics">Robototexnika</button>
+        <button class="filter-btn" data-filter="ai-llm">Süni İntellekt & LLM</button>
+        <button class="filter-btn" data-filter="data">Data Analitika</button>
+        <button class="filter-btn" data-filter="urban">Urbanistika</button>
+      </div>
+
+      <div class="projects-grid">
+        <!-- Project 1: WRC Combat Bot -->
+        <div class="project-card-wrap" data-category="robotics">
+          <div class="glass-card project-card">
+            <div class="project-top">
+              <div class="project-icon">🤖</div>
+              <div class="project-links">
+                <a href="#gallery" class="proj-link-btn" title="Qalereyada bax">👁</a>
+              </div>
+            </div>
+            <div class="project-category">Robototexnika & Hardware</div>
+            <h3 class="project-title">WRC Combat Bot (Döyüş Robotu)</h3>
+            <p class="project-desc">
+              World Robot Championship Bots Combat kateqoriyası üçün hazırlanmış yüksək manevr qabiliyyətinə və zərbə gücünə malik döyüş robotu. Hərəkət alqoritmlərinin optimizasiyası və tele-idarəetmə protokolları ilə 1/4 finala yüksəlmişdir.
+            </p>
+            <div class="project-techs">
+              <span class="tech-tag">C/C++</span>
+              <span class="tech-tag">Motor Drivers</span>
+              <span class="tech-tag">Sensors</span>
+              <span class="tech-tag">Hardware Design</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 2: Omnitrix Voice Chatbot -->
+        <div class="project-card-wrap" data-category="ai-llm">
+          <div class="glass-card project-card">
+            <div class="project-top">
+              <div class="project-icon">🎙️</div>
+              <div class="project-links">
+                <span class="proj-link-btn" title="İnkubasiya Layihəsi">★</span>
+              </div>
+            </div>
+            <div class="project-category">AI Voice & NLP</div>
+            <h3 class="project-title">Omnitrix AI Voice Chatbot</h3>
+            <p class="project-desc">
+              ADNSU Startup & TTO və İRİA inkubasiya proqramı çərçivəsində rəhbərlik etdiyim AI əsaslı səsli ünsiyyət həlli. İstifadəçi nitqini təhlil edən, səsli sual-cavab aparan və biznes proseslərinə inteqrasiya olunan MVP platforması.
+            </p>
+            <div class="project-techs">
+              <span class="tech-tag">Python</span>
+              <span class="tech-tag">Voice AI</span>
+              <span class="tech-tag">NLP</span>
+              <span class="tech-tag">FastAPI</span>
+              <span class="tech-tag">Product Management</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 3: UrbanLab 13 Inclusive Streets -->
+        <div class="project-card-wrap" data-category="urban data">
+          <div class="glass-card project-card">
+            <div class="project-top">
+              <div class="project-icon">🏙️</div>
+              <div class="project-links">
+                <span class="proj-link-btn" title="World Urban Forum Qalibi">🏆</span>
+              </div>
+            </div>
+            <div class="project-category">Urbanistika & AI</div>
+            <h3 class="project-title">UrbanLab 13 — AI İnkluziv Şəhər Layihəsi</h3>
+            <p class="project-desc">
+              Bakı küçələrinin data əsaslı analizi və inkluziv urbanistika standartlarına uyğunlaşdırılması üçün AI konsepti. Piyada axınları və əlçatanlıq datalarının təhlili ilə Dünya Urban Forumunda qalib gəlmiş layihə.
+            </p>
+            <div class="project-techs">
+              <span class="tech-tag">Data Analytics</span>
+              <span class="tech-tag">AI Simulation</span>
+              <span class="tech-tag">GIS</span>
+              <span class="tech-tag">Urban Planning</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 4: Tool-Calling AI Agent -->
+        <div class="project-card-wrap" data-category="ai-llm">
+          <div class="glass-card project-card">
+            <div class="project-top">
+              <div class="project-icon">⚡</div>
+              <div class="project-links">
+                <a href="https://github.com/hnarminn/tool-calling-agent" target="_blank" class="proj-link-btn" title="GitHub Koduna Bax">↗</a>
+              </div>
+            </div>
+            <div class="project-category">LLM Agent Architecture</div>
+            <h3 class="project-title">Tool-Calling AI Agent (Claude SDK)</h3>
+            <p class="project-desc">
+              Anthropic Claude-un Tool Use (Function Calling) xüsusiyyəti əsasında istifadəçi niyyətini avtonom dərk edən, kalkulyator, hava proqnozu və veb axtarış kimi alətləri müstəqil seçib çağıran intellektual agent sistemi.
+            </p>
+            <div class="project-techs">
+              <span class="tech-tag">Python</span>
+              <span class="tech-tag">Anthropic API</span>
+              <span class="tech-tag">Function Calling</span>
+              <span class="tech-tag">Agents</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 5: RAG Document Assistant -->
+        <div class="project-card-wrap" data-category="ai-llm">
+          <div class="glass-card project-card">
+            <div class="project-top">
+              <div class="project-icon">📚</div>
+              <div class="project-links">
+                <a href="https://github.com/hnarminn/rag" target="_blank" class="proj-link-btn" title="GitHub Koduna Bax">↗</a>
+              </div>
+            </div>
+            <div class="project-category">RAG & Vektor Axtarışı</div>
+            <h3 class="project-title">RAG — "Sənədlərinizlə Danışın"</h3>
+            <p class="project-desc">
+              Retrieval-Augmented Generation sistemi. İstifadəçilərin korporativ və tədqiqat sənədlərindən mənbə istinadları ilə dəqiq, hallusinasiyasız və etibarlı cavablar çıxaran sənəd köməkçisi.
+            </p>
+            <div class="project-techs">
+              <span class="tech-tag">RAG</span>
+              <span class="tech-tag">Vector DB</span>
+              <span class="tech-tag">Embeddings</span>
+              <span class="tech-tag">LangChain</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 6: RAG Evaluation Framework -->
+        <div class="project-card-wrap" data-category="ai-llm">
+          <div class="glass-card project-card">
+            <div class="project-top">
+              <div class="project-icon">🔬</div>
+              <div class="project-links">
+                <a href="https://github.com/hnarminn/rag-eval-framework-" target="_blank" class="proj-link-btn" title="GitHub Koduna Bax">↗</a>
+              </div>
+            </div>
+            <div class="project-category">AI Testing & MLOps</div>
+            <h3 class="project-title">RAG Qiymətləndirmə Çərçivəsi (Eval)</h3>
+            <p class="project-desc">
+              AI çıxışının qiymətləndirilməsi, sual-cavab test dəstləri, uğursuzluqların təhlili və kiçik açıq qaynaqlı modellərin performansının optimallaşdırılması üçün qurulmuş tam sınaq mühiti.
+            </p>
+            <div class="project-techs">
+              <span class="tech-tag">Evaluation Metrics</span>
+              <span class="tech-tag">Model Fine-Tuning</span>
+              <span class="tech-tag">Error Analysis</span>
+              <span class="tech-tag">Python</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 7: Smart Code Reviewer -->
+        <div class="project-card-wrap" data-category="ai-llm">
+          <div class="glass-card project-card">
+            <div class="project-top">
+              <div class="project-icon">🛡️</div>
+              <div class="project-links">
+                <a href="https://github.com/hnarminn/llm-code-reviewer" target="_blank" class="proj-link-btn" title="GitHub Koduna Bax">↗</a>
+              </div>
+            </div>
+            <div class="project-category">Developer Tooling</div>
+            <h3 class="project-title">Smart LLM Code Reviewer</h3>
+            <p class="project-desc">
+              Kod keyfiyyətini, təhlükəsizlik boşluqlarını və performans problemlərini skan edən və strukturlaşdırılmış JSON formatında peşəkar tövsiyələr qaytaran LLM əsaslı avtomatlaşdırılmış audit aləti.
+            </p>
+            <div class="project-techs">
+              <span class="tech-tag">OpenAI API</span>
+              <span class="tech-tag">Static Analysis</span>
+              <span class="tech-tag">JSON Schema</span>
+              <span class="tech-tag">Security</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 8: ETİM Computer Vision -->
+        <div class="project-card-wrap" data-category="robotics ai-llm">
+          <div class="glass-card project-card">
+            <div class="project-top">
+              <div class="project-icon">👁️</div>
+              <div class="project-links">
+                <span class="proj-link-btn" title="Müdafiə Sənayesi Nazirliyi ETİM">★</span>
+              </div>
+            </div>
+            <div class="project-category">Computer Vision & Deep Learning</div>
+            <h3 class="project-title">ETİM Təsvir Emalı & Dərin Öyrənmə</h3>
+            <p class="project-desc">
+              OpenCV ilə real zamanlı görüntü emalı, ANN və CNN arxitekturaları, backpropagation və təsvir ilkin emalı (preprocessing). CVAT aləti ilə data etiketləmə və robot manipulyatorları üçün obyekt tanıma.
+            </p>
+            <div class="project-techs">
+              <span class="tech-tag">OpenCV</span>
+              <span class="tech-tag">CNN / ANN</span>
+              <span class="tech-tag">CVAT</span>
+              <span class="tech-tag">Linux Ubuntu</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 9: Data Analytics & Power BI -->
+        <div class="project-card-wrap" data-category="data">
+          <div class="glass-card project-card">
+            <div class="project-top">
+              <div class="project-icon">📈</div>
+              <div class="project-links">
+                <span class="proj-link-btn" title="Apex Business School">★</span>
+              </div>
+            </div>
+            <div class="project-category">Data Analitika & BI</div>
+            <h3 class="project-title">Power BI & Python Biznes Dashboardları</h3>
+            <p class="project-desc">
+              "Zirvəyə doğru" təqaüdü çərçivəsində şirkət məlumatlarının ETL prosesi, SQL sorğuları, DAX düsturları və interaktiv Power BI hesabatları. Satış, logistika və əməliyyat göstəricilərinin vizuallaşdırılması.
+            </p>
+            <div class="project-techs">
+              <span class="tech-tag">Power BI</span>
+              <span class="tech-tag">DAX</span>
+              <span class="tech-tag">SQL</span>
+              <span class="tech-tag">Excel Pivot</span>
+              <span class="tech-tag">Pandas</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       TECHNICAL SKILLS SECTION
+       ========================================================================== -->
+  <section class="skills-section" id="skills">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag">04 • Bacarıqlar & Texnoloji Stack</div>
+        <h2 class="section-title">Texniki & Mühəndislik <span class="gradient-text">Bacarıqları</span></h2>
+        <p class="section-subtitle">Real layihələrdə və laboratoriya mühitində tətbiq olunan alətlər və sistemlər.</p>
+      </div>
+
+      <div class="skills-matrix">
+        <!-- Card 1: Data Analytics & BI -->
+        <div class="glass-card skill-category-card">
+          <div class="skill-cat-header">
+            <div class="skill-cat-icon icon-cyan">📊</div>
+            <h3 class="skill-cat-title">Data Analitika & BI</h3>
+          </div>
+          <div class="skill-items-list">
+            <div class="skill-item">
+              <div class="skill-item-info">
+                <span class="skill-name">Power BI (DAX, Modeling, Reports)</span>
+                <span class="skill-lvl">92%</span>
+              </div>
+              <div class="skill-bar-bg"><div class="skill-bar-fill" style="width: 92%;"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-item-info">
+                <span class="skill-name">Microsoft Excel Expert (MOS-211)</span>
+                <span class="skill-lvl">95%</span>
+              </div>
+              <div class="skill-bar-bg"><div class="skill-bar-fill" style="width: 95%;"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-item-info">
+                <span class="skill-name">SQL (Queries, Joins, Subqueries)</span>
+                <span class="skill-lvl">88%</span>
+              </div>
+              <div class="skill-bar-bg"><div class="skill-bar-fill" style="width: 88%;"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-item-info">
+                <span class="skill-name">Python (Pandas, NumPy, EDA)</span>
+                <span class="skill-lvl">90%</span>
+              </div>
+              <div class="skill-bar-bg"><div class="skill-bar-fill" style="width: 90%;"></div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 2: AI & Computer Vision -->
+        <div class="glass-card skill-category-card">
+          <div class="skill-cat-header">
+            <div class="skill-cat-icon icon-purple">🧠</div>
+            <h3 class="skill-cat-title">Süni İntellekt & CV</h3>
+          </div>
+          <div class="skill-items-list">
+            <div class="skill-item">
+              <div class="skill-item-info">
+                <span class="skill-name">Computer Vision (OpenCV)</span>
+                <span class="skill-lvl">86%</span>
+              </div>
+              <div class="skill-bar-bg"><div class="skill-bar-fill fill-purple" style="width: 86%;"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-item-info">
+                <span class="skill-name">Deep Learning (ANN, CNN, Backprop)</span>
+                <span class="skill-lvl">82%</span>
+              </div>
+              <div class="skill-bar-bg"><div class="skill-bar-fill fill-purple" style="width: 82%;"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-item-info">
+                <span class="skill-name">CVAT (Data Annotation & Labeling)</span>
+                <span class="skill-lvl">90%</span>
+              </div>
+              <div class="skill-bar-bg"><div class="skill-bar-fill fill-purple" style="width: 90%;"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-item-info">
+                <span class="skill-name">LLM, NLP & RAG Sistemləri</span>
+                <span class="skill-lvl">85%</span>
+              </div>
+              <div class="skill-bar-bg"><div class="skill-bar-fill fill-purple" style="width: 85%;"></div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 3: Robotics & Mechatronics -->
+        <div class="glass-card skill-category-card">
+          <div class="skill-cat-header">
+            <div class="skill-cat-icon icon-gold">🤖</div>
+            <h3 class="skill-cat-title">Robototexnika & Mühəndislik</h3>
+          </div>
+          <div class="skill-items-list">
+            <div class="skill-item">
+              <div class="skill-item-info">
+                <span class="skill-name">Robot Modelləşdirməsi & İdarəetmə</span>
+                <span class="skill-lvl">88%</span>
+              </div>
+              <div class="skill-bar-bg"><div class="skill-bar-fill fill-gold" style="width: 88%;"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-item-info">
+                <span class="skill-name">PLC & Məntiqi Kontrollerlər</span>
+                <span class="skill-lvl">82%</span>
+              </div>
+              <div class="skill-bar-bg"><div class="skill-bar-fill fill-gold" style="width: 82%;"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-item-info">
+                <span class="skill-name">Linux Ubuntu & Terminal</span>
+                <span class="skill-lvl">90%</span>
+              </div>
+              <div class="skill-bar-bg"><div class="skill-bar-fill fill-gold" style="width: 90%;"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-item-info">
+                <span class="skill-name">Embedded Sistemlər & C/C++ (İlkin)</span>
+                <span class="skill-lvl">75%</span>
+              </div>
+              <div class="skill-bar-bg"><div class="skill-bar-fill fill-gold" style="width: 75%;"></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Addon Grid: Soft Skills & Languages -->
+      <div class="skills-addon-grid">
+        <div class="glass-card addon-card">
+          <h4 class="addon-title">♟️ Fərdi & Liderlik Bacarıqları</h4>
+          <div class="soft-skills-tags">
+            <span class="soft-tag">♟️ Şahmat Əsaslı Strateji Düşüncə</span>
+            <span class="soft-tag">👑 Komanda Rəhbərliyi (Team Lead)</span>
+            <span class="soft-tag">🔍 Analitik Problem Həlli</span>
+            <span class="soft-tag">⏱️ Vaxtın İdarə Olunması</span>
+            <span class="soft-tag">🚀 Sürətli Adaptasiya</span>
+            <span class="soft-tag">🎯 Detallara Dəqiq Fokus</span>
+            <span class="soft-tag">🗣️ Effektiv Ünsiyyət və Təqdimat</span>
+          </div>
+        </div>
+
+        <div class="glass-card addon-card">
+          <h4 class="addon-title">🌐 Dil Bilikləri</h4>
+          <div class="languages-list">
+            <div class="lang-row">
+              <span class="lang-name">Azərbaycan dili</span>
+              <span class="lang-level">Ana Dili (Native)</span>
+            </div>
+            <div class="lang-row">
+              <span class="lang-name">İngilis dili</span>
+              <span class="lang-level">A2 - B1 (Texniki / İşgüzar)</span>
+            </div>
+            <div class="lang-row">
+              <span class="lang-name">Türk dili</span>
+              <span class="lang-level">B1 (Sərbəst)</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       EDUCATION & CERTIFICATIONS SECTION
+       ========================================================================== -->
+  <section class="education-section" id="education">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag">05 • Təhsil & Kvalifikasiya</div>
+        <h2 class="section-title">Akademik Yolum & <span class="gradient-text">Sertifikatlar</span></h2>
+        <p class="section-subtitle">Dövlət universitetində fundamental mühəndislik və beynəlxalq peşəkar sertifikasiyalar.</p>
+      </div>
+
+      <div class="edu-cert-grid">
+        <!-- Left: Education Column -->
+        <div class="edu-stack">
+          <!-- ADNSU -->
+          <div class="glass-card edu-card">
+            <div class="edu-period">2023 — 2027 (Davam edir)</div>
+            <h3 class="edu-degree">Robototexnika və Mexatronika Mühəndisliyi</h3>
+            <div class="edu-school">Azərbaycan Dövlət Neft və Sənaye Universiteti (ADNSU) • İT və İdarəetmə Fakültəsi</div>
+            <p style="font-size: 0.9rem; color: var(--text-muted); line-height: 1.6;">
+              Mühəndislik nəzəriyyəsi, tətbiqi riyaziyyat, rəqəmsal idarəetmə sistemləri və intellektual robotların proqramlaşdırılması üzrə bakalavr təhsili.
+            </p>
+            <div class="edu-courses-list">
+              <span class="course-tag">Robotların idarə olunması</span>
+              <span class="course-tag">Süni intellekt</span>
+              <span class="course-tag">Verilənlər strukturu və alqoritmlər</span>
+              <span class="course-tag">PLC Kontrollerlər</span>
+              <span class="course-tag">Maşın və mexanizmlər nəzəriyyəsi</span>
+              <span class="course-tag">Robotların kompüter modelləşdirilməsi</span>
+              <span class="course-tag">Rəqəmsal siqnallar və təsvirlərin işlənməsi</span>
+              <span class="course-tag">Rəqəmsal kommunikasiya</span>
+              <span class="course-tag">Verilənlər bazası sistemləri</span>
+              <span class="course-tag">İntellektual robotlar</span>
+            </div>
+          </div>
+
+          <!-- Apex Business School -->
+          <div class="glass-card edu-card" style="border-left-color: var(--accent-gold);">
+            <div class="edu-period" style="color: var(--accent-gold);">2025 — 2026</div>
+            <h3 class="edu-degree">Data Analitika ("Zirvəyə doğru" Təqaüd Qalibi)</h3>
+            <div class="edu-school">Apex Business School</div>
+            <p style="font-size: 0.9rem; color: var(--text-muted); line-height: 1.6;">
+              Təqaüd proqramının qalibi olaraq Power BI (DAX, Data Modeling, Dashboard Creation), Microsoft Excel (Advanced Pivot & Formulas), Python (Pandas, NumPy) və SQL (Subqueries, Joins) üzrə intensiv praktiki kurs.
+            </p>
+          </div>
+
+          <!-- Secondary School -->
+          <div class="glass-card edu-card" style="border-left-color: var(--accent-purple);">
+            <div class="edu-period" style="color: var(--accent-purple);">2012 — 2023</div>
+            <h3 class="edu-degree">Tam Orta Təhsil</h3>
+            <div class="edu-school">S. Məhərrəmov adına 106 saylı Tam Orta Məktəb</div>
+          </div>
+        </div>
+
+        <!-- Right: Certifications & Diplomas -->
+        <div class="certs-stack">
+          <!-- Cert 1: Microsoft MOS-211 -->
+          <div class="glass-card cert-card">
+            <div class="cert-icon">🏅</div>
+            <div>
+              <h4 class="cert-title">Microsoft MOS-211: Microsoft Excel Expert</h4>
+              <div class="cert-issuer">Microsoft Corporation</div>
+              <div class="cert-score">Nəticə: 810 / 1000 bal</div>
+            </div>
+          </div>
+
+          <!-- Cert 2: Linux Foundation -->
+          <div class="glass-card cert-card">
+            <div class="cert-icon" style="background: rgba(0, 242, 254, 0.1); color: var(--accent-cyan); border-color: rgba(0, 242, 254, 0.3);">🐧</div>
+            <div>
+              <h4 class="cert-title">LFS101: Introduction to Linux</h4>
+              <div class="cert-issuer">The Linux Foundation</div>
+              <div class="cert-score">Linux arxitekturası, bash skriptləri və idarəetmə</div>
+            </div>
+          </div>
+
+          <!-- Cert 3: Defense Ministry ETIM -->
+          <div class="glass-card cert-card">
+            <div class="cert-icon" style="background: rgba(16, 185, 129, 0.1); color: var(--accent-emerald); border-color: rgba(16, 185, 129, 0.3);">🎖️</div>
+            <div>
+              <h4 class="cert-title">Milli Mühəndis Hazırlığı Sertifikatı</h4>
+              <div class="cert-issuer">Müdafiə Sənayesi Nazirliyi ETİM Mərkəzi</div>
+              <div class="cert-score">Robototexnika, OpenCV və Dərin Öyrənmə</div>
+            </div>
+          </div>
+
+          <!-- Cert 4: World Urban Forum -->
+          <div class="glass-card cert-card">
+            <div class="cert-icon">🏆</div>
+            <div>
+              <h4 class="cert-title">UrbanLab 13 Qalibiyyət Diplomu</h4>
+              <div class="cert-issuer">World Urban Forum (WUF)</div>
+              <div class="cert-score">AI əsaslı inkluziv urbanistika layihəsi üzrə 1-ci yer</div>
+            </div>
+          </div>
+
+          <!-- Cert 5: WRC Robot Championship -->
+          <div class="glass-card cert-card">
+            <div class="cert-icon" style="background: rgba(127, 0, 255, 0.1); color: var(--accent-purple); border-color: rgba(127, 0, 255, 0.3);">🤖</div>
+            <div>
+              <h4 class="cert-title">World Robot Championship (WRC)</h4>
+              <div class="cert-issuer">WRC Beynəlxalq Təşkilat Komitəsi</div>
+              <div class="cert-score">Bots Combat Kateqoriyası • 1/4 Final Mərhələsi</div>
+            </div>
+          </div>
+
+          <!-- Cert 6: Apex Business School -->
+          <div class="glass-card cert-card">
+            <div class="cert-icon">🎓</div>
+            <div>
+              <h4 class="cert-title">Data Analitika Mütəxəssisi Sertifikatı</h4>
+              <div class="cert-issuer">Apex Business School ("Zirvəyə doğru" Təqaüdü)</div>
+              <div class="cert-score">Power BI, Python, SQL və Biznes Analitikası</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       INTERACTIVE GALLERY & MEDIA SHOWCASE
+       ========================================================================== -->
+  <section class="gallery-section" id="gallery">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag">06 • Foto & Video Sübutlar</div>
+        <h2 class="section-title">İnteraktiv <span class="gradient-text">Qalereya & Arxiv</span></h2>
+        <p class="section-subtitle">Robotlar, yarışlar, sertifikatlar və data dashboard-ları. Kompüterinizdən yeni şəkillər əlavə edə bilərsiniz — onlar brauzerinizdə daimi yadda saxlanılacaq!</p>
+      </div>
+
+      <div class="gallery-categories">
+        <!-- Category 1: WRC World Robot Championship -->
+        <div>
+          <h3 class="gal-category-title">🤖 Dünya Robot Çempionatı (WRC Bots Combat)</h3>
+          <div class="gallery-grid">
+            <div class="media-slot" data-slot-id="wrc-1">
+              <input type="file" accept="image/*">
+              <div class="media-placeholder">
+                <span class="media-icon">📷</span>
+                <span class="media-caption">WRC Döyüş Robotu Quruluşu</span>
+                <span class="media-subtext">Şəkil seçmək üçün klikləyin</span>
+              </div>
+            </div>
+            <div class="media-slot" data-slot-id="wrc-2">
+              <input type="file" accept="image/*">
+              <div class="media-placeholder">
+                <span class="media-icon">👥</span>
+                <span class="media-caption">Komanda & Poliqon Sınağı</span>
+                <span class="media-subtext">Şəkil seçmək üçün klikləyin</span>
+              </div>
+            </div>
+            <div class="media-slot" data-slot-id="wrc-3">
+              <input type="file" accept="image/*">
+              <div class="media-placeholder">
+                <span class="media-icon">🏆</span>
+                <span class="media-caption">WRC 1/4 Final Anları</span>
+                <span class="media-subtext">Şəkil seçmək üçün klikləyin</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Category 2: Data Analytics & AI Dashboards -->
+        <div>
+          <h3 class="gal-category-title">📊 Data Analitika, AI & OpenCV Layihələri</h3>
+          <div class="gallery-grid">
+            <div class="media-slot" data-slot-id="data-1">
+              <input type="file" accept="image/*">
+              <div class="media-placeholder">
+                <span class="media-icon">📈</span>
+                <span class="media-caption">Power BI İnteraktiv Dashboard</span>
+                <span class="media-subtext">Şəkil seçmək üçün klikləyin</span>
+              </div>
+            </div>
+            <div class="media-slot" data-slot-id="data-2">
+              <input type="file" accept="image/*">
+              <div class="media-placeholder">
+                <span class="media-icon">🧠</span>
+                <span class="media-caption">OpenCV & Təsvir Emalı Nəticələri</span>
+                <span class="media-subtext">Şəkil seçmək üçün klikləyin</span>
+              </div>
+            </div>
+            <div class="media-slot" data-slot-id="data-3">
+              <input type="file" accept="image/*">
+              <div class="media-placeholder">
+                <span class="media-icon">🏙️</span>
+                <span class="media-caption">UrbanLab 13 Şəhər Dizaynı</span>
+                <span class="media-subtext">Şəkil seçmək üçün klikləyin</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Category 3: Certifications & Diplomas -->
+        <div>
+          <h3 class="gal-category-title">📜 Sertifikatlar və Rəsmi Sənədlər</h3>
+          <div class="gallery-grid">
+            <div class="media-slot" data-slot-id="cert-1">
+              <input type="file" accept="image/*">
+              <div class="media-placeholder">
+                <span class="media-icon">📜</span>
+                <span class="media-caption">Microsoft MOS-211 Excel Sertifikatı</span>
+                <span class="media-subtext">Şəkil seçmək üçün klikləyin</span>
+              </div>
+            </div>
+            <div class="media-slot" data-slot-id="cert-2">
+              <input type="file" accept="image/*">
+              <div class="media-placeholder">
+                <span class="media-icon">📜</span>
+                <span class="media-caption">Müdafiə Sənayesi Nazirliyi ETİM Sertifikatı</span>
+                <span class="media-subtext">Şəkil seçmək üçün klikləyin</span>
+              </div>
+            </div>
+            <div class="media-slot" data-slot-id="cert-3">
+              <input type="file" accept="image/*">
+              <div class="media-placeholder">
+                <span class="media-icon">📜</span>
+                <span class="media-caption">Apex "Zirvə" & UrbanLab Qalibiyyət Diplomu</span>
+                <span class="media-subtext">Şəkil seçmək üçün klikləyin</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Category 4: Videos & Dynamic Demos -->
+        <div>
+          <h3 class="gal-category-title">🎥 Video Demos & Robot Sınaqları</h3>
+          <div class="gallery-grid">
+            <div class="media-slot" data-slot-id="vid-1">
+              <input type="file" accept="video/*">
+              <div class="media-placeholder">
+                <span class="media-icon">🎬</span>
+                <span class="media-caption">WRC Robot Döyüşü / Manevr Videosu</span>
+                <span class="media-subtext">Video seçmək üçün klikləyin (mp4, webm)</span>
+              </div>
+            </div>
+            <div class="media-slot" data-slot-id="vid-2">
+              <input type="file" accept="video/*">
+              <div class="media-placeholder">
+                <span class="media-icon">🎬</span>
+                <span class="media-caption">Omnitrix AI Voice Chatbot Səs Testi</span>
+                <span class="media-subtext">Video seçmək üçün klikləyin (mp4, webm)</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       CONTACT SECTION
+       ========================================================================== -->
+  <section class="contact-section" id="contact">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag">07 • Əlaqə & Əməkdaşlıq</div>
+        <h2 class="section-title">Birlikdə Yeni Zirvələrə <span class="gradient-text">Çataq</span></h2>
+        <p class="section-subtitle">Robototexnika, süni intellekt və data analitika layihələri, təcrübə və əməkdaşlıq üçün hər zaman hazıram.</p>
+      </div>
+
+      <div class="contact-layout">
+        <!-- Left: Direct Channels -->
+        <div>
+          <h3 style="font-size: 1.5rem; margin-bottom: 0.8rem;">Birbaşa Əlaqə Vasitələri</h3>
+          <p style="color: var(--text-muted); margin-bottom: 1.5rem; line-height: 1.6;">
+            Mənimlə telefon, WhatsApp, email və ya LinkedIn vasitəsilə dərhal əlaqə saxlaya bilərsiniz.
+          </p>
+
+          <div class="contact-channels">
+            <!-- WhatsApp -->
+            <a href="https://wa.me/994504489339" target="_blank" class="glass-card channel-card">
+              <div class="channel-icon" style="background: rgba(16, 185, 129, 0.1); color: #10b981; border-color: rgba(16, 185, 129, 0.3);">
+                💬
+              </div>
+              <div>
+                <div class="channel-label">WhatsApp (Sürətli Mesaj)</div>
+                <div class="channel-value dyn-phone">+994 50 448 93 39</div>
+              </div>
+            </a>
+
+            <!-- Phone Call -->
+            <a href="tel:+994504489339" class="glass-card channel-card">
+              <div class="channel-icon">📞</div>
+              <div>
+                <div class="channel-label">Telefon Əlaqəsi</div>
+                <div class="channel-value dyn-phone">050-448-93-39</div>
+              </div>
+            </a>
+
+            <!-- Email -->
+            <a href="mailto:hemidzadenernin@gmail.com" class="glass-card channel-card">
+              <div class="channel-icon">✉️</div>
+              <div>
+                <div class="channel-label">Email Ünvanı</div>
+                <div class="channel-value dyn-email">hemidzadenernin@gmail.com</div>
+              </div>
+            </a>
+
+            <!-- LinkedIn -->
+            <a href="https://www.linkedin.com/in/n%C9%99rmin-h%C9%99midzad%C9%99" target="_blank" class="glass-card channel-card">
+              <div class="channel-icon" style="background: rgba(79, 172, 254, 0.1); color: #4facfe; border-color: rgba(79, 172, 254, 0.3);">
+                💼
+              </div>
+              <div>
+                <div class="channel-label">LinkedIn Profili</div>
+                <div class="channel-value dyn-linkedin">linkedin.com/in/nərmin-həmidzadə</div>
+              </div>
+            </a>
+
+            <!-- Location -->
+            <div class="glass-card channel-card" style="cursor: default;">
+              <div class="channel-icon">📍</div>
+              <div>
+                <div class="channel-label">Yerləşmə</div>
+                <div class="channel-value">Bakı şəhəri, Azərbaycan</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Message Form -->
+        <div class="glass-card contact-form-card">
+          <h3 style="font-size: 1.4rem; margin-bottom: 0.5rem;">Mənə Mesaj Göndərin</h3>
+          <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1.5rem;">
+            Təklifləriniz, layihələriniz və ya suallarınız üçün aşağıdakı formanı doldurun:
+          </p>
+
+          <form id="contactForm" class="contact-form">
+            <div class="form-group">
+              <label for="senderName" class="form-label">Adınız və Soyadınız *</label>
+              <input type="text" id="senderName" class="form-control" placeholder="Məsələn: Əli Məmmədov" required>
+            </div>
+
+            <div class="form-group">
+              <label for="senderEmail" class="form-label">Email Ünvanınız *</label>
+              <input type="email" id="senderEmail" class="form-control" placeholder="adiniz@example.com" required>
+            </div>
+
+            <div class="form-group">
+              <label for="senderSubject" class="form-label">Mövzu</label>
+              <input type="text" id="senderSubject" class="form-control" placeholder="Məs: Əməkdaşlıq, Layihə, İş təklifi">
+            </div>
+
+            <div class="form-group">
+              <label for="senderMessage" class="form-label">Mesajınız *</label>
+              <textarea id="senderMessage" class="form-control" rows="4" placeholder="Layihəniz və ya təklifiniz haqqında qısa məlumat..." required></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary" style="width: 100%; padding: 0.9rem; font-size: 1rem;">
+              Mesajı Göndər 🚀
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       FOOTER
+       ========================================================================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-copy">
+          © 2026 <strong>Nərmin Həmidzadə</strong>. Bütün hüquqlar qorunur.
+        </div>
+        <div class="footer-quote">
+          "Hər böyük nailiyyət bir addım və güclü iradə ilə başlayır."
+        </div>
+      </div>
+    </div>
   </footer>
 
-  <!-- LIGHTBOX -->
-  <div class="lightbox" id="lightbox" onclick="closeLightbox()">
-    <button class="lb-close" onclick="closeLightbox()">✕</button>
-    <div id="lb-content"></div>
+  <!-- Back To Top Button -->
+  <button class="back-to-top" aria-label="Yuxarı qayıt">↑</button>
+
+  <!-- ==========================================================================
+       LIVE IN-BROWSER EDIT BUTTON & DRAWER
+       ========================================================================== -->
+  <div class="live-edit-wrapper">
+    <button class="live-edit-btn" id="liveEditToggle" title="Sayt mətnlərini canlı dəyiş">
+      ⚙️ Canlı Redaktə
+    </button>
   </div>
 
-  <!-- EDIT PANEL -->
-  <div class="edit-toggle">
-    <div class="edit-panel" id="editPanel">
-      <h3>✏ Məzmunu Dəyiş</h3>
-      <div class="edit-field">
-        <label>Ad Soyad</label>
-        <input type="text" id="e-name" value="Nərmin Həmidzadə">
+  <div class="edit-drawer" id="editDrawer">
+    <div class="edit-drawer-header">
+      <div class="edit-drawer-title">
+        <span>✏️</span> Sayt Məlumatlarını Dəyiş
       </div>
-      <div class="edit-field">
-        <label>Alt başlıq (hero)</label>
-        <input type="text" id="e-label" value="Robototexnika & Mexatronika · Data Analitika · ADNSU">
-      </div>
-      <div class="edit-field">
-        <label>Qısa bio</label>
-        <textarea id="e-bio" rows="3">Robototexnika mühəndisliyi tələbəsi. Embedded sistemlər, data analitika və süni intellekt sahələrində özünü inkişaf etdirən.</textarea>
-      </div>
-      <div class="edit-field">
-        <label>Haqqımda mətni</label>
-        <textarea id="e-about" rows="5">Mən Nərmin Həmidzadə, ADNSU-da Robototexnika və Mexatronika mühəndisliyi ixtisası üzrə təhsil alıram.
-
-Embedded sistemlər və data analitika sahələri mənim əsas maraq istiqamətlərimdir.
-
-Məqsədim analitik bacarıqlarımı mühəndislik biliklərimlə birləşdirərək real dəyər yaradan layihələrdə iştirak etməkdir.</textarea>
-      </div>
-      <div class="edit-field">
-        <label>Email</label>
-        <input type="text" id="e-email" value="hemidzadenernin@gmail.com">
-      </div>
-      <div class="edit-field">
-        <label>LinkedIn URL</label>
-        <input type="text" id="e-linkedin" value="linkedin.com/in/nərmin-həmidzadə">
-      </div>
-      <button class="edit-save" onclick="applyEdits()">✓ Yadda Saxla</button>
+      <button class="drawer-close-btn" id="drawerClose">✕</button>
     </div>
-    <button class="edit-btn" onclick="toggleEdit()">✏ Dəyiş</button>
+
+    <div class="edit-drawer-body">
+      <div class="edit-group">
+        <label class="edit-label">Ad və Soyad</label>
+        <input type="text" id="editName" class="edit-input" value="Nərmin Həmidzadə">
+      </div>
+
+      <div class="edit-group">
+        <label class="edit-label">Status Başlığı</label>
+        <input type="text" id="editStatus" class="edit-input" value="Aktiv Layihələr və Əməkdaşlıq üçün Açıqdır">
+      </div>
+
+      <div class="edit-group">
+        <label class="edit-label">Qısa Bioqrafiya (Hero)</label>
+        <textarea id="editBio" class="edit-textarea" rows="3"></textarea>
+      </div>
+
+      <div class="edit-group">
+        <label class="edit-label">Haqqımda Mətni</label>
+        <textarea id="editAbout" class="edit-textarea" rows="4"></textarea>
+      </div>
+
+      <div class="edit-group">
+        <label class="edit-label">Email Ünvanı</label>
+        <input type="email" id="editEmail" class="edit-input" value="hemidzadenernin@gmail.com">
+      </div>
+
+      <div class="edit-group">
+        <label class="edit-label">Telefon / WhatsApp</label>
+        <input type="text" id="editPhone" class="edit-input" value="+994 50 448 93 39">
+      </div>
+
+      <div class="edit-group">
+        <label class="edit-label">LinkedIn Profili</label>
+        <input type="text" id="editLinkedin" class="edit-input" value="linkedin.com/in/nərmin-həmidzadə">
+      </div>
+    </div>
+
+    <div class="edit-drawer-footer">
+      <button class="btn btn-primary" id="saveEditsBtn" style="flex: 1;">💾 Yadda Saxla</button>
+      <button class="btn btn-secondary" id="resetEditsBtn">Sıfırla</button>
+    </div>
   </div>
 
-  <script>
-    // ── Scroll reveal ──
-    const revs = document.querySelectorAll('.reveal');
-    const obs = new IntersectionObserver(es => es.forEach(e => { if(e.isIntersecting) e.target.classList.add('on'); }), {threshold:0.05});
-    revs.forEach(r => obs.observe(r));
+  <!-- ==========================================================================
+       LIGHTBOX MODAL
+       ========================================================================== -->
+  <div class="modal-overlay" id="lightboxModal">
+    <button class="modal-close-btn" aria-label="Bağla">✕</button>
+    <div style="max-width: 900px; width: 100%; text-align: center;">
+      <div id="lightboxMediaContainer"></div>
+      <div id="lightboxCaption" style="margin-top: 1rem; color: #fff; font-size: 1rem; font-weight: 600;"></div>
+    </div>
+  </div>
 
-    // ── Gallery builder ──
-    // slot configs: { gridId, count, label, accept }
-    const galGroups = [
-      { id: 'gal-wrc',    count: 3, label: 'Şəkil əlavə et', accept: 'image/*' },
-      { id: 'gal-data',   count: 2, label: 'Screenshot / Şəkil', accept: 'image/*' },
-      { id: 'gal-certs',  count: 2, label: 'Sertifikat şəkli', accept: 'image/*' },
-      { id: 'gal-videos', count: 3, label: 'Video əlavə et', accept: 'video/*' },
-    ];
+  <!-- ==========================================================================
+       PRINTABLE & INTERACTIVE CV MODAL
+       ========================================================================== -->
+  <div class="modal-overlay" id="cvModal">
+    <div class="modal-dialog">
+      <button class="modal-close-btn" aria-label="Bağla">✕</button>
 
-    galGroups.forEach(group => {
-      const grid = document.getElementById(group.id);
-      for(let i = 0; i < group.count; i++) {
-        const slotId = group.id + '-' + i;
-        const s = document.createElement('div');
-        s.className = 'gal-slot';
-        s.id = slotId;
-        s.innerHTML = `
-          <input type="file" accept="${group.accept}" onchange="loadMedia(this,'${slotId}')">
-          <div class="gal-plus">+</div>
-          <div class="gal-txt">${group.label}</div>
-          <button class="gal-rm" onclick="removeMedia(event,'${slotId}')">✕</button>`;
-        grid.appendChild(s);
-      }
-    });
+      <div class="cv-actions-bar">
+        <button class="btn btn-gold" id="printCvBtn">
+          🖨️ PDF Kimi Çap Et / Saxla
+        </button>
+      </div>
 
-    function loadMedia(inp, slotId) {
-      const f = inp.files[0]; if (!f) return;
-      const s = document.getElementById(slotId);
-      s.querySelectorAll('img,video').forEach(el => el.remove());
-      s.querySelector('.gal-plus').style.display = 'none';
-      s.querySelector('.gal-txt').style.display = 'none';
-      const url = URL.createObjectURL(f);
-      if (f.type.startsWith('video')) {
-        const v = document.createElement('video');
-        v.src = url; v.autoplay = true; v.muted = true; v.loop = true; v.playsInline = true;
-        v.style.cssText = 'position:absolute;inset:0;width:100%;height:100%;object-fit:cover;';
-        s.appendChild(v);
-        // click to open lightbox for video
-        v.addEventListener('click', e => { e.stopPropagation(); openLightbox('video', url); });
-      } else {
-        const img = document.createElement('img');
-        img.src = url;
-        img.style.cssText = 'position:absolute;inset:0;width:100%;height:100%;object-fit:cover;cursor:zoom-in;';
-        s.appendChild(img);
-        img.addEventListener('click', e => { e.stopPropagation(); openLightbox('img', url); });
-      }
-    }
+      <!-- CV Printable Sheet -->
+      <div class="cv-printable-sheet" id="cvPrintableArea">
+        <div class="cv-header-row">
+          <div>
+            <h1 class="cv-name">NƏRMİN HƏMİDZADƏ</h1>
+            <div class="cv-title-sub">Robototexnika və Mexatronika Mühəndisliyi • Data Analitik</div>
+          </div>
+          <div class="cv-contact-details">
+            <div>📞 050-448-93-39</div>
+            <div>✉️ hemidzadenernin@gmail.com</div>
+            <div>📍 Bakı, Azərbaycan</div>
+            <div>💼 linkedin.com/in/nərmin-həmidzadə</div>
+          </div>
+        </div>
 
-    function removeMedia(e, slotId) {
-      e.stopPropagation();
-      const s = document.getElementById(slotId);
-      s.querySelectorAll('img,video').forEach(el => el.remove());
-      s.querySelector('.gal-plus').style.display = '';
-      s.querySelector('.gal-txt').style.display = '';
-      s.querySelector('input[type="file"]').value = '';
-    }
+        <!-- Haqqımda -->
+        <div class="cv-section">
+          <h2 class="cv-sec-title">Haqqımda</h2>
+          <p class="cv-item-desc">
+            Mən Nərmin – analitika, robototexnika və IT sahəsində inkişaf edən gəncəm. Məqsədim İT, Süni İntellekt, Data Analitika və Embedded sistemlər sahəsində peşəkar şəkildə inkişaf edərək real layihələrdə dəyər yaratmaqdır. Uşaqlıqdan şahmatla peşəkar məşğuliyyətim mənə analitik təfəkkür, strateji planlama və detallara fokuslanma qazandırmışdır.
+          </p>
+        </div>
 
-    // ── Lightbox ──
-    function openLightbox(type, src) {
-      const lb = document.getElementById('lightbox');
-      const lbc = document.getElementById('lb-content');
-      lbc.innerHTML = '';
-      if (type === 'img') {
-        const img = document.createElement('img'); img.src = src; lbc.appendChild(img);
-      } else {
-        const v = document.createElement('video');
-        v.src = src; v.controls = true; v.autoplay = true; v.style.maxWidth='90vw'; v.style.maxHeight='85vh';
-        lbc.appendChild(v);
-      }
-      lb.classList.add('open');
-    }
-    function closeLightbox() {
-      document.getElementById('lightbox').classList.remove('open');
-      document.getElementById('lb-content').innerHTML = '';
-    }
-    document.addEventListener('keydown', e => { if(e.key==='Escape') closeLightbox(); });
+        <!-- Təhsil -->
+        <div class="cv-section">
+          <h2 class="cv-sec-title">Təhsil</h2>
+          <div class="cv-item">
+            <div class="cv-item-header">
+              <span>Azərbaycan Dövlət Neft və Sənaye Universiteti (ADNSU)</span>
+              <span>2023 — 2027</span>
+            </div>
+            <div class="cv-item-sub">Fakültə: İnformasiya Texnologiyaları və İdarəetmə • İxtisas: Robototexnika və Mexatronika Mühəndisliyi</div>
+            <p class="cv-item-desc">
+              <strong>Tədris olunan əsas fənlər:</strong> Robotların idarə olunması, Verilənlər strukturu və alqoritmlər, Maşın və mexanizmlər nəzəriyyəsi, Proqramlaşdırılan məntiqi kontrollerlər (PLC), Süni intellekt, Robototexniki sistemlərin modelləşdirilməsi, Rəqəmsal siqnalların və təsvirlərin işlənməsi, Verilənlər bazası sistemləri, İntellektual robotlar.
+            </p>
+          </div>
 
-    // ── Edit panel ──
-    function toggleEdit() {
-      document.getElementById('editPanel').classList.toggle('open');
-    }
-    function applyEdits() {
-      const name = document.getElementById('e-name').value;
-      const label = document.getElementById('e-label').value;
-      const bio = document.getElementById('e-bio').value;
-      const about = document.getElementById('e-about').value;
-      const email = document.getElementById('e-email').value;
-      const linkedin = document.getElementById('e-linkedin').value;
+          <div class="cv-item">
+            <div class="cv-item-header">
+              <span>Apex Business School</span>
+              <span>2025 — 2026</span>
+            </div>
+            <div class="cv-item-sub">Data Analitik ("Zirvəyə doğru" Təqaüd Proqramının Qalibi)</div>
+            <p class="cv-item-desc">
+              Power BI (Dashboard creation, data modeling, DAX basics, interactive reports), Microsoft Excel (Pivot Tables, advanced functions, data cleaning), Python (Pandas, NumPy, data cleaning, analysis), SQL (Functions, subqueries, database analysis).
+            </p>
+          </div>
+        </div>
 
-      const parts = name.trim().split(' ');
-      const last = parts.pop();
-      document.getElementById('h-name').innerHTML = parts.join(' ') + (parts.length ? '<br>' : '') + `<span>${last}</span>`;
-      document.getElementById('h-label').textContent = label;
-      document.getElementById('h-bio').textContent = bio;
-      document.getElementById('about-text').innerHTML = about.split('\n\n').map(p => `<p>${p}</p>`).join('');
+        <!-- Təcrübə -->
+        <div class="cv-section">
+          <h2 class="cv-sec-title">Təcrübə və Layihələr</h2>
+          <div class="cv-item">
+            <div class="cv-item-header">
+              <span>ADNSU Startup və TTO & İRİA İnkubasiya Proqramı — Omnitrix Komanda Rəhbəri</span>
+              <span>2026 (6 ay)</span>
+            </div>
+            <p class="cv-item-desc">
+              Süni İntellekt (AI) və Data Analitika üzrə istifadəçilərlə səsli ünsiyyət quran AI Voice Chatbot həllinin konsepsiyası, funksional tələblər, bazar araşdırması və MVP hazırlanması.
+            </p>
+          </div>
 
-      document.querySelectorAll('.ci-item').forEach(el => {
-        const lbl = el.querySelector('.ci-label');
-        if (!lbl) return;
-        if (lbl.textContent === 'Email') { el.href = 'mailto:' + email; el.lastChild.textContent = email; }
-        if (lbl.textContent === 'LinkedIn') { el.lastChild.textContent = linkedin; }
-      });
+          <div class="cv-item">
+            <div class="cv-item-header">
+              <span>UrbanLab 13 Qalibi — World Urban Forum (WUF)</span>
+              <span>2026</span>
+            </div>
+            <p class="cv-item-desc">
+              AI dəstəyi ilə Bakı şəhərinin real küçə məkanlarının inkluziv urbanistika standartlarına uyğun yenidən dizaynı və data əsaslı analiz layihəsi.
+            </p>
+          </div>
 
-      document.getElementById('editPanel').classList.remove('open');
-    }
-  </script>
+          <div class="cv-item">
+            <div class="cv-item-header">
+              <span>ETİM – Müdafiə Sənayesi Nazirliyi Elmi-Tədqiqat və İnnovasiya Mərkəzi</span>
+              <span>2026 (5 ay)</span>
+            </div>
+            <div class="cv-item-sub">Milli Mühəndis Hazırlığı</div>
+            <p class="cv-item-desc">
+              Robototexnika sistemləri, Linux Ubuntu, Image Processing, OpenCV, Deep Learning (ANN, CNN, backpropagation), LLM və NLP modelləri üzrə praktiki mühəndislik təlimi və layihələr.
+            </p>
+          </div>
+
+          <div class="cv-item">
+            <div class="cv-item-header">
+              <span>World Robot Championship (WRC) — Bots Combat Kateqoriyası</span>
+              <span>2024 — 2025</span>
+            </div>
+            <p class="cv-item-desc">
+              Komanda ilə döyüş robotunun dizaynı, mexaniki qurulması, hərəkət alqoritmlərinin optimallaşdırılması və dünya çempionatında 1/4 final mərhələsi.
+            </p>
+          </div>
+
+          <div class="cv-item">
+            <div class="cv-item-header">
+              <span>Azərbaycan Respublikası Bələdiyyə Seçkiləri — Müşahidəçi</span>
+              <span>2025</span>
+            </div>
+            <p class="cv-item-desc">
+              Seçki prosesinin monitorinqi, sənədləşdirmə və hesabatlılıq.
+            </p>
+          </div>
+        </div>
+
+        <!-- Bacarıqlar & Sertifikatlar Grid -->
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;">
+          <div class="cv-section">
+            <h2 class="cv-sec-title">Texniki Bacarıqlar</h2>
+            <ul style="font-size: 0.85rem; color: #334155; line-height: 1.6; padding-left: 1.2rem;">
+              <li>Python (Pandas, NumPy, OpenCV)</li>
+              <li>SQL (Sorğular, Birləşmələr, Analiz)</li>
+              <li>Power BI (DAX, Modeling, Dashboards)</li>
+              <li>Microsoft Excel Expert (Advanced Formulas, Pivot)</li>
+              <li>Linux (Ubuntu)</li>
+              <li>Image Processing / Computer Vision (OpenCV, CVAT)</li>
+              <li>Deep Learning (ANN, CNN, Backpropagation)</li>
+              <li>Robototexnika və Mexatronika, PLC Sistemləri</li>
+              <li>C/C++ (İlkin anlayışlar)</li>
+            </ul>
+          </div>
+
+          <div class="cv-section">
+            <h2 class="cv-sec-title">Sertifikatlar & Dillər</h2>
+            <ul style="font-size: 0.85rem; color: #334155; line-height: 1.6; padding-left: 1.2rem; margin-bottom: 1rem;">
+              <li><strong>Microsoft MOS-211 Excel Expert:</strong> 810/1000 bal</li>
+              <li><strong>The Linux Foundation:</strong> LFS101 Introduction to Linux</li>
+              <li><strong>ETİM:</strong> Milli Mühəndis Hazırlığı Sertifikatı</li>
+              <li><strong>World Urban Forum:</strong> UrbanLab 13 Qalibi Diplomu</li>
+              <li><strong>Apex Business School:</strong> Data Analitika Diplomu</li>
+            </ul>
+            <p style="font-size: 0.85rem; color: #334155;">
+              <strong>Dillər:</strong> Azərbaycan (Ana dili), İngilis (A2-B1), Türk (B1)
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- JavaScript -->
+  <script src="script.js"></script>
 </body>
 </html>
