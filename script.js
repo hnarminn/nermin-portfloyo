@@ -14,6 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initModals();
   initContactForm();
   initLiveEditor();
+  initTacticalSimulator();
 });
 
 /* ==========================================================================

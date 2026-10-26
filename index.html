@@ -126,66 +126,157 @@
 
       <!-- Hero Visual Showcase -->
       <div class="hero-visual-wrapper">
-        <div class="floating-badge fb-1">
-          <span class="fb-icon">🤖</span>
-          <div>
-            <div class="fb-title">WRC Dünya Çempionatı</div>
-            <div class="fb-val">1/4 Finalist (Bots Combat)</div>
-          </div>
-        </div>
-
-        <div class="hero-card">
-          <div class="tech-emblem-wrap">
-            <div class="emblem-orbit-outer"></div>
-            <div class="emblem-orbit-inner"></div>
-            <div class="emblem-core">
-              <span class="emblem-initials">NH</span>
-              <span class="emblem-subtag">ENG // LAB</span>
+        <!-- Canva Dark Tactical Engineering Terminal -->
+        <div class="tactical-simulator-card">
+          <!-- Terminal Header -->
+          <div class="sim-header-bar">
+            <div class="sim-title">
+              <span>⚡</span> AZƏRSİLAH // ETİM AVİONİKA & AI
             </div>
-            <div class="profile-badge-float" title="Mechatronics & Data">⚡</div>
-          </div>
-          </div>
-
-          <div class="profile-info">
-            <h2 class="profile-name dyn-name">Nərmin Həmidzadə</h2>
-            <p class="profile-role">Robototexnika & Data Analitika</p>
-          </div>
-
-          <div class="profile-specs-grid">
-            <div class="profile-spec-item">
-              <div class="spec-lbl">Təhsil</div>
-              <div class="spec-val">ADNSU (2023-2027)</div>
-            </div>
-            <div class="profile-spec-item">
-              <div class="spec-lbl">Məkan / Yaş</div>
-              <div class="spec-val">Bakı • 19 yaş</div>
-            </div>
-            <div class="profile-spec-item">
-              <div class="spec-lbl">Liderlik</div>
-              <div class="spec-val">Omnitrix Team Lead</div>
-            </div>
-            <div class="profile-spec-item">
-              <div class="spec-lbl">Excel Expert</div>
-              <div class="spec-val">810 / 1000 MOS</div>
+            <div class="sim-status-live">
+              <span class="live-radar-dot"></span>
+              <span>CANLI REJİM</span>
             </div>
           </div>
 
-          <div class="profile-skills-pills">
-            <span class="skill-pill-sm">Python</span>
-            <span class="skill-pill-sm">Power BI</span>
-            <span class="skill-pill-sm">OpenCV</span>
-            <span class="skill-pill-sm">Deep Learning</span>
-            <span class="skill-pill-sm">SQL</span>
-            <span class="skill-pill-sm">Linux Ubuntu</span>
-            <span class="skill-pill-sm">Şahmat</span>
+          <!-- Mode Selector Tabs -->
+          <div class="sim-mode-tabs">
+            <button class="sim-tab-btn active" data-sim-tab="sim-pua">
+              🛸 Qırat H10 PUA
+            </button>
+            <button class="sim-tab-btn" data-sim-tab="sim-voice">
+              🎙️ AudioBot AI
+            </button>
+            <button class="sim-tab-btn" data-sim-tab="sim-batur">
+              🎯 Batur / Bars
+            </button>
           </div>
-        </div>
 
-        <div class="floating-badge fb-2">
-          <span class="fb-icon">🏆</span>
-          <div>
-            <div class="fb-title">Nailiyyət</div>
-            <div class="fb-val">UrbanLab 13 & Zirvə Qalibi</div>
+          <!-- Viewport Screens -->
+          <div class="sim-viewport">
+            <!-- Screen 1: Qırat H10 Tactical PUA Radar -->
+            <div class="sim-screen active" id="sim-pua">
+              <div class="radar-display-box">
+                <div class="radar-scope-wrap">
+                  <div class="radar-sweep-beam"></div>
+                  <div class="radar-ring-mid"></div>
+                  <div class="radar-ring-inner"></div>
+                  <div class="radar-axis-h"></div>
+                  <div class="radar-axis-v"></div>
+                  <div class="radar-drone-target"></div>
+                  <div class="radar-drone-label">QIRAT-H10 [40.40°N, 49.86°E]</div>
+                </div>
+
+                <div class="telemetry-grid">
+                  <div class="tele-item">
+                    <div class="tele-lbl">Hündürlük</div>
+                    <div class="tele-val">1,850 m</div>
+                  </div>
+                  <div class="tele-item">
+                    <div class="tele-lbl">Sürət</div>
+                    <div class="tele-val">210 km/s</div>
+                  </div>
+                  <div class="tele-item">
+                    <div class="tele-lbl">Batareya</div>
+                    <div class="tele-val">94% (4.2h)</div>
+                  </div>
+                  <div class="tele-item">
+                    <div class="tele-lbl">Missiya</div>
+                    <div class="tele-val">Patrul / Kəşfiyyat</div>
+                  </div>
+                  <div class="tele-item">
+                    <div class="tele-lbl">Kanal</div>
+                    <div class="tele-val">AES-256 Link</div>
+                  </div>
+                  <div class="tele-item">
+                    <div class="tele-lbl">Naviqasiya</div>
+                    <div class="tele-val">ROS 2 / OpenCV</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Screen 2: AudioBot Voice AI Dialogue -->
+            <div class="sim-screen" id="sim-voice">
+              <div class="audiobot-display-box">
+                <div class="waveform-wrap">
+                  <div class="wave-bar"></div>
+                  <div class="wave-bar"></div>
+                  <div class="wave-bar"></div>
+                  <div class="wave-bar"></div>
+                  <div class="wave-bar"></div>
+                  <div class="wave-bar"></div>
+                  <div class="wave-bar"></div>
+                  <div class="wave-bar"></div>
+                  <div class="wave-bar"></div>
+                  <div class="wave-bar"></div>
+                </div>
+
+                <div class="dialogue-stream">
+                  <div class="msg-bubble-user">
+                    🗣️ "Qırat H10 və Bars dronlarının sistem telemetriyasını yoxla."
+                  </div>
+                  <div class="msg-bubble-bot">
+                    🤖 AudioBot: "Avionika və optik-elektron sensorlar aktivdir. Bütün modullar optimal rejimdədir."
+                  </div>
+                </div>
+
+                <div class="telemetry-grid" style="margin-top: 0.4rem;">
+                  <div class="tele-item">
+                    <div class="tele-lbl">Səs Gecikməsi</div>
+                    <div class="tele-val" style="color: #38bdf8;">42 ms</div>
+                  </div>
+                  <div class="tele-item">
+                    <div class="tele-lbl">NLP Dəqiqlik</div>
+                    <div class="tele-val" style="color: #10b981;">98.4%</div>
+                  </div>
+                  <div class="tele-item">
+                    <div class="tele-lbl">Arxitektura</div>
+                    <div class="tele-val">Omnitrix AI</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Screen 3: Batur / Bars Optical OpenCV Tracking -->
+            <div class="sim-screen" id="sim-batur">
+              <div class="opencv-display-box">
+                <div class="tracking-reticle-wrap">
+                  <div class="target-bounding-box"></div>
+                </div>
+
+                <div class="telemetry-grid" style="margin-top: 0.8rem;">
+                  <div class="tele-item">
+                    <div class="tele-lbl">Hədəf Dron</div>
+                    <div class="tele-val">Bars / Batur</div>
+                  </div>
+                  <div class="tele-item">
+                    <div class="tele-lbl">Görüntü Emalı</div>
+                    <div class="tele-val">OpenCV CNN</div>
+                  </div>
+                  <div class="tele-item">
+                    <div class="tele-lbl">İzləmə Statusu</div>
+                    <div class="tele-val" style="color: #10b981;">LOCKED</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Bottom Card Specs -->
+          <div class="sim-footer-specs">
+            <div class="spec-badge-clean">
+              <span>TƏHSİL:</span> ADNSU (2023–2027)
+            </div>
+            <div class="spec-badge-clean">
+              <span>KVALİFİKASİYA:</span> Robototexnika Mühəndisi
+            </div>
+            <div class="spec-badge-clean">
+              <span>LİDERLİK:</span> Omnitrix Team Lead
+            </div>
+            <div class="spec-badge-clean">
+              <span>SERTİFİKAT:</span> MOS Excel Expert (810)
+            </div>
           </div>
         </div>
       </div>
