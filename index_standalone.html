@@ -1,0 +1,4234 @@
+﻿<!DOCTYPE html>
+<html lang="az">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nərmin Həmidzadə | Robototexnika Mühəndisi & Data Analitik</title>
+  
+  <!-- Meta tags for SEO & Social Sharing -->
+  <meta name="description" content="Nərmin Həmidzadə - Robototexnika və Mexatronika Mühəndisliyi tələbəsi (ADNSU), Data Analitik, AI & Computer Vision tədqiqatçısı, Omnitrix komanda rəhbəri və WRC 1/4 finalistı.">
+  <meta name="keywords" content="Nərmin Həmidzadə, Narmin Hamidzada, ADNSU, Robototexnika, Mexatronika, Data Analitika, Power BI, Python, OpenCV, WRC Bots Combat, ETİM">
+  <meta name="author" content="Nərmin Həmidzadə">
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="Nərmin Həmidzadə | Peşəkar Portfolio">
+  <meta property="og:description" content="Robototexnika, Süni İntellekt, Embedded Sistemlər və Data Analitika sahəsində innovativ layihələr.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="avatar.png">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Main Stylesheet -->
+  <style>
+/* ==========================================================================
+   NƏRMİN HƏMİDZADƏ - PORTFOLIO DESIGN SYSTEM
+   Modern Luxury Cyber-Engineering & Glassmorphism Aesthetic
+   ========================================================================== */
+
+:root {
+  /* Colors */
+  --bg-deep: #07090e;
+  --bg-surface: #0d121f;
+  --bg-surface-elevated: #141b2d;
+  --bg-card: rgba(18, 25, 42, 0.75);
+  --bg-card-hover: rgba(26, 36, 60, 0.85);
+  
+  --border-subtle: rgba(255, 255, 255, 0.08);
+  --border-focus: rgba(0, 242, 254, 0.4);
+  --border-glow: rgba(0, 242, 254, 0.25);
+  
+  --text-main: #f3f6fc;
+  --text-muted: #94a3b8;
+  --text-dim: #64748b;
+  
+  /* Vibrant Accents */
+  --accent-cyan: #00f2fe;
+  --accent-blue: #4facfe;
+  --accent-purple: #7f00ff;
+  --accent-violet: #e100ff;
+  --accent-gold: #f5af19;
+  --accent-amber: #e5a93c;
+  --accent-emerald: #10b981;
+  
+  /* Gradients */
+  --grad-cyan-blue: linear-gradient(135deg, #00f2fe 0%, #4facfe 100%);
+  --grad-purple-pink: linear-gradient(135deg, #7f00ff 0%, #e100ff 100%);
+  --grad-gold: linear-gradient(135deg, #f5af19 0%, #f12711 100%);
+  --grad-card: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.01) 100%);
+  --grad-glow: radial-gradient(circle at 50% 50%, rgba(0, 242, 254, 0.15) 0%, transparent 70%);
+
+  /* Typography */
+  --font-main: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-heading: 'Outfit', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+  
+  /* Spacing & Radii */
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --radius-xl: 30px;
+  --radius-full: 9999px;
+  
+  /* Transitions */
+  --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-normal: 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-bounce: 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* Base Reset */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--font-main);
+  background-color: var(--bg-deep);
+  color: var(--text-main);
+  line-height: 1.65;
+  overflow-x: hidden;
+  position: relative;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Background Atmosphere */
+.bg-ambient {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.ambient-blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(100px);
+  opacity: 0.35;
+  animation: floatOrb 20s infinite ease-in-out alternate;
+}
+
+.blob-1 {
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, #00f2fe, transparent 70%);
+  top: -100px;
+  left: -100px;
+}
+
+.blob-2 {
+  width: 650px;
+  height: 650px;
+  background: radial-gradient(circle, #7f00ff, transparent 70%);
+  top: 35%;
+  right: -150px;
+  animation-duration: 25s;
+}
+
+.blob-3 {
+  width: 550px;
+  height: 550px;
+  background: radial-gradient(circle, #f5af19, transparent 70%);
+  bottom: 5%;
+  left: 10%;
+  opacity: 0.22;
+  animation-duration: 18s;
+}
+
+.grid-overlay {
+  position: fixed;
+  inset: 0;
+  background-image: 
+    linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+  background-size: 48px 48px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Reading Progress Bar */
+.scroll-progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  background: var(--grad-cyan-blue);
+  z-index: 1001;
+  width: 0%;
+  transition: width 0.1s linear;
+}
+
+/* Container */
+.container {
+  width: 100%;
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  position: relative;
+  z-index: 2;
+}
+
+/* Typography Helpers */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  line-height: 1.2;
+  color: #fff;
+}
+
+.gradient-text {
+  background: var(--grad-cyan-blue);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+
+.gradient-text-purple {
+  background: var(--grad-purple-pink);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+
+.gradient-text-gold {
+  background: var(--grad-gold);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+
+.mono-tag {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* Section Header Styles */
+.section-header {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto 3.5rem auto;
+}
+
+.section-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.35rem 0.9rem;
+  border-radius: var(--radius-full);
+  background: rgba(0, 242, 254, 0.08);
+  border: 1px solid rgba(0, 242, 254, 0.25);
+  color: var(--accent-cyan);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  margin-bottom: 1rem;
+}
+
+.section-title {
+  font-size: clamp(2rem, 3.5vw, 2.75rem);
+  letter-spacing: -0.02em;
+  margin-bottom: 1rem;
+}
+
+.section-subtitle {
+  color: var(--text-muted);
+  font-size: 1.05rem;
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  padding: 0.75rem 1.6rem;
+  border-radius: var(--radius-md);
+  font-family: var(--font-main);
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all var(--transition-normal);
+  border: none;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-primary {
+  background: var(--grad-cyan-blue);
+  color: #07090e;
+  box-shadow: 0 4px 20px rgba(0, 242, 254, 0.3);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 242, 254, 0.45);
+  color: #000;
+}
+
+.btn-secondary {
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--text-main);
+  border: 1px solid var(--border-subtle);
+  backdrop-filter: blur(12px);
+}
+
+.btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+  color: #fff;
+}
+
+.btn-gold {
+  background: var(--grad-gold);
+  color: #0a0a0a;
+  box-shadow: 0 4px 20px rgba(245, 175, 25, 0.25);
+  font-weight: 700;
+}
+
+.btn-gold:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(245, 175, 25, 0.4);
+}
+
+.btn-icon {
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border-radius: var(--radius-md);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-muted);
+  transition: all var(--transition-fast);
+}
+
+.btn-icon:hover {
+  color: var(--accent-cyan);
+  border-color: var(--border-focus);
+  background: rgba(0, 242, 254, 0.1);
+  transform: translateY(-2px);
+}
+
+/* Glassmorphism Card Base */
+.glass-card {
+  background: var(--bg-card);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: 1.8rem;
+  transition: all var(--transition-normal);
+  position: relative;
+  overflow: hidden;
+}
+
+.glass-card:hover {
+  border-color: var(--border-focus);
+  background: var(--bg-card-hover);
+  transform: translateY(-4px);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.4);
+}
+
+/* ==========================================================================
+   NAVIGATION BAR
+   ========================================================================== */
+.site-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  padding: 1.1rem 0;
+  transition: all var(--transition-normal);
+  background: rgba(7, 9, 14, 0.65);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.site-nav.scrolled {
+  padding: 0.8rem 0;
+  background: rgba(7, 9, 14, 0.92);
+  border-bottom-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  text-decoration: none;
+}
+
+.brand-badge {
+  width: 38px;
+  height: 38px;
+  background: var(--grad-cyan-blue);
+  color: #07090e;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-mono);
+  font-weight: 800;
+  font-size: 1rem;
+  box-shadow: 0 0 15px rgba(0, 242, 254, 0.4);
+}
+
+.brand-text {
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: -0.01em;
+}
+
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 1.8rem;
+  list-style: none;
+}
+
+.nav-link {
+  color: var(--text-muted);
+  text-decoration: none;
+  font-size: 0.92rem;
+  font-weight: 500;
+  transition: color var(--transition-fast);
+  position: relative;
+  padding: 0.3rem 0;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--accent-cyan);
+  transition: width var(--transition-fast);
+  border-radius: 2px;
+}
+
+.nav-link:hover, .nav-link.active {
+  color: #fff;
+}
+
+.nav-link:hover::after, .nav-link.active::after {
+  width: 100%;
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+}
+
+.mobile-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 1.4rem;
+  cursor: pointer;
+  padding: 0.4rem;
+}
+
+/* ==========================================================================
+   HERO SECTION
+   ========================================================================== */
+.hero-section {
+  padding: 9.5rem 0 5.5rem 0;
+  position: relative;
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 3.5rem;
+  align-items: center;
+}
+
+.hero-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.4rem 1rem;
+  border-radius: var(--radius-full);
+  background: rgba(16, 185, 129, 0.1);
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  font-size: 0.82rem;
+  color: #34d399;
+  font-weight: 500;
+  margin-bottom: 1.4rem;
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #10b981;
+  box-shadow: 0 0 10px #10b981;
+  animation: pulseGreen 2s infinite;
+}
+
+.hero-title {
+  font-size: clamp(2.5rem, 5vw, 4.2rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  margin-bottom: 1.2rem;
+}
+
+.hero-subtitle {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--accent-cyan);
+  margin-bottom: 1.2rem;
+  font-family: var(--font-heading);
+}
+
+.hero-bio {
+  color: var(--text-muted);
+  font-size: 1.1rem;
+  line-height: 1.7;
+  margin-bottom: 2.2rem;
+  max-width: 580px;
+}
+
+.hero-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: center;
+  margin-bottom: 2.5rem;
+}
+
+.hero-socials {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  color: var(--text-dim);
+  font-size: 0.85rem;
+}
+
+.hero-socials-list {
+  display: flex;
+  gap: 0.6rem;
+}
+
+/* Hero Visual Card */
+.hero-visual-wrapper {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.hero-card {
+  width: 100%;
+  max-width: 420px;
+  background: linear-gradient(145deg, rgba(20, 27, 45, 0.9), rgba(10, 14, 24, 0.95));
+  border: 1px solid rgba(0, 242, 254, 0.3);
+  border-radius: var(--radius-xl);
+  padding: 2.2rem;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6), 0 0 30px rgba(0, 242, 254, 0.15);
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(20px);
+}
+
+.hero-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--grad-cyan-blue);
+}
+
+.profile-avatar-wrap {
+  width: 140px;
+  height: 140px;
+  margin: 0 auto 1.5rem auto;
+  border-radius: 50%;
+  padding: 4px;
+  background: var(--grad-cyan-blue);
+  box-shadow: 0 0 25px rgba(0, 242, 254, 0.35);
+  position: relative;
+}
+
+.profile-avatar {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  background: #141b2d;
+  display: block;
+}
+
+.profile-badge-float {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background: #07090e;
+  border: 2px solid var(--accent-cyan);
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+}
+
+.profile-info {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.profile-name {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 0.3rem;
+}
+
+.profile-role {
+  font-size: 0.88rem;
+  color: var(--accent-cyan);
+  font-family: var(--font-mono);
+}
+
+.profile-specs-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.8rem;
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.profile-spec-item {
+  font-size: 0.8rem;
+}
+
+.spec-lbl {
+  color: var(--text-dim);
+  text-transform: uppercase;
+  font-size: 0.7rem;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.2rem;
+}
+
+.spec-val {
+  font-weight: 600;
+  color: #fff;
+}
+
+.profile-skills-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  justify-content: center;
+}
+
+.skill-pill-sm {
+  background: rgba(0, 242, 254, 0.08);
+  border: 1px solid rgba(0, 242, 254, 0.2);
+  color: #e2e8f0;
+  font-size: 0.75rem;
+  padding: 0.25rem 0.65rem;
+  border-radius: var(--radius-full);
+}
+
+/* Floating Widget Badges */
+.floating-badge {
+  position: absolute;
+  background: rgba(13, 18, 31, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(12px);
+  padding: 0.65rem 1rem;
+  border-radius: var(--radius-md);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  z-index: 3;
+  animation: floatOrb 6s ease-in-out infinite alternate;
+}
+
+.fb-1 {
+  top: -15px;
+  left: -20px;
+  border-color: rgba(245, 175, 25, 0.35);
+}
+
+.fb-2 {
+  bottom: -20px;
+  right: -20px;
+  border-color: rgba(0, 242, 254, 0.35);
+  animation-delay: -3s;
+}
+
+.fb-icon {
+  font-size: 1.3rem;
+}
+
+.fb-title {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  font-family: var(--font-mono);
+}
+
+.fb-val {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+/* ==========================================================================
+   METRICS & STATS STRIP
+   ========================================================================== */
+.stats-strip {
+  padding: 2.5rem 0;
+  position: relative;
+  z-index: 2;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  background: rgba(13, 18, 31, 0.45);
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+
+.stat-card {
+  text-align: center;
+  padding: 1.2rem;
+  position: relative;
+}
+
+.stat-card:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 20%;
+  height: 60%;
+  width: 1px;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.stat-number {
+  font-family: var(--font-heading);
+  font-size: 2.4rem;
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 0.3rem;
+}
+
+.stat-label {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+/* ==========================================================================
+   ABOUT SECTION
+   ========================================================================== */
+.about-section {
+  padding: 6.5rem 0;
+  position: relative;
+}
+
+.about-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3.5rem;
+  align-items: start;
+}
+
+.about-bio-text {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: #cbd5e1;
+}
+
+.about-bio-text p {
+  margin-bottom: 1.4rem;
+}
+
+.about-quote-box {
+  background: linear-gradient(135deg, rgba(0, 242, 254, 0.08), rgba(127, 0, 255, 0.08));
+  border-left: 4px solid var(--accent-cyan);
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  padding: 1.3rem 1.6rem;
+  margin: 1.8rem 0;
+  font-style: italic;
+  color: #e2e8f0;
+}
+
+.about-quote-box span {
+  display: block;
+  font-style: normal;
+  font-size: 0.85rem;
+  color: var(--accent-cyan);
+  font-weight: 600;
+  margin-top: 0.4rem;
+  font-family: var(--font-mono);
+}
+
+/* Interactive Tabs */
+.about-tabs-container {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: 1.8rem;
+  backdrop-filter: blur(16px);
+}
+
+.tab-nav {
+  display: flex;
+  gap: 0.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  padding-bottom: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.tab-btn {
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  font-family: var(--font-main);
+  font-weight: 600;
+  font-size: 0.9rem;
+  padding: 0.6rem 1rem;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.tab-btn:hover {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.tab-btn.active {
+  color: #07090e;
+  background: var(--grad-cyan-blue);
+  font-weight: 700;
+}
+
+.tab-content {
+  display: none;
+  animation: fadeIn 0.3s ease;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+.tab-item-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.tab-feature {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.tab-icon-box {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-sm);
+  background: rgba(0, 242, 254, 0.1);
+  color: var(--accent-cyan);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  flex-shrink: 0;
+}
+
+.tab-feature-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 0.25rem;
+}
+
+.tab-feature-desc {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+/* ==========================================================================
+   EXPERIENCE & LEADERSHIP TIMELINE
+   ========================================================================== */
+.experience-section {
+  padding: 6.5rem 0;
+  position: relative;
+  background: rgba(10, 14, 24, 0.4);
+}
+
+.timeline {
+  position: relative;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 28px;
+  width: 2px;
+  background: linear-gradient(to bottom, #00f2fe, #7f00ff, #f5af19, rgba(255, 255, 255, 0.1));
+}
+
+.timeline-item {
+  position: relative;
+  padding-left: 72px;
+  margin-bottom: 2.8rem;
+}
+
+.timeline-dot {
+  position: absolute;
+  left: 17px;
+  top: 18px;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--bg-deep);
+  border: 3px solid var(--accent-cyan);
+  box-shadow: 0 0 15px rgba(0, 242, 254, 0.6);
+  z-index: 2;
+  transition: transform var(--transition-fast);
+}
+
+.timeline-item:hover .timeline-dot {
+  transform: scale(1.25);
+  background: var(--accent-cyan);
+}
+
+.timeline-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: 1.8rem;
+  backdrop-filter: blur(14px);
+  transition: all var(--transition-normal);
+}
+
+.timeline-card:hover {
+  border-color: var(--border-focus);
+  background: var(--bg-card-hover);
+  transform: translateX(6px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+}
+
+.timeline-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  margin-bottom: 0.8rem;
+}
+
+.timeline-role {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+.timeline-company {
+  color: var(--accent-cyan);
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin-top: 0.2rem;
+}
+
+.timeline-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 0.3rem 0.8rem;
+  border-radius: var(--radius-full);
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+
+.timeline-bullets {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  margin: 1.1rem 0;
+}
+
+.timeline-bullets li {
+  position: relative;
+  padding-left: 1.4rem;
+  color: #cbd5e1;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.timeline-bullets li::before {
+  content: '▹';
+  position: absolute;
+  left: 0;
+  color: var(--accent-cyan);
+  font-size: 1.1rem;
+}
+
+.timeline-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin-top: 1rem;
+}
+
+.t-tag {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: var(--text-muted);
+  font-size: 0.75rem;
+  padding: 0.2rem 0.6rem;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-mono);
+}
+
+/* ==========================================================================
+   PROJECTS SECTION
+   ========================================================================== */
+.projects-section {
+  padding: 6.5rem 0;
+  position: relative;
+}
+
+.project-filters {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-bottom: 3rem;
+}
+
+.filter-btn {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-muted);
+  padding: 0.55rem 1.2rem;
+  border-radius: var(--radius-full);
+  font-size: 0.88rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.filter-btn:hover {
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.filter-btn.active {
+  background: var(--grad-cyan-blue);
+  color: #07090e;
+  font-weight: 700;
+  border-color: transparent;
+  box-shadow: 0 4px 15px rgba(0, 242, 254, 0.35);
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 2rem;
+}
+
+.project-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.project-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.2rem;
+}
+
+.project-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-md);
+  background: rgba(0, 242, 254, 0.1);
+  border: 1px solid rgba(0, 242, 254, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  color: var(--accent-cyan);
+}
+
+.project-links {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.proj-link-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-muted);
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: all var(--transition-fast);
+}
+
+.proj-link-btn:hover {
+  color: #fff;
+  background: var(--accent-cyan);
+  color: #07090e;
+  border-color: var(--accent-cyan);
+  transform: translateY(-2px);
+}
+
+.project-category {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--accent-cyan);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 0.4rem;
+}
+
+.project-title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+  color: #fff;
+}
+
+.project-desc {
+  color: var(--text-muted);
+  font-size: 0.92rem;
+  line-height: 1.65;
+  margin-bottom: 1.5rem;
+  flex-grow: 1;
+}
+
+.project-techs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: auto;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.tech-tag {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  padding: 0.25rem 0.6rem;
+  border-radius: var(--radius-sm);
+  background: rgba(255, 255, 255, 0.03);
+  color: var(--text-muted);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+/* ==========================================================================
+   SKILLS & TECH STACK
+   ========================================================================== */
+.skills-section {
+  padding: 6.5rem 0;
+  position: relative;
+  background: rgba(13, 18, 31, 0.35);
+}
+
+.skills-matrix {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.skill-category-card {
+  padding: 2rem;
+}
+
+.skill-cat-header {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  margin-bottom: 1.6rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.skill-cat-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+}
+
+.icon-cyan {
+  background: rgba(0, 242, 254, 0.1);
+  color: var(--accent-cyan);
+  border: 1px solid rgba(0, 242, 254, 0.25);
+}
+
+.icon-purple {
+  background: rgba(127, 0, 255, 0.1);
+  color: var(--accent-purple);
+  border: 1px solid rgba(127, 0, 255, 0.25);
+}
+
+.icon-gold {
+  background: rgba(245, 175, 25, 0.1);
+  color: var(--accent-gold);
+  border: 1px solid rgba(245, 175, 25, 0.25);
+}
+
+.skill-cat-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.skill-items-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+}
+
+.skill-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.skill-item-info {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.88rem;
+  font-weight: 500;
+}
+
+.skill-name {
+  color: #e2e8f0;
+}
+
+.skill-lvl {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--accent-cyan);
+}
+
+.skill-bar-bg {
+  width: 100%;
+  height: 6px;
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+}
+
+.skill-bar-fill {
+  height: 100%;
+  background: var(--grad-cyan-blue);
+  border-radius: var(--radius-full);
+  transition: width 1.2s ease-in-out;
+}
+
+.fill-purple {
+  background: var(--grad-purple-pink);
+}
+
+.fill-gold {
+  background: var(--grad-gold);
+}
+
+/* Soft Skills & Languages Strip */
+.skills-addon-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-top: 2.5rem;
+}
+
+.addon-card {
+  padding: 1.8rem;
+}
+
+.addon-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 1.2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.soft-skills-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.soft-tag {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 0.45rem 0.9rem;
+  border-radius: var(--radius-full);
+  font-size: 0.85rem;
+  color: #e2e8f0;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.languages-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.lang-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.6rem 0.8rem;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: var(--radius-sm);
+}
+
+.lang-name {
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.lang-level {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--accent-cyan);
+}
+
+/* ==========================================================================
+   EDUCATION & CERTIFICATIONS
+   ========================================================================== */
+.education-section {
+  padding: 6.5rem 0;
+  position: relative;
+}
+
+.edu-cert-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 3rem;
+}
+
+.edu-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+}
+
+.edu-card {
+  padding: 1.8rem;
+  border-left: 3px solid var(--accent-cyan);
+}
+
+.edu-period {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--accent-cyan);
+  font-weight: 600;
+  margin-bottom: 0.3rem;
+}
+
+.edu-degree {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 0.3rem;
+}
+
+.edu-school {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  margin-bottom: 0.9rem;
+}
+
+.edu-details-summary {
+  cursor: pointer;
+  font-size: 0.85rem;
+  color: var(--accent-cyan);
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: 0.4rem;
+}
+
+.edu-courses-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 0.8rem;
+  padding-top: 0.8rem;
+  border-top: 1px dashed rgba(255, 255, 255, 0.1);
+}
+
+.course-tag {
+  background: rgba(0, 242, 254, 0.06);
+  border: 1px solid rgba(0, 242, 254, 0.15);
+  font-size: 0.75rem;
+  padding: 0.2rem 0.6rem;
+  border-radius: var(--radius-sm);
+  color: #e2e8f0;
+}
+
+/* Certifications Column */
+.certs-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.cert-card {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  padding: 1.2rem 1.4rem;
+}
+
+.cert-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: var(--radius-md);
+  background: rgba(245, 175, 25, 0.12);
+  border: 1px solid rgba(245, 175, 25, 0.3);
+  color: var(--accent-gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  flex-shrink: 0;
+}
+
+.cert-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 0.2rem;
+}
+
+.cert-issuer {
+  font-size: 0.84rem;
+  color: var(--text-muted);
+}
+
+.cert-score {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--accent-cyan);
+  font-weight: 600;
+  margin-top: 0.2rem;
+}
+
+/* ==========================================================================
+   INTERACTIVE GALLERY & MEDIA SHOWCASE
+   ========================================================================== */
+.gallery-section {
+  padding: 6.5rem 0;
+  position: relative;
+  background: rgba(10, 14, 24, 0.5);
+}
+
+.gallery-categories {
+  display: flex;
+  flex-direction: column;
+  gap: 3.5rem;
+}
+
+.gal-category-title {
+  font-size: 1.35rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.8rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.media-slot {
+  aspect-ratio: 4/3;
+  background: var(--bg-card);
+  border: 2px dashed rgba(255, 255, 255, 0.15);
+  border-radius: var(--radius-md);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all var(--transition-normal);
+  text-align: center;
+  padding: 1.5rem;
+}
+
+.media-slot:hover {
+  border-color: var(--accent-cyan);
+  background: rgba(0, 242, 254, 0.05);
+}
+
+.media-slot input[type="file"] {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  cursor: pointer;
+  z-index: 5;
+}
+
+.media-placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+  pointer-events: none;
+}
+
+.media-icon {
+  font-size: 2rem;
+  color: var(--accent-cyan);
+}
+
+.media-caption {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: #fff;
+}
+
+.media-subtext {
+  font-size: 0.75rem;
+  color: var(--text-dim);
+}
+
+.media-slot img, .media-slot video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 2;
+}
+
+.media-overlay-actions {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  display: none;
+  gap: 6px;
+  z-index: 6;
+}
+
+.media-slot:hover .media-overlay-actions {
+  display: flex;
+}
+
+.media-btn-mini {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.75);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  cursor: pointer;
+  transition: background var(--transition-fast);
+}
+
+.media-btn-mini:hover {
+  background: #ef4444;
+}
+
+/* ==========================================================================
+   CONTACT SECTION
+   ========================================================================== */
+.contact-section {
+  padding: 6.5rem 0;
+  position: relative;
+}
+
+.contact-layout {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 3.5rem;
+  align-items: start;
+}
+
+.contact-channels {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  margin-top: 1.5rem;
+}
+
+.channel-card {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  padding: 1.2rem 1.5rem;
+  text-decoration: none;
+}
+
+.channel-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-md);
+  background: rgba(0, 242, 254, 0.1);
+  border: 1px solid rgba(0, 242, 254, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  color: var(--accent-cyan);
+  flex-shrink: 0;
+}
+
+.channel-label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  font-family: var(--font-mono);
+  letter-spacing: 0.05em;
+}
+
+.channel-value {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #fff;
+}
+
+/* Contact Form */
+.contact-form-card {
+  padding: 2.5rem;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.3rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #cbd5e1;
+}
+
+.form-control {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 0.85rem 1.1rem;
+  color: #fff;
+  font-family: var(--font-main);
+  font-size: 0.95rem;
+  transition: border-color var(--transition-fast), background var(--transition-fast);
+  outline: none;
+}
+
+.form-control:focus {
+  border-color: var(--accent-cyan);
+  background: rgba(0, 242, 254, 0.03);
+  box-shadow: 0 0 15px rgba(0, 242, 254, 0.15);
+}
+
+textarea.form-control {
+  resize: vertical;
+  min-height: 120px;
+}
+
+/* ==========================================================================
+   FOOTER
+   ========================================================================== */
+.site-footer {
+  padding: 3.5rem 0 2.5rem 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  position: relative;
+  background: #05070a;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.footer-copy {
+  color: var(--text-dim);
+  font-size: 0.88rem;
+}
+
+.footer-copy strong {
+  color: #fff;
+}
+
+.footer-quote {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--accent-cyan);
+}
+
+.back-to-top {
+  position: fixed;
+  bottom: 2rem;
+  left: 2rem;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 100;
+  opacity: 0;
+  visibility: hidden;
+  transition: all var(--transition-normal);
+}
+
+.back-to-top.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.back-to-top:hover {
+  background: var(--accent-cyan);
+  color: #07090e;
+  transform: translateY(-4px);
+}
+
+/* ==========================================================================
+   LIVE EDIT DRAWER & FLOATING TOGGLE
+   ========================================================================== */
+.live-edit-wrapper {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 1000;
+}
+
+.live-edit-btn {
+  background: var(--grad-gold);
+  color: #07090e;
+  border: none;
+  border-radius: var(--radius-full);
+  padding: 0.75rem 1.4rem;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  cursor: pointer;
+  box-shadow: 0 8px 25px rgba(245, 175, 25, 0.4);
+  transition: all var(--transition-bounce);
+}
+
+.live-edit-btn:hover {
+  transform: scale(1.06);
+}
+
+.edit-drawer {
+  position: fixed;
+  top: 0;
+  right: -420px;
+  width: 400px;
+  height: 100vh;
+  background: var(--bg-surface-elevated);
+  border-left: 1px solid rgba(255, 255, 255, 0.12);
+  z-index: 1005;
+  box-shadow: -15px 0 40px rgba(0, 0, 0, 0.7);
+  transition: right 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  flex-direction: column;
+}
+
+.edit-drawer.open {
+  right: 0;
+}
+
+.edit-drawer-header {
+  padding: 1.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.edit-drawer-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--accent-gold);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.drawer-close-btn {
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  font-size: 1.4rem;
+  cursor: pointer;
+}
+
+.edit-drawer-body {
+  padding: 1.5rem;
+  overflow-y: auto;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.edit-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.edit-label {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+}
+
+.edit-input, .edit-textarea {
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-sm);
+  padding: 0.65rem 0.85rem;
+  color: #fff;
+  font-family: var(--font-main);
+  font-size: 0.88rem;
+  outline: none;
+}
+
+.edit-input:focus, .edit-textarea:focus {
+  border-color: var(--accent-gold);
+}
+
+.edit-drawer-footer {
+  padding: 1.2rem 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  gap: 0.8rem;
+}
+
+/* ==========================================================================
+   LIGHTBOX & CV MODALS
+   ========================================================================== */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(12px);
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  opacity: 0;
+  visibility: hidden;
+  transition: all var(--transition-normal);
+}
+
+.modal-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal-dialog {
+  background: var(--bg-surface-elevated);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-xl);
+  max-width: 850px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.8);
+  animation: modalScaleUp 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.modal-close-btn {
+  position: absolute;
+  top: 1.2rem;
+  right: 1.2rem;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  color: #fff;
+  font-size: 1.2rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  transition: background var(--transition-fast);
+}
+
+.modal-close-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* Printable CV Modal Content */
+.cv-printable-sheet {
+  background: #ffffff;
+  color: #1e293b;
+  padding: 3rem;
+  font-family: var(--font-main);
+  border-radius: var(--radius-lg);
+}
+
+.cv-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  border-bottom: 2px solid #0f172a;
+  padding-bottom: 1.5rem;
+  margin-bottom: 1.8rem;
+}
+
+.cv-name {
+  font-size: 2.2rem;
+  color: #0f172a;
+  font-weight: 800;
+}
+
+.cv-title-sub {
+  font-size: 1.1rem;
+  color: #0284c7;
+  font-weight: 600;
+}
+
+.cv-contact-details {
+  text-align: right;
+  font-size: 0.85rem;
+  color: #475569;
+  line-height: 1.5;
+}
+
+.cv-section {
+  margin-bottom: 1.6rem;
+}
+
+.cv-sec-title {
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  color: #0f172a;
+  border-bottom: 1px solid #cbd5e1;
+  padding-bottom: 0.3rem;
+  margin-bottom: 0.8rem;
+  letter-spacing: 0.05em;
+}
+
+.cv-item {
+  margin-bottom: 1rem;
+}
+
+.cv-item-header {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: #0f172a;
+}
+
+.cv-item-sub {
+  font-size: 0.85rem;
+  color: #0284c7;
+  font-weight: 600;
+  margin-bottom: 0.3rem;
+}
+
+.cv-item-desc {
+  font-size: 0.85rem;
+  color: #334155;
+  line-height: 1.5;
+}
+
+/* CV Actions Bar */
+.cv-actions-bar {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  padding: 1.2rem 2rem;
+  background: var(--bg-surface);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 0 0 var(--radius-xl) var(--radius-xl);
+}
+
+/* Toast Notification */
+.toast-notice {
+  position: fixed;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%) translateY(100px);
+  background: #0f172a;
+  color: #fff;
+  border: 1px solid var(--accent-cyan);
+  padding: 0.8rem 1.6rem;
+  border-radius: var(--radius-full);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+  z-index: 3000;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  font-size: 0.9rem;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.toast-notice.show {
+  transform: translateX(-50%) translateY(0);
+  opacity: 1;
+}
+
+/* Keyframes */
+@keyframes floatOrb {
+  0% { transform: translateY(0px) scale(1); }
+  50% { transform: translateY(-30px) scale(1.05); }
+  100% { transform: translateY(20px) scale(0.95); }
+}
+
+@keyframes pulseGreen {
+  0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+  70% { transform: scale(1); box-shadow: 0 0 0 8px rgba(16, 185, 129, 0); }
+  100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes modalScaleUp {
+  from { opacity: 0; transform: scale(0.92); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+/* ==========================================================================
+   RESPONSIVE DESIGN (MEDIA QUERIES)
+   ========================================================================== */
+@media (max-width: 1024px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    text-align: center;
+  }
+  
+  .hero-bio {
+    margin: 0 auto 2rem auto;
+  }
+  
+  .hero-buttons {
+    justify-content: center;
+  }
+  
+  .hero-socials {
+    justify-content: center;
+  }
+  
+  .hero-visual-wrapper {
+    order: -1;
+  }
+  
+  .about-layout {
+    grid-template-columns: 1fr;
+  }
+  
+  .skills-matrix {
+    grid-template-columns: 1fr;
+  }
+  
+  .edu-cert-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .contact-layout {
+    grid-template-columns: 1fr;
+  }
+  
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .stat-card:nth-child(2)::after {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-menu {
+    position: fixed;
+    top: 70px;
+    left: 0;
+    right: 0;
+    background: var(--bg-surface-elevated);
+    flex-direction: column;
+    padding: 2rem;
+    gap: 1.5rem;
+    border-bottom: 1px solid var(--border-subtle);
+    transform: translateY(-150%);
+    transition: transform 0.35s ease;
+  }
+  
+  .nav-menu.open {
+    transform: translateY(0);
+  }
+  
+  .mobile-toggle {
+    display: block;
+  }
+  
+  .nav-actions .btn {
+    display: none;
+  }
+  
+  .skills-addon-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .edit-drawer {
+    width: 100%;
+    right: -100%;
+  }
+  
+  .cv-printable-sheet {
+    padding: 1.5rem;
+  }
+  
+  .cv-header-row {
+    flex-direction: column;
+    gap: 1rem;
+    text-align: left;
+  }
+  
+  .cv-contact-details {
+    text-align: left;
+  }
+}
+
+/* ==========================================================================
+   PRINT STYLES FOR CV
+   ========================================================================== */
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  #cvPrintableArea, #cvPrintableArea * {
+    visibility: visible;
+  }
+  #cvPrintableArea {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    background: #fff;
+    color: #000;
+  }
+  .modal-overlay {
+    background: none;
+    padding: 0;
+  }
+  .modal-close-btn, .cv-actions-bar {
+    display: none !important;
+  }
+}
+
+</style>
+</head>
+<body>
+
+  <!-- Ambient Animated Lighting & Grid -->
+  <div class="bg-ambient">
+    <div class="ambient-blob blob-1"></div>
+    <div class="ambient-blob blob-2"></div>
+    <div class="ambient-blob blob-3"></div>
+  </div>
+  <div class="grid-overlay"></div>
+
+  <!-- Scroll Progress Indicator -->
+  <div class="scroll-progress-bar"></div>
+
+  <!-- ==========================================================================
+       NAVIGATION BAR
+       ========================================================================== -->
+  <nav class="site-nav">
+    <div class="container nav-container">
+      <a href="#home" class="nav-brand">
+        <div class="brand-badge">NH</div>
+        <span class="brand-text">Nərmin Həmidzadə</span>
+      </a>
+
+      <ul class="nav-menu">
+        <li><a href="#about" class="nav-link">Haqqımda</a></li>
+        <li><a href="#experience" class="nav-link">Təcrübə</a></li>
+        <li><a href="#projects" class="nav-link">Layihələr</a></li>
+        <li><a href="#skills" class="nav-link">Bacarıqlar</a></li>
+        <li><a href="#education" class="nav-link">Təhsil & Sertifikatlar</a></li>
+        <li><a href="#gallery" class="nav-link">Qalereya</a></li>
+        <li><a href="#contact" class="nav-link">Əlaqə</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <button class="btn btn-secondary trigger-cv-modal" style="padding: 0.55rem 1.1rem; font-size: 0.85rem;">
+          📄 CV-yə Bax
+        </button>
+        <a href="#contact" class="btn btn-primary" style="padding: 0.55rem 1.1rem; font-size: 0.85rem;">
+          Əlaqə Saxla
+        </a>
+        <button class="mobile-toggle" aria-label="Menyu aç">☰</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ==========================================================================
+       HERO SECTION
+       ========================================================================== -->
+  <section class="hero-section" id="home">
+    <div class="container hero-grid">
+      <div class="hero-content">
+        <div class="hero-status">
+          <span class="status-dot"></span>
+          <span>Aktiv Layihələr və Əməkdaşlıq üçün Açıqdır</span>
+        </div>
+
+        <h1 class="hero-title">
+          Salam, mən <br>
+          <span class="gradient-text dyn-name">Nərmin Həmidzadə</span>
+        </h1>
+
+        <div class="hero-subtitle">
+          <span class="dynamic-subtitle">Robototexnika və Mexatronika Mühəndisi</span>
+        </div>
+
+        <p class="hero-bio">
+          Azərbaycan Dövlət Neft və Sənaye Universitetinin (ADNSU) tələbəsi, Omnitrix komanda rəhbəri və WRC Dünya Robot Çempionatı 1/4 finalisti. Süni intellekt, robototexnika, görüntü emalı (OpenCV) və data analitikasını inteqrasiya edərək sənayedə real dəyər yaradan texnoloji həllər qururam.
+        </p>
+
+        <div class="hero-buttons">
+          <a href="#projects" class="btn btn-primary">
+            🚀 Layihələrimə Bax
+          </a>
+          <button class="btn btn-secondary trigger-cv-modal">
+            📄 CV-ni Aç / Endir
+          </button>
+          <a href="#contact" class="btn btn-secondary">
+            💬 Əlaqə
+          </a>
+        </div>
+
+        <div class="hero-socials">
+          <span>Sosial profillər:</span>
+          <div class="hero-socials-list">
+            <a href="https://www.linkedin.com/in/n%C9%99rmin-h%C9%99midzad%C9%99" target="_blank" class="btn-icon" title="LinkedIn">
+              <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+            </a>
+            <a href="https://github.com/hnarminn" target="_blank" class="btn-icon" title="GitHub">
+              <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+            </a>
+            <a href="mailto:hemidzadenernin@gmail.com" class="btn-icon" title="Email">
+              <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M0 3v18h24v-18h-24zm21.518 2l-9.518 7.713-9.518-7.713h19.036zm-19.518 14v-11.817l10 8.104 10-8.104v11.817h-20z"/></svg>
+            </a>
+            <a href="https://wa.me/994504489339" target="_blank" class="btn-icon" title="WhatsApp">
+              <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hero Visual Showcase -->
+      <div class="hero-visual-wrapper">
+        <div class="floating-badge fb-1">
+          <span class="fb-icon">🤖</span>
+          <div>
+            <div class="fb-title">WRC Dünya Çempionatı</div>
+            <div class="fb-val">1/4 Finalist (Bots Combat)</div>
+          </div>
+        </div>
+
+        <div class="hero-card">
+          <div class="profile-avatar-wrap">
+            <img src="avatar.png" alt="Nərmin Həmidzadə" class="profile-avatar" onerror="this.src='https://avatars.githubusercontent.com/u/167617717?v=4'">
+            <div class="profile-badge-float" title="Verified Engineering">✓</div>
+          </div>
+
+          <div class="profile-info">
+            <h2 class="profile-name dyn-name">Nərmin Həmidzadə</h2>
+            <p class="profile-role">Robototexnika & Data Analitika</p>
+          </div>
+
+          <div class="profile-specs-grid">
+            <div class="profile-spec-item">
+              <div class="spec-lbl">Təhsil</div>
+              <div class="spec-val">ADNSU (2023-2027)</div>
+            </div>
+            <div class="profile-spec-item">
+              <div class="spec-lbl">Məkan / Yaş</div>
+              <div class="spec-val">Bakı • 19 yaş</div>
+            </div>
+            <div class="profile-spec-item">
+              <div class="spec-lbl">Liderlik</div>
+              <div class="spec-val">Omnitrix Team Lead</div>
+            </div>
+            <div class="profile-spec-item">
+              <div class="spec-lbl">Excel Expert</div>
+              <div class="spec-val">810 / 1000 MOS</div>
+            </div>
+          </div>
+
+          <div class="profile-skills-pills">
+            <span class="skill-pill-sm">Python</span>
+            <span class="skill-pill-sm">Power BI</span>
+            <span class="skill-pill-sm">OpenCV</span>
+            <span class="skill-pill-sm">Deep Learning</span>
+            <span class="skill-pill-sm">SQL</span>
+            <span class="skill-pill-sm">Linux Ubuntu</span>
+            <span class="skill-pill-sm">Şahmat</span>
+          </div>
+        </div>
+
+        <div class="floating-badge fb-2">
+          <span class="fb-icon">🏆</span>
+          <div>
+            <div class="fb-title">Nailiyyət</div>
+            <div class="fb-val">UrbanLab 13 & Zirvə Qalibi</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       METRICS & STATS STRIP
+       ========================================================================== -->
+  <section class="stats-strip">
+    <div class="container stats-grid">
+      <div class="stat-card">
+        <div class="stat-number gradient-text" data-target="810" data-suffix="/1000">0</div>
+        <div class="stat-label">Microsoft Excel Expert (MOS-211) Balı</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number gradient-text-purple" data-target="4" data-prefix="Top ">0</div>
+        <div class="stat-label">WRC 1/4 Finalisti (Bots Combat)</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number gradient-text-gold" data-target="2" data-suffix="+ Qalibiyyət">0</div>
+        <div class="stat-label">Zirvə Təqaüdü & UrbanLab 13 Qalibi</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number gradient-text" data-target="9" data-suffix="+ Layihə">0</div>
+        <div class="stat-label">AI, Robototexnika & Data Layihələri</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       ABOUT ME SECTION
+       ========================================================================== -->
+  <section class="about-section" id="about">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag">01 • Haqqımda</div>
+        <h2 class="section-title">Mühəndislik, Analitika & <span class="gradient-text">Strateji Baxış</span></h2>
+        <p class="section-subtitle">Gələcəyin texnologiyalarını bu günün nizam-intizamı və cəsarəti ilə inşa edirəm.</p>
+      </div>
+
+      <div class="about-layout">
+        <div class="about-bio-text">
+          <p class="dyn-about-p1">
+            Mən Nərmin Həmidzadə, 12 iyun 2006-cı ildə Bakı şəhərində anadan olmuşam (19 yaş). 2023-cü ildən Azərbaycan Dövlət Neft və Sənaye Universitetində (ADNSU) İnformasiya Texnologiyaları və İdarəetmə fakültəsində <strong>Robototexnika və Mexatronika Mühəndisliyi</strong> ixtisası üzrə ali təhsil alıram.
+          </p>
+
+          <p>
+            Təhsilimlə yanaşı robototexniki sistemlərin kompüter modelləşdirilməsi, süni intellekt, verilənlər bazası sistemləri, PLC və rəqəmsal siqnalların işlənməsi kimi mühüm sahələri dərindən mənimsəmişəm. <strong>Embedded sistemlər</strong> və <strong>data analitika</strong> mənim ən böyük maraq və fəaliyyət orbitimdir.
+          </p>
+
+          <div class="about-quote-box">
+            "Hər böyük nailiyyət bir addım və güclü iradə ilə başlayır."
+            <span>— Nərmin Həmidzadə</span>
+          </div>
+
+          <p>
+            <strong>♟️ Şahmat və Strateji Təfəkkür:</strong> Uşaqlıqdan şahmatla peşəkar səviyyədə məşğul olmuşam və müxtəlif turnirlərdə uğurlar qazanmışam. Bu idman növü mənə soyuqqanlı təhlil, səbir, dərin analitik baxış və mürəkkəb mühəndislik sistemlərində hər gedişi qabaqcadan planlaşdırmaq bacarığı qazandırıb.
+          </p>
+        </div>
+
+        <!-- Interactive Tabs -->
+        <div class="about-tabs-container">
+          <div class="tab-nav">
+            <button class="tab-btn active" data-tab="tab-interests">Əsas Maraqlarım</button>
+            <button class="tab-btn" data-tab="tab-philosophy">Mühəndis Fəlsəfəm</button>
+            <button class="tab-btn" data-tab="tab-chess">Şahmat & Analitika</button>
+          </div>
+
+          <div class="tab-content active" id="tab-interests">
+            <div class="tab-item-list">
+              <div class="tab-feature">
+                <div class="tab-icon-box">🤖</div>
+                <div>
+                  <h4 class="tab-feature-title">Robototexnika & Hardware İnteqrasiyası</h4>
+                  <p class="tab-feature-desc">Sensorların oxunması, motor nəzarəti, PLC alqoritmləri, WRC Bots Combat kateqoriyasında döyüş robotlarının mexaniki və proqram təminatı qurulması.</p>
+                </div>
+              </div>
+
+              <div class="tab-feature">
+                <div class="tab-icon-box">📊</div>
+                <div>
+                  <h4 class="tab-feature-title">Data Analitika & Biznes İntellekti (BI)</h4>
+                  <p class="tab-feature-desc">Power BI, Python (Pandas, NumPy), Excel və SQL vasitəsilə böyük verilənlərin təmizlənməsi, vizual dashboardların yaradılması və data əsaslı qərarlar.</p>
+                </div>
+              </div>
+
+              <div class="tab-feature">
+                <div class="tab-icon-box">🧠</div>
+                <div>
+                  <h4 class="tab-feature-title">Computer Vision & Süni İntellekt</h4>
+                  <p class="tab-feature-desc">OpenCV ilə təsvirlərin emalı, Deep Learning (ANN, CNN, backpropagation), CVAT ilə data etiketlənməsi və LLM/NLP modellərinin tətbiqi.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="tab-content" id="tab-philosophy">
+            <div class="tab-item-list">
+              <div class="tab-feature">
+                <div class="tab-icon-box">🎯</div>
+                <div>
+                  <h4 class="tab-feature-title">Nəticəyönümlü Məsuliyyət</h4>
+                  <p class="tab-feature-desc">Hər bir layihədə dəqiqlik, detallara xüsusi diqqət və tapşırığı ən yüksək standartda tamamlamaq başlıca prinsipimdir.</p>
+                </div>
+              </div>
+
+              <div class="tab-feature">
+                <div class="tab-icon-box">👥</div>
+                <div>
+                  <h4 class="tab-feature-title">Komanda İşi & Liderlik</h4>
+                  <p class="tab-feature-desc">ADNSU və İRİA-nın Omnitrix komandasında rəhbər kimi komanda üzvləri arasında effektiv kommunikasiya və çevik MVP inkişafı təcrübəsi.</p>
+                </div>
+              </div>
+
+              <div class="tab-feature">
+                <div class="tab-icon-box">⚡</div>
+                <div>
+                  <h4 class="tab-feature-title">Sürətli Adaptasiya & Davamlı İnkişaf</h4>
+                  <p class="tab-feature-desc">Yeni texnologiyaları, kitabxanaları və proqramlaşdırma dillərini sürətlə öyrənərək real mühitdə dərhal tətbiq etmə bacarığı.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="tab-content" id="tab-chess">
+            <div class="tab-item-list">
+              <div class="tab-feature">
+                <div class="tab-icon-box">♟️</div>
+                <div>
+                  <h4 class="tab-feature-title">Strateji Proqnozlaşdırma</h4>
+                  <p class="tab-feature-desc">Şahmat lövhəsində olduğu kimi, sistem arxitekturasında da potensial xətaları bir neçə addım qabaqcadan görmək bacarığı.</p>
+                </div>
+              </div>
+
+              <div class="tab-feature">
+                <div class="tab-icon-box">⏳</div>
+                <div>
+                  <h4 class="tab-feature-title">Səbir & Təzyiq Altında Qərarvermə</h4>
+                  <p class="tab-feature-desc">WRC çempionatında və hakatonlarda sıx vaxt və yüksək rəqabət şəraitində optimal qərarlar qəbul etmək vərdişi.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       EXPERIENCE & LEADERSHIP TIMELINE
+       ========================================================================== */
+  <section class="experience-section" id="experience">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag">02 • Təcrübə & Fəaliyyət</div>
+        <h2 class="section-title">Liderlik & <span class="gradient-text">Real Təcrübə</span></h2>
+        <p class="section-subtitle">İnkubasiya proqramları, dövlət layihələri və beynəlxalq mühəndislik yarışları.</p>
+      </div>
+
+      <div class="timeline">
+        <!-- Item 1: Omnitrix Team Lead -->
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <div class="timeline-header">
+              <div>
+                <h3 class="timeline-role">Omnitrix Komanda Rəhbəri (Team Lead)</h3>
+                <div class="timeline-company">ADNSU Startup və TTO & İnnovasiya və Rəqəmsal İnkişaf Agentliyi (İRİA)</div>
+              </div>
+              <div class="timeline-badge">2026 • 6 ay</div>
+            </div>
+            <ul class="timeline-bullets">
+              <li>Süni İntellekt (AI) və Data Analitika istiqamətində innovativ layihəyə rəhbərlik etdim.</li>
+              <li>İstifadəçilərlə təbii səslə ünsiyyət quran AI əsaslı Voice Chatbot həllinin konseptual memarlığını və funksional tələblərini formalaşdırdım.</li>
+              <li>Startup ideyasının bazar araşdırması, biznes dəyərinin ölçülməsi və MVP (Minimum Viable Product) prototipinin komanda ilə hazırlanmasını idarə etdim.</li>
+            </ul>
+            <div class="timeline-tags">
+              <span class="t-tag">Team Leadership</span>
+              <span class="t-tag">Voice AI</span>
+              <span class="t-tag">Data Analytics</span>
+              <span class="t-tag">MVP Development</span>
+              <span class="t-tag">İRİA</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 2: UrbanLab 13 Winner -->
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <div class="timeline-header">
+              <div>
+                <h3 class="timeline-role">UrbanLab 13 Qalibi (Tədqiqatçı & Analitik)</h3>
+                <div class="timeline-company">World Urban Forum (WUF)</div>
+              </div>
+              <div class="timeline-badge">2026</div>
+            </div>
+            <ul class="timeline-bullets">
+              <li>Süni intellekt dəstəyi ilə Bakı şəhərinin real küçə məkanlarının inkluziv urbanistika standartlarına uyğun yenidən dizaynı layihəsini təqdim etdim.</li>
+              <li>Şəhər planlaşdırılması prosesində data əsaslı analiz və qərarvermə üzrə yüksək nəticə göstərərək qalib olduq.</li>
+            </ul>
+            <div class="timeline-tags">
+              <span class="t-tag">Urban Analytics</span>
+              <span class="t-tag">AI Design</span>
+              <span class="t-tag">Inclusive Architecture</span>
+              <span class="t-tag">World Urban Forum</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 3: ETİM Defense Ministry -->
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <div class="timeline-header">
+              <div>
+                <h3 class="timeline-role">Milli Mühəndis Hazırlığı Mütəxəssisi</h3>
+                <div class="timeline-company">Müdafiə Sənayesi Nazirliyi — Elmi-Tədqiqat və İnnovasiya Mərkəzi (ETİM)</div>
+              </div>
+              <div class="timeline-badge">2026 • 5 ay</div>
+            </div>
+            <ul class="timeline-bullets">
+              <li>Milli Mühəndis Hazırlığı Proqramının qalibi olaraq robototexnika sistemlərinin proqramlaşdırılması üzrə intensiv praktiki təlim keçdim.</li>
+              <li>Linux (Ubuntu), OpenCV ilə görüntü emalı (Computer Vision), Deep Learning (ANN, CNN, backpropagation) və model optimizasiyası üzrə real təcrübə qazandım.</li>
+              <li>NLP və LLM modellərinin data preprocessing və tətbiqi sahəsində praktiki bilikləri inkişaf etdirdim.</li>
+            </ul>
+            <div class="timeline-tags">
+              <span class="t-tag">Linux Ubuntu</span>
+              <span class="t-tag">OpenCV</span>
+              <span class="t-tag">Deep Learning (CNN/ANN)</span>
+              <span class="t-tag">LLM & NLP</span>
+              <span class="t-tag">ETİM</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 4: WRC World Robot Championship -->
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <div class="timeline-header">
+              <div>
+                <h3 class="timeline-role">World Robot Championship (WRC) — 1/4 Finalisti</h3>
+                <div class="timeline-company">Bots Combat Kateqoriyası</div>
+              </div>
+              <div class="timeline-badge">2024 - 2025</div>
+            </div>
+            <ul class="timeline-bullets">
+              <li>Komanda ilə birlikdə döyüş robotunun dizaynı, mexaniki yığılması və proqramlaşdırılmasında birbaşa iştirak etdim.</li>
+              <li>Robotun hərəkət alqoritmlərinin optimallaşdırılması, sensor kalibrasiyası və poliqon testlərini apardım.</li>
+              <li>Gərgin rəqabət şəraitində komandamız yarışda 1/4 final mərhələsinə yüksəldi.</li>
+            </ul>
+            <div class="timeline-tags">
+              <span class="t-tag">WRC</span>
+              <span class="t-tag">Robotics Engineering</span>
+              <span class="t-tag">Bots Combat</span>
+              <span class="t-tag">Motion Algorithms</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 5: Election Observer -->
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <div class="timeline-header">
+              <div>
+                <h3 class="timeline-role">Müşahidəçi (Monitorinq və Hesabatlılıq)</h3>
+                <div class="timeline-company">Azərbaycan Respublikası Bələdiyyə Seçkiləri</div>
+              </div>
+              <div class="timeline-badge">2025</div>
+            </div>
+            <ul class="timeline-bullets">
+              <li>Seçki prosesinin şəffaflığının monitorinqini həyata keçirdim.</li>
+              <li>Obyektivlik, yüksək diqqətlilik və məsuliyyət prinsipləri ilə hesabatlandırma apardım.</li>
+            </ul>
+            <div class="timeline-tags">
+              <span class="t-tag">Monitorinq</span>
+              <span class="t-tag">Hesabatlılıq</span>
+              <span class="t-tag">Detallara Diqqət</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       FEATURED PROJECTS SECTION
+       ========================================================================== -->
+  <section class="projects-section" id="projects">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag">03 • Layihələr & Mühəndislik</div>
+        <h2 class="section-title">İnnovasiya & <span class="gradient-text">Kod Arxitekturası</span></h2>
+        <p class="section-subtitle">Robototexnika, süni intellekt, data vizuallaşdırma və RAG sistemləri üzrə real işlərim.</p>
+      </div>
+
+      <!-- Category Filter Tabs -->
+      <div class="project-filters">
+        <button class="filter-btn active" data-filter="all">Hamısı</button>
+        <button class="filter-btn" data-filter="robotics">Robototexnika</button>
+        <button class="filter-btn" data-filter="ai-llm">Süni İntellekt & LLM</button>
+        <button class="filter-btn" data-filter="data">Data Analitika</button>
+        <button class="filter-btn" data-filter="urban">Urbanistika</button>
+      </div>
+
+      <div class="projects-grid">
+        <!-- Project 1: WRC Combat Bot -->
+        <div class="project-card-wrap" data-category="robotics">
+          <div class="glass-card project-card">
+            <div class="project-top">
+              <div class="project-icon">🤖</div>
+              <div class="project-links">
+                <a href="#gallery" class="proj-link-btn" title="Qalereyada bax">👁</a>
+              </div>
+            </div>
+            <div class="project-category">Robototexnika & Hardware</div>
+            <h3 class="project-title">WRC Combat Bot (Döyüş Robotu)</h3>
+            <p class="project-desc">
+              World Robot Championship Bots Combat kateqoriyası üçün hazırlanmış yüksək manevr qabiliyyətinə və zərbə gücünə malik döyüş robotu. Hərəkət alqoritmlərinin optimizasiyası və tele-idarəetmə protokolları ilə 1/4 finala yüksəlmişdir.
+            </p>
+            <div class="project-techs">
+              <span class="tech-tag">C/C++</span>
+              <span class="tech-tag">Motor Drivers</span>
+              <span class="tech-tag">Sensors</span>
+              <span class="tech-tag">Hardware Design</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 2: Omnitrix Voice Chatbot -->
+        <div class="project-card-wrap" data-category="ai-llm">
+          <div class="glass-card project-card">
+            <div class="project-top">
+              <div class="project-icon">🎙️</div>
+              <div class="project-links">
+                <span class="proj-link-btn" title="İnkubasiya Layihəsi">★</span>
+              </div>
+            </div>
+            <div class="project-category">AI Voice & NLP</div>
+            <h3 class="project-title">Omnitrix AI Voice Chatbot</h3>
+            <p class="project-desc">
+              ADNSU Startup & TTO və İRİA inkubasiya proqramı çərçivəsində rəhbərlik etdiyim AI əsaslı səsli ünsiyyət həlli. İstifadəçi nitqini təhlil edən, səsli sual-cavab aparan və biznes proseslərinə inteqrasiya olunan MVP platforması.
+            </p>
+            <div class="project-techs">
+              <span class="tech-tag">Python</span>
+              <span class="tech-tag">Voice AI</span>
+              <span class="tech-tag">NLP</span>
+              <span class="tech-tag">FastAPI</span>
+              <span class="tech-tag">Product Management</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 3: UrbanLab 13 Inclusive Streets -->
+        <div class="project-card-wrap" data-category="urban data">
+          <div class="glass-card project-card">
+            <div class="project-top">
+              <div class="project-icon">🏙️</div>
+              <div class="project-links">
+                <span class="proj-link-btn" title="World Urban Forum Qalibi">🏆</span>
+              </div>
+            </div>
+            <div class="project-category">Urbanistika & AI</div>
+            <h3 class="project-title">UrbanLab 13 — AI İnkluziv Şəhər Layihəsi</h3>
+            <p class="project-desc">
+              Bakı küçələrinin data əsaslı analizi və inkluziv urbanistika standartlarına uyğunlaşdırılması üçün AI konsepti. Piyada axınları və əlçatanlıq datalarının təhlili ilə Dünya Urban Forumunda qalib gəlmiş layihə.
+            </p>
+            <div class="project-techs">
+              <span class="tech-tag">Data Analytics</span>
+              <span class="tech-tag">AI Simulation</span>
+              <span class="tech-tag">GIS</span>
+              <span class="tech-tag">Urban Planning</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 4: Tool-Calling AI Agent -->
+        <div class="project-card-wrap" data-category="ai-llm">
+          <div class="glass-card project-card">
+            <div class="project-top">
+              <div class="project-icon">⚡</div>
+              <div class="project-links">
+                <a href="https://github.com/hnarminn/tool-calling-agent" target="_blank" class="proj-link-btn" title="GitHub Koduna Bax">↗</a>
+              </div>
+            </div>
+            <div class="project-category">LLM Agent Architecture</div>
+            <h3 class="project-title">Tool-Calling AI Agent (Claude SDK)</h3>
+            <p class="project-desc">
+              Anthropic Claude-un Tool Use (Function Calling) xüsusiyyəti əsasında istifadəçi niyyətini avtonom dərk edən, kalkulyator, hava proqnozu və veb axtarış kimi alətləri müstəqil seçib çağıran intellektual agent sistemi.
+            </p>
+            <div class="project-techs">
+              <span class="tech-tag">Python</span>
+              <span class="tech-tag">Anthropic API</span>
+              <span class="tech-tag">Function Calling</span>
+              <span class="tech-tag">Agents</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 5: RAG Document Assistant -->
+        <div class="project-card-wrap" data-category="ai-llm">
+          <div class="glass-card project-card">
+            <div class="project-top">
+              <div class="project-icon">📚</div>
+              <div class="project-links">
+                <a href="https://github.com/hnarminn/rag" target="_blank" class="proj-link-btn" title="GitHub Koduna Bax">↗</a>
+              </div>
+            </div>
+            <div class="project-category">RAG & Vektor Axtarışı</div>
+            <h3 class="project-title">RAG — "Sənədlərinizlə Danışın"</h3>
+            <p class="project-desc">
+              Retrieval-Augmented Generation sistemi. İstifadəçilərin korporativ və tədqiqat sənədlərindən mənbə istinadları ilə dəqiq, hallusinasiyasız və etibarlı cavablar çıxaran sənəd köməkçisi.
+            </p>
+            <div class="project-techs">
+              <span class="tech-tag">RAG</span>
+              <span class="tech-tag">Vector DB</span>
+              <span class="tech-tag">Embeddings</span>
+              <span class="tech-tag">LangChain</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 6: RAG Evaluation Framework -->
+        <div class="project-card-wrap" data-category="ai-llm">
+          <div class="glass-card project-card">
+            <div class="project-top">
+              <div class="project-icon">🔬</div>
+              <div class="project-links">
+                <a href="https://github.com/hnarminn/rag-eval-framework-" target="_blank" class="proj-link-btn" title="GitHub Koduna Bax">↗</a>
+              </div>
+            </div>
+            <div class="project-category">AI Testing & MLOps</div>
+            <h3 class="project-title">RAG Qiymətləndirmə Çərçivəsi (Eval)</h3>
+            <p class="project-desc">
+              AI çıxışının qiymətləndirilməsi, sual-cavab test dəstləri, uğursuzluqların təhlili və kiçik açıq qaynaqlı modellərin performansının optimallaşdırılması üçün qurulmuş tam sınaq mühiti.
+            </p>
+            <div class="project-techs">
+              <span class="tech-tag">Evaluation Metrics</span>
+              <span class="tech-tag">Model Fine-Tuning</span>
+              <span class="tech-tag">Error Analysis</span>
+              <span class="tech-tag">Python</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 7: Smart Code Reviewer -->
+        <div class="project-card-wrap" data-category="ai-llm">
+          <div class="glass-card project-card">
+            <div class="project-top">
+              <div class="project-icon">🛡️</div>
+              <div class="project-links">
+                <a href="https://github.com/hnarminn/llm-code-reviewer" target="_blank" class="proj-link-btn" title="GitHub Koduna Bax">↗</a>
+              </div>
+            </div>
+            <div class="project-category">Developer Tooling</div>
+            <h3 class="project-title">Smart LLM Code Reviewer</h3>
+            <p class="project-desc">
+              Kod keyfiyyətini, təhlükəsizlik boşluqlarını və performans problemlərini skan edən və strukturlaşdırılmış JSON formatında peşəkar tövsiyələr qaytaran LLM əsaslı avtomatlaşdırılmış audit aləti.
+            </p>
+            <div class="project-techs">
+              <span class="tech-tag">OpenAI API</span>
+              <span class="tech-tag">Static Analysis</span>
+              <span class="tech-tag">JSON Schema</span>
+              <span class="tech-tag">Security</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 8: ETİM Computer Vision -->
+        <div class="project-card-wrap" data-category="robotics ai-llm">
+          <div class="glass-card project-card">
+            <div class="project-top">
+              <div class="project-icon">👁️</div>
+              <div class="project-links">
+                <span class="proj-link-btn" title="Müdafiə Sənayesi Nazirliyi ETİM">★</span>
+              </div>
+            </div>
+            <div class="project-category">Computer Vision & Deep Learning</div>
+            <h3 class="project-title">ETİM Təsvir Emalı & Dərin Öyrənmə</h3>
+            <p class="project-desc">
+              OpenCV ilə real zamanlı görüntü emalı, ANN və CNN arxitekturaları, backpropagation və təsvir ilkin emalı (preprocessing). CVAT aləti ilə data etiketləmə və robot manipulyatorları üçün obyekt tanıma.
+            </p>
+            <div class="project-techs">
+              <span class="tech-tag">OpenCV</span>
+              <span class="tech-tag">CNN / ANN</span>
+              <span class="tech-tag">CVAT</span>
+              <span class="tech-tag">Linux Ubuntu</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 9: Data Analytics & Power BI -->
+        <div class="project-card-wrap" data-category="data">
+          <div class="glass-card project-card">
+            <div class="project-top">
+              <div class="project-icon">📈</div>
+              <div class="project-links">
+                <span class="proj-link-btn" title="Apex Business School">★</span>
+              </div>
+            </div>
+            <div class="project-category">Data Analitika & BI</div>
+            <h3 class="project-title">Power BI & Python Biznes Dashboardları</h3>
+            <p class="project-desc">
+              "Zirvəyə doğru" təqaüdü çərçivəsində şirkət məlumatlarının ETL prosesi, SQL sorğuları, DAX düsturları və interaktiv Power BI hesabatları. Satış, logistika və əməliyyat göstəricilərinin vizuallaşdırılması.
+            </p>
+            <div class="project-techs">
+              <span class="tech-tag">Power BI</span>
+              <span class="tech-tag">DAX</span>
+              <span class="tech-tag">SQL</span>
+              <span class="tech-tag">Excel Pivot</span>
+              <span class="tech-tag">Pandas</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       TECHNICAL SKILLS SECTION
+       ========================================================================== -->
+  <section class="skills-section" id="skills">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag">04 • Bacarıqlar & Texnoloji Stack</div>
+        <h2 class="section-title">Texniki & Mühəndislik <span class="gradient-text">Bacarıqları</span></h2>
+        <p class="section-subtitle">Real layihələrdə və laboratoriya mühitində tətbiq olunan alətlər və sistemlər.</p>
+      </div>
+
+      <div class="skills-matrix">
+        <!-- Card 1: Data Analytics & BI -->
+        <div class="glass-card skill-category-card">
+          <div class="skill-cat-header">
+            <div class="skill-cat-icon icon-cyan">📊</div>
+            <h3 class="skill-cat-title">Data Analitika & BI</h3>
+          </div>
+          <div class="skill-items-list">
+            <div class="skill-item">
+              <div class="skill-item-info">
+                <span class="skill-name">Power BI (DAX, Modeling, Reports)</span>
+                <span class="skill-lvl">92%</span>
+              </div>
+              <div class="skill-bar-bg"><div class="skill-bar-fill" style="width: 92%;"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-item-info">
+                <span class="skill-name">Microsoft Excel Expert (MOS-211)</span>
+                <span class="skill-lvl">95%</span>
+              </div>
+              <div class="skill-bar-bg"><div class="skill-bar-fill" style="width: 95%;"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-item-info">
+                <span class="skill-name">SQL (Queries, Joins, Subqueries)</span>
+                <span class="skill-lvl">88%</span>
+              </div>
+              <div class="skill-bar-bg"><div class="skill-bar-fill" style="width: 88%;"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-item-info">
+                <span class="skill-name">Python (Pandas, NumPy, EDA)</span>
+                <span class="skill-lvl">90%</span>
+              </div>
+              <div class="skill-bar-bg"><div class="skill-bar-fill" style="width: 90%;"></div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 2: AI & Computer Vision -->
+        <div class="glass-card skill-category-card">
+          <div class="skill-cat-header">
+            <div class="skill-cat-icon icon-purple">🧠</div>
+            <h3 class="skill-cat-title">Süni İntellekt & CV</h3>
+          </div>
+          <div class="skill-items-list">
+            <div class="skill-item">
+              <div class="skill-item-info">
+                <span class="skill-name">Computer Vision (OpenCV)</span>
+                <span class="skill-lvl">86%</span>
+              </div>
+              <div class="skill-bar-bg"><div class="skill-bar-fill fill-purple" style="width: 86%;"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-item-info">
+                <span class="skill-name">Deep Learning (ANN, CNN, Backprop)</span>
+                <span class="skill-lvl">82%</span>
+              </div>
+              <div class="skill-bar-bg"><div class="skill-bar-fill fill-purple" style="width: 82%;"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-item-info">
+                <span class="skill-name">CVAT (Data Annotation & Labeling)</span>
+                <span class="skill-lvl">90%</span>
+              </div>
+              <div class="skill-bar-bg"><div class="skill-bar-fill fill-purple" style="width: 90%;"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-item-info">
+                <span class="skill-name">LLM, NLP & RAG Sistemləri</span>
+                <span class="skill-lvl">85%</span>
+              </div>
+              <div class="skill-bar-bg"><div class="skill-bar-fill fill-purple" style="width: 85%;"></div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 3: Robotics & Mechatronics -->
+        <div class="glass-card skill-category-card">
+          <div class="skill-cat-header">
+            <div class="skill-cat-icon icon-gold">🤖</div>
+            <h3 class="skill-cat-title">Robototexnika & Mühəndislik</h3>
+          </div>
+          <div class="skill-items-list">
+            <div class="skill-item">
+              <div class="skill-item-info">
+                <span class="skill-name">Robot Modelləşdirməsi & İdarəetmə</span>
+                <span class="skill-lvl">88%</span>
+              </div>
+              <div class="skill-bar-bg"><div class="skill-bar-fill fill-gold" style="width: 88%;"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-item-info">
+                <span class="skill-name">PLC & Məntiqi Kontrollerlər</span>
+                <span class="skill-lvl">82%</span>
+              </div>
+              <div class="skill-bar-bg"><div class="skill-bar-fill fill-gold" style="width: 82%;"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-item-info">
+                <span class="skill-name">Linux Ubuntu & Terminal</span>
+                <span class="skill-lvl">90%</span>
+              </div>
+              <div class="skill-bar-bg"><div class="skill-bar-fill fill-gold" style="width: 90%;"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-item-info">
+                <span class="skill-name">Embedded Sistemlər & C/C++ (İlkin)</span>
+                <span class="skill-lvl">75%</span>
+              </div>
+              <div class="skill-bar-bg"><div class="skill-bar-fill fill-gold" style="width: 75%;"></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Addon Grid: Soft Skills & Languages -->
+      <div class="skills-addon-grid">
+        <div class="glass-card addon-card">
+          <h4 class="addon-title">♟️ Fərdi & Liderlik Bacarıqları</h4>
+          <div class="soft-skills-tags">
+            <span class="soft-tag">♟️ Şahmat Əsaslı Strateji Düşüncə</span>
+            <span class="soft-tag">👑 Komanda Rəhbərliyi (Team Lead)</span>
+            <span class="soft-tag">🔍 Analitik Problem Həlli</span>
+            <span class="soft-tag">⏱️ Vaxtın İdarə Olunması</span>
+            <span class="soft-tag">🚀 Sürətli Adaptasiya</span>
+            <span class="soft-tag">🎯 Detallara Dəqiq Fokus</span>
+            <span class="soft-tag">🗣️ Effektiv Ünsiyyət və Təqdimat</span>
+          </div>
+        </div>
+
+        <div class="glass-card addon-card">
+          <h4 class="addon-title">🌐 Dil Bilikləri</h4>
+          <div class="languages-list">
+            <div class="lang-row">
+              <span class="lang-name">Azərbaycan dili</span>
+              <span class="lang-level">Ana Dili (Native)</span>
+            </div>
+            <div class="lang-row">
+              <span class="lang-name">İngilis dili</span>
+              <span class="lang-level">A2 - B1 (Texniki / İşgüzar)</span>
+            </div>
+            <div class="lang-row">
+              <span class="lang-name">Türk dili</span>
+              <span class="lang-level">B1 (Sərbəst)</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       EDUCATION & CERTIFICATIONS SECTION
+       ========================================================================== -->
+  <section class="education-section" id="education">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag">05 • Təhsil & Kvalifikasiya</div>
+        <h2 class="section-title">Akademik Yolum & <span class="gradient-text">Sertifikatlar</span></h2>
+        <p class="section-subtitle">Dövlət universitetində fundamental mühəndislik və beynəlxalq peşəkar sertifikasiyalar.</p>
+      </div>
+
+      <div class="edu-cert-grid">
+        <!-- Left: Education Column -->
+        <div class="edu-stack">
+          <!-- ADNSU -->
+          <div class="glass-card edu-card">
+            <div class="edu-period">2023 — 2027 (Davam edir)</div>
+            <h3 class="edu-degree">Robototexnika və Mexatronika Mühəndisliyi</h3>
+            <div class="edu-school">Azərbaycan Dövlət Neft və Sənaye Universiteti (ADNSU) • İT və İdarəetmə Fakültəsi</div>
+            <p style="font-size: 0.9rem; color: var(--text-muted); line-height: 1.6;">
+              Mühəndislik nəzəriyyəsi, tətbiqi riyaziyyat, rəqəmsal idarəetmə sistemləri və intellektual robotların proqramlaşdırılması üzrə bakalavr təhsili.
+            </p>
+            <div class="edu-courses-list">
+              <span class="course-tag">Robotların idarə olunması</span>
+              <span class="course-tag">Süni intellekt</span>
+              <span class="course-tag">Verilənlər strukturu və alqoritmlər</span>
+              <span class="course-tag">PLC Kontrollerlər</span>
+              <span class="course-tag">Maşın və mexanizmlər nəzəriyyəsi</span>
+              <span class="course-tag">Robotların kompüter modelləşdirilməsi</span>
+              <span class="course-tag">Rəqəmsal siqnallar və təsvirlərin işlənməsi</span>
+              <span class="course-tag">Rəqəmsal kommunikasiya</span>
+              <span class="course-tag">Verilənlər bazası sistemləri</span>
+              <span class="course-tag">İntellektual robotlar</span>
+            </div>
+          </div>
+
+          <!-- Apex Business School -->
+          <div class="glass-card edu-card" style="border-left-color: var(--accent-gold);">
+            <div class="edu-period" style="color: var(--accent-gold);">2025 — 2026</div>
+            <h3 class="edu-degree">Data Analitika ("Zirvəyə doğru" Təqaüd Qalibi)</h3>
+            <div class="edu-school">Apex Business School</div>
+            <p style="font-size: 0.9rem; color: var(--text-muted); line-height: 1.6;">
+              Təqaüd proqramının qalibi olaraq Power BI (DAX, Data Modeling, Dashboard Creation), Microsoft Excel (Advanced Pivot & Formulas), Python (Pandas, NumPy) və SQL (Subqueries, Joins) üzrə intensiv praktiki kurs.
+            </p>
+          </div>
+
+          <!-- Secondary School -->
+          <div class="glass-card edu-card" style="border-left-color: var(--accent-purple);">
+            <div class="edu-period" style="color: var(--accent-purple);">2012 — 2023</div>
+            <h3 class="edu-degree">Tam Orta Təhsil</h3>
+            <div class="edu-school">S. Məhərrəmov adına 106 saylı Tam Orta Məktəb</div>
+          </div>
+        </div>
+
+        <!-- Right: Certifications & Diplomas -->
+        <div class="certs-stack">
+          <!-- Cert 1: Microsoft MOS-211 -->
+          <div class="glass-card cert-card">
+            <div class="cert-icon">🏅</div>
+            <div>
+              <h4 class="cert-title">Microsoft MOS-211: Microsoft Excel Expert</h4>
+              <div class="cert-issuer">Microsoft Corporation</div>
+              <div class="cert-score">Nəticə: 810 / 1000 bal</div>
+            </div>
+          </div>
+
+          <!-- Cert 2: Linux Foundation -->
+          <div class="glass-card cert-card">
+            <div class="cert-icon" style="background: rgba(0, 242, 254, 0.1); color: var(--accent-cyan); border-color: rgba(0, 242, 254, 0.3);">🐧</div>
+            <div>
+              <h4 class="cert-title">LFS101: Introduction to Linux</h4>
+              <div class="cert-issuer">The Linux Foundation</div>
+              <div class="cert-score">Linux arxitekturası, bash skriptləri və idarəetmə</div>
+            </div>
+          </div>
+
+          <!-- Cert 3: Defense Ministry ETIM -->
+          <div class="glass-card cert-card">
+            <div class="cert-icon" style="background: rgba(16, 185, 129, 0.1); color: var(--accent-emerald); border-color: rgba(16, 185, 129, 0.3);">🎖️</div>
+            <div>
+              <h4 class="cert-title">Milli Mühəndis Hazırlığı Sertifikatı</h4>
+              <div class="cert-issuer">Müdafiə Sənayesi Nazirliyi ETİM Mərkəzi</div>
+              <div class="cert-score">Robototexnika, OpenCV və Dərin Öyrənmə</div>
+            </div>
+          </div>
+
+          <!-- Cert 4: World Urban Forum -->
+          <div class="glass-card cert-card">
+            <div class="cert-icon">🏆</div>
+            <div>
+              <h4 class="cert-title">UrbanLab 13 Qalibiyyət Diplomu</h4>
+              <div class="cert-issuer">World Urban Forum (WUF)</div>
+              <div class="cert-score">AI əsaslı inkluziv urbanistika layihəsi üzrə 1-ci yer</div>
+            </div>
+          </div>
+
+          <!-- Cert 5: WRC Robot Championship -->
+          <div class="glass-card cert-card">
+            <div class="cert-icon" style="background: rgba(127, 0, 255, 0.1); color: var(--accent-purple); border-color: rgba(127, 0, 255, 0.3);">🤖</div>
+            <div>
+              <h4 class="cert-title">World Robot Championship (WRC)</h4>
+              <div class="cert-issuer">WRC Beynəlxalq Təşkilat Komitəsi</div>
+              <div class="cert-score">Bots Combat Kateqoriyası • 1/4 Final Mərhələsi</div>
+            </div>
+          </div>
+
+          <!-- Cert 6: Apex Business School -->
+          <div class="glass-card cert-card">
+            <div class="cert-icon">🎓</div>
+            <div>
+              <h4 class="cert-title">Data Analitika Mütəxəssisi Sertifikatı</h4>
+              <div class="cert-issuer">Apex Business School ("Zirvəyə doğru" Təqaüdü)</div>
+              <div class="cert-score">Power BI, Python, SQL və Biznes Analitikası</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       INTERACTIVE GALLERY & MEDIA SHOWCASE
+       ========================================================================== -->
+  <section class="gallery-section" id="gallery">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag">06 • Foto & Video Sübutlar</div>
+        <h2 class="section-title">İnteraktiv <span class="gradient-text">Qalereya & Arxiv</span></h2>
+        <p class="section-subtitle">Robotlar, yarışlar, sertifikatlar və data dashboard-ları. Kompüterinizdən yeni şəkillər əlavə edə bilərsiniz — onlar brauzerinizdə daimi yadda saxlanılacaq!</p>
+      </div>
+
+      <div class="gallery-categories">
+        <!-- Category 1: WRC World Robot Championship -->
+        <div>
+          <h3 class="gal-category-title">🤖 Dünya Robot Çempionatı (WRC Bots Combat)</h3>
+          <div class="gallery-grid">
+            <div class="media-slot" data-slot-id="wrc-1">
+              <input type="file" accept="image/*">
+              <div class="media-placeholder">
+                <span class="media-icon">📷</span>
+                <span class="media-caption">WRC Döyüş Robotu Quruluşu</span>
+                <span class="media-subtext">Şəkil seçmək üçün klikləyin</span>
+              </div>
+            </div>
+            <div class="media-slot" data-slot-id="wrc-2">
+              <input type="file" accept="image/*">
+              <div class="media-placeholder">
+                <span class="media-icon">👥</span>
+                <span class="media-caption">Komanda & Poliqon Sınağı</span>
+                <span class="media-subtext">Şəkil seçmək üçün klikləyin</span>
+              </div>
+            </div>
+            <div class="media-slot" data-slot-id="wrc-3">
+              <input type="file" accept="image/*">
+              <div class="media-placeholder">
+                <span class="media-icon">🏆</span>
+                <span class="media-caption">WRC 1/4 Final Anları</span>
+                <span class="media-subtext">Şəkil seçmək üçün klikləyin</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Category 2: Data Analytics & AI Dashboards -->
+        <div>
+          <h3 class="gal-category-title">📊 Data Analitika, AI & OpenCV Layihələri</h3>
+          <div class="gallery-grid">
+            <div class="media-slot" data-slot-id="data-1">
+              <input type="file" accept="image/*">
+              <div class="media-placeholder">
+                <span class="media-icon">📈</span>
+                <span class="media-caption">Power BI İnteraktiv Dashboard</span>
+                <span class="media-subtext">Şəkil seçmək üçün klikləyin</span>
+              </div>
+            </div>
+            <div class="media-slot" data-slot-id="data-2">
+              <input type="file" accept="image/*">
+              <div class="media-placeholder">
+                <span class="media-icon">🧠</span>
+                <span class="media-caption">OpenCV & Təsvir Emalı Nəticələri</span>
+                <span class="media-subtext">Şəkil seçmək üçün klikləyin</span>
+              </div>
+            </div>
+            <div class="media-slot" data-slot-id="data-3">
+              <input type="file" accept="image/*">
+              <div class="media-placeholder">
+                <span class="media-icon">🏙️</span>
+                <span class="media-caption">UrbanLab 13 Şəhər Dizaynı</span>
+                <span class="media-subtext">Şəkil seçmək üçün klikləyin</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Category 3: Certifications & Diplomas -->
+        <div>
+          <h3 class="gal-category-title">📜 Sertifikatlar və Rəsmi Sənədlər</h3>
+          <div class="gallery-grid">
+            <div class="media-slot" data-slot-id="cert-1">
+              <input type="file" accept="image/*">
+              <div class="media-placeholder">
+                <span class="media-icon">📜</span>
+                <span class="media-caption">Microsoft MOS-211 Excel Sertifikatı</span>
+                <span class="media-subtext">Şəkil seçmək üçün klikləyin</span>
+              </div>
+            </div>
+            <div class="media-slot" data-slot-id="cert-2">
+              <input type="file" accept="image/*">
+              <div class="media-placeholder">
+                <span class="media-icon">📜</span>
+                <span class="media-caption">Müdafiə Sənayesi Nazirliyi ETİM Sertifikatı</span>
+                <span class="media-subtext">Şəkil seçmək üçün klikləyin</span>
+              </div>
+            </div>
+            <div class="media-slot" data-slot-id="cert-3">
+              <input type="file" accept="image/*">
+              <div class="media-placeholder">
+                <span class="media-icon">📜</span>
+                <span class="media-caption">Apex "Zirvə" & UrbanLab Qalibiyyət Diplomu</span>
+                <span class="media-subtext">Şəkil seçmək üçün klikləyin</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Category 4: Videos & Dynamic Demos -->
+        <div>
+          <h3 class="gal-category-title">🎥 Video Demos & Robot Sınaqları</h3>
+          <div class="gallery-grid">
+            <div class="media-slot" data-slot-id="vid-1">
+              <input type="file" accept="video/*">
+              <div class="media-placeholder">
+                <span class="media-icon">🎬</span>
+                <span class="media-caption">WRC Robot Döyüşü / Manevr Videosu</span>
+                <span class="media-subtext">Video seçmək üçün klikləyin (mp4, webm)</span>
+              </div>
+            </div>
+            <div class="media-slot" data-slot-id="vid-2">
+              <input type="file" accept="video/*">
+              <div class="media-placeholder">
+                <span class="media-icon">🎬</span>
+                <span class="media-caption">Omnitrix AI Voice Chatbot Səs Testi</span>
+                <span class="media-subtext">Video seçmək üçün klikləyin (mp4, webm)</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       CONTACT SECTION
+       ========================================================================== -->
+  <section class="contact-section" id="contact">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag">07 • Əlaqə & Əməkdaşlıq</div>
+        <h2 class="section-title">Birlikdə Yeni Zirvələrə <span class="gradient-text">Çataq</span></h2>
+        <p class="section-subtitle">Robototexnika, süni intellekt və data analitika layihələri, təcrübə və əməkdaşlıq üçün hər zaman hazıram.</p>
+      </div>
+
+      <div class="contact-layout">
+        <!-- Left: Direct Channels -->
+        <div>
+          <h3 style="font-size: 1.5rem; margin-bottom: 0.8rem;">Birbaşa Əlaqə Vasitələri</h3>
+          <p style="color: var(--text-muted); margin-bottom: 1.5rem; line-height: 1.6;">
+            Mənimlə telefon, WhatsApp, email və ya LinkedIn vasitəsilə dərhal əlaqə saxlaya bilərsiniz.
+          </p>
+
+          <div class="contact-channels">
+            <!-- WhatsApp -->
+            <a href="https://wa.me/994504489339" target="_blank" class="glass-card channel-card">
+              <div class="channel-icon" style="background: rgba(16, 185, 129, 0.1); color: #10b981; border-color: rgba(16, 185, 129, 0.3);">
+                💬
+              </div>
+              <div>
+                <div class="channel-label">WhatsApp (Sürətli Mesaj)</div>
+                <div class="channel-value dyn-phone">+994 50 448 93 39</div>
+              </div>
+            </a>
+
+            <!-- Phone Call -->
+            <a href="tel:+994504489339" class="glass-card channel-card">
+              <div class="channel-icon">📞</div>
+              <div>
+                <div class="channel-label">Telefon Əlaqəsi</div>
+                <div class="channel-value dyn-phone">050-448-93-39</div>
+              </div>
+            </a>
+
+            <!-- Email -->
+            <a href="mailto:hemidzadenernin@gmail.com" class="glass-card channel-card">
+              <div class="channel-icon">✉️</div>
+              <div>
+                <div class="channel-label">Email Ünvanı</div>
+                <div class="channel-value dyn-email">hemidzadenernin@gmail.com</div>
+              </div>
+            </a>
+
+            <!-- LinkedIn -->
+            <a href="https://www.linkedin.com/in/n%C9%99rmin-h%C9%99midzad%C9%99" target="_blank" class="glass-card channel-card">
+              <div class="channel-icon" style="background: rgba(79, 172, 254, 0.1); color: #4facfe; border-color: rgba(79, 172, 254, 0.3);">
+                💼
+              </div>
+              <div>
+                <div class="channel-label">LinkedIn Profili</div>
+                <div class="channel-value dyn-linkedin">linkedin.com/in/nərmin-həmidzadə</div>
+              </div>
+            </a>
+
+            <!-- Location -->
+            <div class="glass-card channel-card" style="cursor: default;">
+              <div class="channel-icon">📍</div>
+              <div>
+                <div class="channel-label">Yerləşmə</div>
+                <div class="channel-value">Bakı şəhəri, Azərbaycan</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Message Form -->
+        <div class="glass-card contact-form-card">
+          <h3 style="font-size: 1.4rem; margin-bottom: 0.5rem;">Mənə Mesaj Göndərin</h3>
+          <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1.5rem;">
+            Təklifləriniz, layihələriniz və ya suallarınız üçün aşağıdakı formanı doldurun:
+          </p>
+
+          <form id="contactForm" class="contact-form">
+            <div class="form-group">
+              <label for="senderName" class="form-label">Adınız və Soyadınız *</label>
+              <input type="text" id="senderName" class="form-control" placeholder="Məsələn: Əli Məmmədov" required>
+            </div>
+
+            <div class="form-group">
+              <label for="senderEmail" class="form-label">Email Ünvanınız *</label>
+              <input type="email" id="senderEmail" class="form-control" placeholder="adiniz@example.com" required>
+            </div>
+
+            <div class="form-group">
+              <label for="senderSubject" class="form-label">Mövzu</label>
+              <input type="text" id="senderSubject" class="form-control" placeholder="Məs: Əməkdaşlıq, Layihə, İş təklifi">
+            </div>
+
+            <div class="form-group">
+              <label for="senderMessage" class="form-label">Mesajınız *</label>
+              <textarea id="senderMessage" class="form-control" rows="4" placeholder="Layihəniz və ya təklifiniz haqqında qısa məlumat..." required></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary" style="width: 100%; padding: 0.9rem; font-size: 1rem;">
+              Mesajı Göndər 🚀
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       FOOTER
+       ========================================================================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-copy">
+          © 2026 <strong>Nərmin Həmidzadə</strong>. Bütün hüquqlar qorunur.
+        </div>
+        <div class="footer-quote">
+          "Hər böyük nailiyyət bir addım və güclü iradə ilə başlayır."
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back To Top Button -->
+  <button class="back-to-top" aria-label="Yuxarı qayıt">↑</button>
+
+  <!-- ==========================================================================
+       LIVE IN-BROWSER EDIT BUTTON & DRAWER
+       ========================================================================== -->
+  <div class="live-edit-wrapper">
+    <button class="live-edit-btn" id="liveEditToggle" title="Sayt mətnlərini canlı dəyiş">
+      ⚙️ Canlı Redaktə
+    </button>
+  </div>
+
+  <div class="edit-drawer" id="editDrawer">
+    <div class="edit-drawer-header">
+      <div class="edit-drawer-title">
+        <span>✏️</span> Sayt Məlumatlarını Dəyiş
+      </div>
+      <button class="drawer-close-btn" id="drawerClose">✕</button>
+    </div>
+
+    <div class="edit-drawer-body">
+      <div class="edit-group">
+        <label class="edit-label">Ad və Soyad</label>
+        <input type="text" id="editName" class="edit-input" value="Nərmin Həmidzadə">
+      </div>
+
+      <div class="edit-group">
+        <label class="edit-label">Status Başlığı</label>
+        <input type="text" id="editStatus" class="edit-input" value="Aktiv Layihələr və Əməkdaşlıq üçün Açıqdır">
+      </div>
+
+      <div class="edit-group">
+        <label class="edit-label">Qısa Bioqrafiya (Hero)</label>
+        <textarea id="editBio" class="edit-textarea" rows="3"></textarea>
+      </div>
+
+      <div class="edit-group">
+        <label class="edit-label">Haqqımda Mətni</label>
+        <textarea id="editAbout" class="edit-textarea" rows="4"></textarea>
+      </div>
+
+      <div class="edit-group">
+        <label class="edit-label">Email Ünvanı</label>
+        <input type="email" id="editEmail" class="edit-input" value="hemidzadenernin@gmail.com">
+      </div>
+
+      <div class="edit-group">
+        <label class="edit-label">Telefon / WhatsApp</label>
+        <input type="text" id="editPhone" class="edit-input" value="+994 50 448 93 39">
+      </div>
+
+      <div class="edit-group">
+        <label class="edit-label">LinkedIn Profili</label>
+        <input type="text" id="editLinkedin" class="edit-input" value="linkedin.com/in/nərmin-həmidzadə">
+      </div>
+    </div>
+
+    <div class="edit-drawer-footer">
+      <button class="btn btn-primary" id="saveEditsBtn" style="flex: 1;">💾 Yadda Saxla</button>
+      <button class="btn btn-secondary" id="resetEditsBtn">Sıfırla</button>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       LIGHTBOX MODAL
+       ========================================================================== -->
+  <div class="modal-overlay" id="lightboxModal">
+    <button class="modal-close-btn" aria-label="Bağla">✕</button>
+    <div style="max-width: 900px; width: 100%; text-align: center;">
+      <div id="lightboxMediaContainer"></div>
+      <div id="lightboxCaption" style="margin-top: 1rem; color: #fff; font-size: 1rem; font-weight: 600;"></div>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       PRINTABLE & INTERACTIVE CV MODAL
+       ========================================================================== -->
+  <div class="modal-overlay" id="cvModal">
+    <div class="modal-dialog">
+      <button class="modal-close-btn" aria-label="Bağla">✕</button>
+
+      <div class="cv-actions-bar">
+        <button class="btn btn-gold" id="printCvBtn">
+          🖨️ PDF Kimi Çap Et / Saxla
+        </button>
+      </div>
+
+      <!-- CV Printable Sheet -->
+      <div class="cv-printable-sheet" id="cvPrintableArea">
+        <div class="cv-header-row">
+          <div>
+            <h1 class="cv-name">NƏRMİN HƏMİDZADƏ</h1>
+            <div class="cv-title-sub">Robototexnika və Mexatronika Mühəndisliyi • Data Analitik</div>
+          </div>
+          <div class="cv-contact-details">
+            <div>📞 050-448-93-39</div>
+            <div>✉️ hemidzadenernin@gmail.com</div>
+            <div>📍 Bakı, Azərbaycan</div>
+            <div>💼 linkedin.com/in/nərmin-həmidzadə</div>
+          </div>
+        </div>
+
+        <!-- Haqqımda -->
+        <div class="cv-section">
+          <h2 class="cv-sec-title">Haqqımda</h2>
+          <p class="cv-item-desc">
+            Mən Nərmin – analitika, robototexnika və IT sahəsində inkişaf edən gəncəm. Məqsədim İT, Süni İntellekt, Data Analitika və Embedded sistemlər sahəsində peşəkar şəkildə inkişaf edərək real layihələrdə dəyər yaratmaqdır. Uşaqlıqdan şahmatla peşəkar məşğuliyyətim mənə analitik təfəkkür, strateji planlama və detallara fokuslanma qazandırmışdır.
+          </p>
+        </div>
+
+        <!-- Təhsil -->
+        <div class="cv-section">
+          <h2 class="cv-sec-title">Təhsil</h2>
+          <div class="cv-item">
+            <div class="cv-item-header">
+              <span>Azərbaycan Dövlət Neft və Sənaye Universiteti (ADNSU)</span>
+              <span>2023 — 2027</span>
+            </div>
+            <div class="cv-item-sub">Fakültə: İnformasiya Texnologiyaları və İdarəetmə • İxtisas: Robototexnika və Mexatronika Mühəndisliyi</div>
+            <p class="cv-item-desc">
+              <strong>Tədris olunan əsas fənlər:</strong> Robotların idarə olunması, Verilənlər strukturu və alqoritmlər, Maşın və mexanizmlər nəzəriyyəsi, Proqramlaşdırılan məntiqi kontrollerlər (PLC), Süni intellekt, Robototexniki sistemlərin modelləşdirilməsi, Rəqəmsal siqnalların və təsvirlərin işlənməsi, Verilənlər bazası sistemləri, İntellektual robotlar.
+            </p>
+          </div>
+
+          <div class="cv-item">
+            <div class="cv-item-header">
+              <span>Apex Business School</span>
+              <span>2025 — 2026</span>
+            </div>
+            <div class="cv-item-sub">Data Analitik ("Zirvəyə doğru" Təqaüd Proqramının Qalibi)</div>
+            <p class="cv-item-desc">
+              Power BI (Dashboard creation, data modeling, DAX basics, interactive reports), Microsoft Excel (Pivot Tables, advanced functions, data cleaning), Python (Pandas, NumPy, data cleaning, analysis), SQL (Functions, subqueries, database analysis).
+            </p>
+          </div>
+        </div>
+
+        <!-- Təcrübə -->
+        <div class="cv-section">
+          <h2 class="cv-sec-title">Təcrübə və Layihələr</h2>
+          <div class="cv-item">
+            <div class="cv-item-header">
+              <span>ADNSU Startup və TTO & İRİA İnkubasiya Proqramı — Omnitrix Komanda Rəhbəri</span>
+              <span>2026 (6 ay)</span>
+            </div>
+            <p class="cv-item-desc">
+              Süni İntellekt (AI) və Data Analitika üzrə istifadəçilərlə səsli ünsiyyət quran AI Voice Chatbot həllinin konsepsiyası, funksional tələblər, bazar araşdırması və MVP hazırlanması.
+            </p>
+          </div>
+
+          <div class="cv-item">
+            <div class="cv-item-header">
+              <span>UrbanLab 13 Qalibi — World Urban Forum (WUF)</span>
+              <span>2026</span>
+            </div>
+            <p class="cv-item-desc">
+              AI dəstəyi ilə Bakı şəhərinin real küçə məkanlarının inkluziv urbanistika standartlarına uyğun yenidən dizaynı və data əsaslı analiz layihəsi.
+            </p>
+          </div>
+
+          <div class="cv-item">
+            <div class="cv-item-header">
+              <span>ETİM – Müdafiə Sənayesi Nazirliyi Elmi-Tədqiqat və İnnovasiya Mərkəzi</span>
+              <span>2026 (5 ay)</span>
+            </div>
+            <div class="cv-item-sub">Milli Mühəndis Hazırlığı</div>
+            <p class="cv-item-desc">
+              Robototexnika sistemləri, Linux Ubuntu, Image Processing, OpenCV, Deep Learning (ANN, CNN, backpropagation), LLM və NLP modelləri üzrə praktiki mühəndislik təlimi və layihələr.
+            </p>
+          </div>
+
+          <div class="cv-item">
+            <div class="cv-item-header">
+              <span>World Robot Championship (WRC) — Bots Combat Kateqoriyası</span>
+              <span>2024 — 2025</span>
+            </div>
+            <p class="cv-item-desc">
+              Komanda ilə döyüş robotunun dizaynı, mexaniki qurulması, hərəkət alqoritmlərinin optimallaşdırılması və dünya çempionatında 1/4 final mərhələsi.
+            </p>
+          </div>
+
+          <div class="cv-item">
+            <div class="cv-item-header">
+              <span>Azərbaycan Respublikası Bələdiyyə Seçkiləri — Müşahidəçi</span>
+              <span>2025</span>
+            </div>
+            <p class="cv-item-desc">
+              Seçki prosesinin monitorinqi, sənədləşdirmə və hesabatlılıq.
+            </p>
+          </div>
+        </div>
+
+        <!-- Bacarıqlar & Sertifikatlar Grid -->
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;">
+          <div class="cv-section">
+            <h2 class="cv-sec-title">Texniki Bacarıqlar</h2>
+            <ul style="font-size: 0.85rem; color: #334155; line-height: 1.6; padding-left: 1.2rem;">
+              <li>Python (Pandas, NumPy, OpenCV)</li>
+              <li>SQL (Sorğular, Birləşmələr, Analiz)</li>
+              <li>Power BI (DAX, Modeling, Dashboards)</li>
+              <li>Microsoft Excel Expert (Advanced Formulas, Pivot)</li>
+              <li>Linux (Ubuntu)</li>
+              <li>Image Processing / Computer Vision (OpenCV, CVAT)</li>
+              <li>Deep Learning (ANN, CNN, Backpropagation)</li>
+              <li>Robototexnika və Mexatronika, PLC Sistemləri</li>
+              <li>C/C++ (İlkin anlayışlar)</li>
+            </ul>
+          </div>
+
+          <div class="cv-section">
+            <h2 class="cv-sec-title">Sertifikatlar & Dillər</h2>
+            <ul style="font-size: 0.85rem; color: #334155; line-height: 1.6; padding-left: 1.2rem; margin-bottom: 1rem;">
+              <li><strong>Microsoft MOS-211 Excel Expert:</strong> 810/1000 bal</li>
+              <li><strong>The Linux Foundation:</strong> LFS101 Introduction to Linux</li>
+              <li><strong>ETİM:</strong> Milli Mühəndis Hazırlığı Sertifikatı</li>
+              <li><strong>World Urban Forum:</strong> UrbanLab 13 Qalibi Diplomu</li>
+              <li><strong>Apex Business School:</strong> Data Analitika Diplomu</li>
+            </ul>
+            <p style="font-size: 0.85rem; color: #334155;">
+              <strong>Dillər:</strong> Azərbaycan (Ana dili), İngilis (A2-B1), Türk (B1)
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- JavaScript -->
+  <script>
+/**
+ * NƏRMİN HƏMİDZADƏ - PORTFOLIO INTERACTIVE CORE
+ * Features: LocalStorage Persistence, Dynamic Typing, Filter Tabs, Lightbox, CV Modal, Live Edit
+ */
+
+document.addEventListener('DOMContentLoaded', () => {
+  initNavbar();
+  initTypingEffect();
+  initScrollSpy();
+  initStatsCounter();
+  initAboutTabs();
+  initProjectFilters();
+  initMediaGallery();
+  initModals();
+  initContactForm();
+  initLiveEditor();
+});
+
+/* ==========================================================================
+   1. NAVBAR & SCROLL PROGRESS
+   ========================================================================== */
+function initNavbar() {
+  const nav = document.querySelector('.site-nav');
+  const progressBar = document.querySelector('.scroll-progress-bar');
+  const backToTop = document.querySelector('.back-to-top');
+  const mobileToggle = document.querySelector('.mobile-toggle');
+  const navMenu = document.querySelector('.nav-menu');
+
+  window.addEventListener('scroll', () => {
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    const docHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    const progress = (scrollTop / docHeight) * 100;
+    
+    if (progressBar) progressBar.style.width = `${progress}%`;
+    
+    if (scrollTop > 60) {
+      nav.classList.add('scrolled');
+      if (backToTop) backToTop.classList.add('visible');
+    } else {
+      nav.classList.remove('scrolled');
+      if (backToTop) backToTop.classList.remove('visible');
+    }
+  });
+
+  if (mobileToggle && navMenu) {
+    mobileToggle.addEventListener('click', () => {
+      navMenu.classList.toggle('open');
+      mobileToggle.textContent = navMenu.classList.contains('open') ? '✕' : '☰';
+    });
+
+    navMenu.querySelectorAll('.nav-link').forEach(link => {
+      link.addEventListener('click', () => {
+        navMenu.classList.remove('open');
+        mobileToggle.textContent = '☰';
+      });
+    });
+  }
+
+  if (backToTop) {
+    backToTop.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
+}
+
+/* ==========================================================================
+   2. DYNAMIC TYPING EFFECT
+   ========================================================================== */
+function initTypingEffect() {
+  const typingEl = document.querySelector('.dynamic-subtitle');
+  if (!typingEl) return;
+
+  const phrases = [
+    "Robototexnika və Mexatronika Mühəndisi",
+    "Data Analitik & BI Mütəxəssisi",
+    "Süni İntellekt & Computer Vision Tədqiqatçısı",
+    "Omnitrix Komanda Rəhbəri (İnkubasiya Proqramı)",
+    "WRC Bots Combat 1/4 Finalisti"
+  ];
+
+  let phraseIndex = 0;
+  let charIndex = 0;
+  let isDeleting = false;
+  const typeSpeed = 70;
+  const deleteSpeed = 35;
+  const pauseEnd = 2000;
+
+  function type() {
+    const currentPhrase = phrases[phraseIndex];
+    if (isDeleting) {
+      typingEl.textContent = currentPhrase.substring(0, charIndex - 1);
+      charIndex--;
+    } else {
+      typingEl.textContent = currentPhrase.substring(0, charIndex + 1);
+      charIndex++;
+    }
+
+    if (!isDeleting && charIndex === currentPhrase.length) {
+      setTimeout(() => isDeleting = true, pauseEnd);
+    } else if (isDeleting && charIndex === 0) {
+      isDeleting = false;
+      phraseIndex = (phraseIndex + 1) % phrases.length;
+    }
+
+    const currentDelay = isDeleting ? deleteSpeed : (charIndex === currentPhrase.length ? pauseEnd : typeSpeed);
+    setTimeout(type, currentDelay);
+  }
+
+  type();
+}
+
+/* ==========================================================================
+   3. SCROLL SPY & ACTIVE NAV
+   ========================================================================== */
+function initScrollSpy() {
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.nav-link');
+
+  window.addEventListener('scroll', () => {
+    let current = '';
+    const scrollPos = window.pageYOffset + 200;
+
+    sections.forEach(section => {
+      const top = section.offsetTop;
+      const height = section.offsetHeight;
+      if (scrollPos >= top && scrollPos < top + height) {
+        current = section.getAttribute('id');
+      }
+    });
+
+    navLinks.forEach(link => {
+      link.classList.remove('active');
+      if (link.getAttribute('href') === `#${current}`) {
+        link.classList.add('active');
+      }
+    });
+  });
+}
+
+/* ==========================================================================
+   4. STATS COUNTER ANIMATION
+   ========================================================================== */
+function initStatsCounter() {
+  const statNumbers = document.querySelectorAll('.stat-number[data-target]');
+  if (!statNumbers.length) return;
+
+  let started = false;
+  const statsSection = document.querySelector('.stats-strip');
+
+  const observer = new IntersectionObserver((entries) => {
+    if (entries[0].isIntersecting && !started) {
+      started = true;
+      statNumbers.forEach(el => {
+        const target = parseFloat(el.getAttribute('data-target'));
+        const prefix = el.getAttribute('data-prefix') || '';
+        const suffix = el.getAttribute('data-suffix') || '';
+        const isDecimal = target % 1 !== 0;
+        let count = 0;
+        const duration = 1800;
+        const stepTime = 25;
+        const steps = duration / stepTime;
+        const increment = target / steps;
+
+        const timer = setInterval(() => {
+          count += increment;
+          if (count >= target) {
+            count = target;
+            clearInterval(timer);
+          }
+          el.textContent = prefix + (isDecimal ? count.toFixed(1) : Math.round(count)) + suffix;
+        }, stepTime);
+      });
+    }
+  }, { threshold: 0.3 });
+
+  if (statsSection) observer.observe(statsSection);
+}
+
+/* ==========================================================================
+   5. ABOUT TABS
+   ========================================================================== */
+function initAboutTabs() {
+  const tabBtns = document.querySelectorAll('.tab-btn');
+  const tabPanes = document.querySelectorAll('.tab-content');
+
+  tabBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const targetId = btn.getAttribute('data-tab');
+
+      tabBtns.forEach(b => b.classList.remove('active'));
+      tabPanes.forEach(p => p.classList.remove('active'));
+
+      btn.classList.add('active');
+      const targetPane = document.getElementById(targetId);
+      if (targetPane) targetPane.classList.add('active');
+    });
+  });
+}
+
+/* ==========================================================================
+   6. PROJECT FILTERS
+   ========================================================================== */
+function initProjectFilters() {
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  const projectCards = document.querySelectorAll('.project-card-wrap');
+
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      const filterValue = btn.getAttribute('data-filter');
+
+      projectCards.forEach(card => {
+        const category = card.getAttribute('data-category');
+        if (filterValue === 'all' || category.includes(filterValue)) {
+          card.style.display = 'block';
+          card.style.animation = 'fadeIn 0.4s ease';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    });
+  });
+}
+
+/* ==========================================================================
+   7. INTERACTIVE MEDIA GALLERY (WITH LOCAL PERSISTENCE)
+   ========================================================================== */
+function initMediaGallery() {
+  const slots = document.querySelectorAll('.media-slot');
+
+  // Load persisted media from LocalStorage if available
+  slots.forEach(slot => {
+    const slotId = slot.getAttribute('data-slot-id');
+    const savedData = localStorage.getItem(`media_slot_${slotId}`);
+
+    if (savedData) {
+      applyMediaToSlot(slot, savedData.type, savedData.src, savedData.name);
+    }
+
+    const fileInput = slot.querySelector('input[type="file"]');
+    if (fileInput) {
+      fileInput.addEventListener('change', (e) => {
+        const file = e.target.files[0];
+        if (!file) return;
+
+        const reader = new FileReader();
+        reader.onload = function(evt) {
+          const src = evt.target.result;
+          const type = file.type.startsWith('video') ? 'video' : 'img';
+          applyMediaToSlot(slot, type, src, file.name);
+
+          // Store in LocalStorage (handles standard images, notifies if oversized)
+          try {
+            localStorage.setItem(`media_slot_${slotId}`, JSON.stringify({
+              type: type,
+              src: src,
+              name: file.name
+            }));
+            showToast("Fayl brauzerinizdə daimi yadda saxlanıldı!");
+          } catch(err) {
+            console.warn("Storage quota exceeded, media stored in memory:", err);
+            showToast("Fayl yükləndi (Böyük həcmli fayllar üçün LocalStorage limiti aşıldı)");
+          }
+        };
+        reader.readAsDataURL(file);
+      });
+    }
+  });
+}
+
+function applyMediaToSlot(slot, type, src, name) {
+  // Clear placeholder & existing media
+  const placeholder = slot.querySelector('.media-placeholder');
+  if (placeholder) placeholder.style.display = 'none';
+
+  slot.querySelectorAll('img, video, .media-overlay-actions').forEach(el => el.remove());
+
+  let mediaEl;
+  if (type === 'video') {
+    mediaEl = document.createElement('video');
+    mediaEl.src = src;
+    mediaEl.autoplay = true;
+    mediaEl.muted = true;
+    mediaEl.loop = true;
+    mediaEl.playsInline = true;
+  } else {
+    mediaEl = document.createElement('img');
+    mediaEl.src = src;
+    mediaEl.alt = name || "Qalereya şəkli";
+  }
+
+  mediaEl.addEventListener('click', (e) => {
+    e.stopPropagation();
+    openLightbox(type, src, name);
+  });
+
+  // Action Buttons Overlay
+  const actions = document.createElement('div');
+  actions.className = 'media-overlay-actions';
+  actions.innerHTML = `
+    <button class="media-btn-mini remove-btn" title="Sil">✕</button>
+  `;
+
+  actions.querySelector('.remove-btn').addEventListener('click', (e) => {
+    e.stopPropagation();
+    const slotId = slot.getAttribute('data-slot-id');
+    localStorage.removeItem(`media_slot_${slotId}`);
+    slot.querySelectorAll('img, video, .media-overlay-actions').forEach(el => el.remove());
+    if (placeholder) placeholder.style.display = 'flex';
+    const input = slot.querySelector('input[type="file"]');
+    if (input) input.value = '';
+    showToast("Fayl qalereyadan silindi.");
+  });
+
+  slot.appendChild(mediaEl);
+  slot.appendChild(actions);
+}
+
+/* ==========================================================================
+   8. MODALS (LIGHTBOX & CV VIEWER)
+   ========================================================================== */
+function initModals() {
+  const lightboxModal = document.getElementById('lightboxModal');
+  const cvModal = document.getElementById('cvModal');
+
+  // Trigger CV Modal
+  document.querySelectorAll('.trigger-cv-modal').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      if (cvModal) cvModal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    });
+  });
+
+  // Close modals
+  document.querySelectorAll('.modal-overlay').forEach(modal => {
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal || e.target.classList.contains('modal-close-btn') || e.target.closest('.modal-close-btn')) {
+        closeAllModals();
+      }
+    });
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeAllModals();
+  });
+
+  // CV Print Action
+  const printBtn = document.getElementById('printCvBtn');
+  if (printBtn) {
+    printBtn.addEventListener('click', () => {
+      window.print();
+    });
+  }
+}
+
+function openLightbox(type, src, caption) {
+  const modal = document.getElementById('lightboxModal');
+  const container = document.getElementById('lightboxMediaContainer');
+  const captionEl = document.getElementById('lightboxCaption');
+  if (!modal || !container) return;
+
+  container.innerHTML = '';
+  if (type === 'video') {
+    const v = document.createElement('video');
+    v.src = src;
+    v.controls = true;
+    v.autoplay = true;
+    v.style.maxWidth = '100%';
+    v.style.maxHeight = '75vh';
+    v.style.borderRadius = '12px';
+    container.appendChild(v);
+  } else {
+    const img = document.createElement('img');
+    img.src = src;
+    img.style.maxWidth = '100%';
+    img.style.maxHeight = '75vh';
+    img.style.objectFit = 'contain';
+    img.style.borderRadius = '12px';
+    container.appendChild(img);
+  }
+
+  if (captionEl) captionEl.textContent = caption || '';
+  modal.classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeAllModals() {
+  document.querySelectorAll('.modal-overlay').forEach(m => m.classList.remove('active'));
+  document.body.style.overflow = '';
+}
+
+/* ==========================================================================
+   9. CONTACT FORM
+   ========================================================================== */
+function initContactForm() {
+  const form = document.getElementById('contactForm');
+  if (!form) return;
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const name = document.getElementById('senderName').value.trim();
+    const email = document.getElementById('senderEmail').value.trim();
+    const subject = document.getElementById('senderSubject').value.trim();
+    const message = document.getElementById('senderMessage').value.trim();
+
+    if (!name || !email || !message) {
+      showToast("Zəhmət olmasa tələb olunan sahələri doldurun!");
+      return;
+    }
+
+    // Direct mailto bridge
+    const mailtoLink = `mailto:hemidzadenernin@gmail.com?subject=${encodeURIComponent(subject || 'Portfolio Əlaqə Mesajı - ' + name)}&body=${encodeURIComponent("Ad: " + name + "\nEmail: " + email + "\n\nMesaj:\n" + message)}`;
+    
+    showToast("Təşəkkürlər! Mesajınız qəbul edildi. Email müştəriniz açılır...");
+    setTimeout(() => {
+      window.location.href = mailtoLink;
+      form.reset();
+    }, 1000);
+  });
+}
+
+/* ==========================================================================
+   10. LIVE IN-BROWSER EDITOR
+   ========================================================================== */
+function initLiveEditor() {
+  const toggleBtn = document.getElementById('liveEditToggle');
+  const drawer = document.getElementById('editDrawer');
+  const closeBtn = document.getElementById('drawerClose');
+  const saveBtn = document.getElementById('saveEditsBtn');
+  const resetBtn = document.getElementById('resetEditsBtn');
+
+  if (!toggleBtn || !drawer) return;
+
+  toggleBtn.addEventListener('click', () => {
+    drawer.classList.toggle('open');
+    populateEditorFields();
+  });
+
+  if (closeBtn) {
+    closeBtn.addEventListener('click', () => drawer.classList.remove('open'));
+  }
+
+  // Load custom edits from localStorage on page startup
+  applySavedEdits();
+
+  if (saveBtn) {
+    saveBtn.addEventListener('click', () => {
+      const edits = {
+        name: document.getElementById('editName').value,
+        status: document.getElementById('editStatus').value,
+        bio: document.getElementById('editBio').value,
+        about: document.getElementById('editAbout').value,
+        email: document.getElementById('editEmail').value,
+        phone: document.getElementById('editPhone').value,
+        linkedin: document.getElementById('editLinkedin').value
+      };
+
+      localStorage.setItem('nermin_portfolio_custom_data', JSON.stringify(edits));
+      applySavedEdits();
+      drawer.classList.remove('open');
+      showToast("Bütün dəyişikliklər uğurla yadda saxlanıldı!");
+    });
+  }
+
+  if (resetBtn) {
+    resetBtn.addEventListener('click', () => {
+      if (confirm("Bütün fərdi dəyişiklikləri sıfırlayıb orijinal vəziyyətə qaytarmaq istəyirsiniz?")) {
+        localStorage.removeItem('nermin_portfolio_custom_data');
+        location.reload();
+      }
+    });
+  }
+}
+
+function populateEditorFields() {
+  const currentName = document.querySelector('.hero-title')?.innerText || "Nərmin Həmidzadə";
+  const currentStatus = document.querySelector('.hero-status span:last-child')?.innerText || "";
+  const currentBio = document.querySelector('.hero-bio')?.innerText || "";
+  const currentAbout = document.querySelector('.about-bio-text p:first-child')?.innerText || "";
+
+  if (document.getElementById('editName')) document.getElementById('editName').value = currentName;
+  if (document.getElementById('editStatus')) document.getElementById('editStatus').value = currentStatus;
+  if (document.getElementById('editBio')) document.getElementById('editBio').value = currentBio;
+  if (document.getElementById('editAbout')) document.getElementById('editAbout').value = currentAbout;
+  if (document.getElementById('editEmail')) document.getElementById('editEmail').value = "hemidzadenernin@gmail.com";
+  if (document.getElementById('editPhone')) document.getElementById('editPhone').value = "+994 50 448 93 39";
+  if (document.getElementById('editLinkedin')) document.getElementById('editLinkedin').value = "linkedin.com/in/nərmin-həmidzadə";
+}
+
+function applySavedEdits() {
+  const saved = localStorage.getItem('nermin_portfolio_custom_data');
+  if (!saved) return;
+
+  try {
+    const data = JSON.parse(saved);
+    if (data.name) {
+      document.querySelectorAll('.dyn-name').forEach(el => el.textContent = data.name);
+    }
+    if (data.status) {
+      const statusEl = document.querySelector('.hero-status span:last-child');
+      if (statusEl) statusEl.textContent = data.status;
+    }
+    if (data.bio) {
+      const bioEl = document.querySelector('.hero-bio');
+      if (bioEl) bioEl.textContent = data.bio;
+    }
+    if (data.about) {
+      const aboutEl = document.querySelector('.dyn-about-p1');
+      if (aboutEl) aboutEl.textContent = data.about;
+    }
+    if (data.email) {
+      document.querySelectorAll('.dyn-email').forEach(el => {
+        el.textContent = data.email;
+        if (el.tagName === 'A') el.href = `mailto:${data.email}`;
+      });
+    }
+    if (data.phone) {
+      document.querySelectorAll('.dyn-phone').forEach(el => {
+        el.textContent = data.phone;
+        if (el.tagName === 'A') el.href = `tel:${data.phone.replace(/\s+/g, '')}`;
+      });
+    }
+    if (data.linkedin) {
+      document.querySelectorAll('.dyn-linkedin').forEach(el => {
+        el.textContent = data.linkedin;
+        if (el.tagName === 'A') el.href = data.linkedin.startsWith('http') ? data.linkedin : `https://${data.linkedin}`;
+      });
+    }
+  } catch (e) {
+    console.error("Error applying saved edits:", e);
+  }
+}
+
+/* ==========================================================================
+   11. TOAST HELPER
+   ========================================================================== */
+function showToast(message) {
+  let toast = document.querySelector('.toast-notice');
+  if (!toast) {
+    toast = document.createElement('div');
+    toast.className = 'toast-notice';
+    document.body.appendChild(toast);
+  }
+  toast.innerHTML = `<span>✓</span> <span>${message}</span>`;
+  toast.classList.add('show');
+  setTimeout(() => toast.classList.remove('show'), 3500);
+}
+
+</script>
+</body>
+</html>
