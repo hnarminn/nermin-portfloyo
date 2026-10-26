@@ -230,6 +230,23 @@ function initProjectFilters() {
 function initMediaGallery() {
   const slots = document.querySelectorAll('.media-slot');
 
+  // Attach lightbox listener to all initial images & videos
+  document.querySelectorAll('.media-slot img').forEach(img => {
+    img.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const caption = img.alt || img.closest('.media-slot')?.querySelector('.media-card-title')?.textContent || '';
+      openLightbox('img', img.src, caption);
+    });
+  });
+
+  document.querySelectorAll('.media-slot video').forEach(vid => {
+    vid.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const caption = vid.closest('.media-slot')?.querySelector('.media-card-title')?.textContent || '';
+      openLightbox('video', vid.src, caption);
+    });
+  });
+
   // Load persisted media from LocalStorage if available
   slots.forEach(slot => {
     const slotId = slot.getAttribute('data-slot-id');
