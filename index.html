@@ -73,7 +73,7 @@
        HERO SECTION
        ========================================================================== -->
   <section class="hero-section" id="home">
-    <div class="container hero-grid">
+    <div class="container hero-centered-wrap">
       <div class="hero-content">
         <div class="hero-status">
           <span class="status-dot"></span>
@@ -92,6 +92,15 @@
         <p class="hero-bio">
           AzShield Defence şirkətində Süni İntellekt (AI) Mühəndisi. Müdafiə sənayesi üçün avtonom dron sistemləri, kompüter görməsi (Computer Vision) və kənar süni intellekt (Edge AI) həlləri üzərində çalışıram.
         </p>
+
+        <div class="hero-tech-pills">
+          <span class="h-pill">🛡️ AzShield Defence</span>
+          <span class="h-pill">🧠 Deep Learning & PyTorch</span>
+          <span class="h-pill">👁️ Computer Vision & OpenCV</span>
+          <span class="h-pill">⚡ Edge AI & TensorRT</span>
+          <span class="h-pill">🤖 Robototexnika (ADNSU)</span>
+          <span class="h-pill">🏆 WRC 1/4 Finalisti</span>
+        </div>
 
         <div class="hero-buttons">
           <a href="#projects" class="btn btn-primary">
@@ -124,164 +133,7 @@
         </div>
       </div>
 
-            <!-- Hero Visual Showcase -->
-      <div class="hero-visual-wrapper">
-        <!-- Pure Dark Canva / Figma AI Engineer Terminal -->
-        <div class="ai-engineer-card">
-          <!-- Card Header Bar -->
-          <div class="ai-card-header">
-            <div class="ai-term-controls">
-              <span class="ctrl-dot dot-red"></span>
-              <span class="ctrl-dot dot-yellow"></span>
-              <span class="ctrl-dot dot-green"></span>
-            </div>
-            <div class="ai-header-title">
-              <span class="shield-badge">🛡️ AZSHIELD DEFENCE</span>
-              <span class="pipe-sep">/</span>
-              <span class="sub-title">AI & COMPUTER VISION LAB</span>
-            </div>
-            <div class="ai-status-pill">
-              <span class="live-pulse-dot"></span>
-              <span class="status-txt">ONLINE • 60 FPS</span>
-            </div>
-          </div>
-
-          <!-- Interactive AI Screen Navigation Tabs -->
-          <div class="ai-mode-tabs">
-            <button class="ai-tab-btn active" data-ai-screen="screen-neural">
-              <span class="tab-icon">🧠</span> Neyron Şəbəkəsi
-            </button>
-            <button class="ai-tab-btn" data-ai-screen="screen-vision">
-              <span class="tab-icon">👁️</span> Hədəf İzləmə (HUD)
-            </button>
-            <button class="ai-tab-btn" data-ai-screen="screen-code">
-              <span class="tab-icon">⚡</span> Model Kodu (PyTorch)
-            </button>
-          </div>
-
-          <!-- Viewport Screens -->
-          <div class="ai-viewport">
-            <!-- Screen 1: Interactive Neural Synapse Canvas -->
-            <div class="ai-screen active" id="screen-neural">
-              <div class="neural-canvas-container">
-                <canvas id="neuralCanvas" width="460" height="230"></canvas>
-                <div class="neural-overlay-stats">
-                  <div class="n-stat-pill">
-                    <span class="n-stat-k">ARXİTEKTURA:</span>
-                    <span class="n-stat-v">CNN + Vision Transformer</span>
-                  </div>
-                  <div class="n-stat-pill">
-                    <span class="n-stat-k">KƏNAR HESABLAMA:</span>
-                    <span class="n-stat-v">TensorRT INT8 (11.8ms)</span>
-                  </div>
-                  <div class="n-stat-pill">
-                    <span class="n-stat-k">DƏQİQLİK:</span>
-                    <span class="n-stat-v highlight-green">99.4% mAP</span>
-                  </div>
                 </div>
-              </div>
-            </div>
-
-            <!-- Screen 2: Real-Time Optical Computer Vision HUD (Batur & BARS Detection) -->
-            <div class="ai-screen" id="screen-vision">
-              <div class="vision-hud-container">
-                <div class="hud-grid-overlay"></div>
-                <div class="hud-scan-beam"></div>
-
-                <!-- Tactical Corners -->
-                <div class="hud-corner top-left"></div>
-                <div class="hud-corner top-right"></div>
-                <div class="hud-corner btm-left"></div>
-                <div class="hud-corner btm-right"></div>
-                <div class="hud-center-crosshair"></div>
-
-                <!-- Target 1: AzShield Batur UAV -->
-                <div class="hud-bbox bbox-1">
-                  <div class="hud-bbox-tag">
-                    <span class="bbox-id">T-01</span>
-                    <span class="bbox-name">AZSHIELD BATUR UAV</span>
-                    <span class="bbox-conf">99.4%</span>
-                  </div>
-                  <div class="hud-bbox-box"></div>
-                  <div class="hud-bbox-coords">X:384 Y:142 • LOCKED</div>
-                </div>
-
-                <!-- Target 2: BARS Interceptor -->
-                <div class="hud-bbox bbox-2">
-                  <div class="hud-bbox-tag">
-                    <span class="bbox-id">T-02</span>
-                    <span class="bbox-name">BARS INTERCEPTOR</span>
-                    <span class="bbox-conf">98.8%</span>
-                  </div>
-                  <div class="hud-bbox-box"></div>
-                  <div class="hud-bbox-coords">SPEED: 240km/h • TRACKING</div>
-                </div>
-
-                <!-- HUD Telemetry Bottom Bar -->
-                <div class="hud-bottom-telemetry">
-                  <div class="tele-col">
-                    <div class="tele-lbl">ALQORİTM</div>
-                    <div class="tele-val">YOLOv8 + DeepSORT</div>
-                  </div>
-                  <div class="tele-col">
-                    <div class="tele-lbl">STATUS</div>
-                    <div class="tele-val lock-color">LOCK ACQUIRED</div>
-                  </div>
-                  <div class="tele-col">
-                    <div class="tele-lbl">OPTİK GECİKMƏ</div>
-                    <div class="tele-val">8.4 ms</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Screen 3: Authentic AI Code & Pipeline -->
-            <div class="ai-screen" id="screen-code">
-              <div class="code-editor-container">
-                <div class="code-editor-top">
-                  <span class="code-file-name">azshield_vision_pipeline.py</span>
-                  <span class="code-env-badge">Python 3.11 • CUDA 12.2</span>
-                </div>
-                <pre class="code-body"><code><span class="c-comment"># AzShield Defence — Autonomous Drone AI Inference</span>
-<span class="c-kw">import</span> torch, cv2
-<span class="c-kw">from</span> azshield.vision <span class="c-kw">import</span> BaturNeuralCore, KalmanTracker
-
-<span class="c-comment"># Load TensorRT accelerated Edge AI model</span>
-core = BaturNeuralCore.load(<span class="c-str">"weights/batur_cv_v4.engine"</span>)
-tracker = KalmanTracker(max_age=<span class="c-num">30</span>)
-
-<span class="c-kw">def</span> <span class="c-fn">infer_telemetry</span>(frame, conf_thresh=<span class="c-num">0.95</span>):
-    detections = core.detect(frame, iou_thresh=<span class="c-num">0.45</span>)
-    targets = tracker.update(detections)
-    <span class="c-kw">for</span> target <span class="c-kw">in</span> targets:
-        autopilot.lock_vector(target.bbox, target.vector)
-    <span class="c-kw">return</span> len(targets)</code></pre>
-                <div class="code-live-console">
-                  <span class="console-prompt">&gt;</span>
-                  <span class="console-text">[AZSHIELD] Model initialized in VRAM. Real-time inference active.</span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Bottom Badges Strip -->
-          <div class="ai-footer-specs">
-            <div class="ai-spec-pill">
-              <span class="spec-k">ŞİRKƏT:</span> <span class="spec-v">AzShield Defence</span>
-            </div>
-            <div class="ai-spec-pill">
-              <span class="spec-k">VƏZİFƏ:</span> <span class="spec-v">AI Engineer</span>
-            </div>
-            <div class="ai-spec-pill">
-              <span class="spec-k">SAHƏ:</span> <span class="spec-v">Computer Vision & UAVs</span>
-            </div>
-            <div class="ai-spec-pill">
-              <span class="spec-k">STACK:</span> <span class="spec-v">PyTorch • OpenCV • TensorRT</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
   </section>
 
   <!-- ==========================================================================
