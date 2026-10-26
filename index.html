@@ -135,9 +135,15 @@
         </div>
 
         <div class="hero-card">
-          <div class="profile-avatar-wrap">
-            <img src="images/profile.jpg" alt="Nərmin Həmidzadə" class="profile-avatar" onerror="this.src='avatar.png'">
-            <div class="profile-badge-float" title="Verified Engineering">✓</div>
+          <div class="tech-emblem-wrap">
+            <div class="emblem-orbit-outer"></div>
+            <div class="emblem-orbit-inner"></div>
+            <div class="emblem-core">
+              <span class="emblem-initials">NH</span>
+              <span class="emblem-subtag">ENG // LAB</span>
+            </div>
+            <div class="profile-badge-float" title="Mechatronics & Data">⚡</div>
+          </div>
           </div>
 
           <div class="profile-info">
@@ -990,97 +996,112 @@
   <section class="gallery-section" id="gallery">
     <div class="container">
       <div class="section-header">
-        <div class="section-tag">06 • Foto & Video Sübutlar</div>
-        <h2 class="section-title">İnteraktiv <span class="gradient-text">Qalereya & Arxiv</span></h2>
-        <p class="section-subtitle">Real çempionat anları, robot yığımı, rəsmi sertifikatlar və süni intellekt layihələrindən görüntülər.</p>
+        <div class="section-tag">06 // İNTERAKTİV ARXİV</div>
+        <h2 class="section-title">Layihələr, Texnologiya & <span class="gradient-text">Sertifikatlar</span></h2>
+        <p class="section-subtitle">Power BI biznes hesabatları, robototexnika quruluşu, kompüter görməsi və rəsmi kvalifikasiyalar.</p>
       </div>
 
       <div class="gallery-categories">
-        <!-- Category 1: WRC World Robot Championship -->
+        <!-- Category 1: Data Analitika & BI (Featuring the real Power BI video!) -->
         <div>
-          <h3 class="gal-category-title">🤖 Dünya Robot Çempionatı (WRC Bots Combat)</h3>
+          <h3 class="gal-category-title">📊 Data Analitika & Business Intelligence</h3>
           <div class="gallery-grid">
-            <!-- Real photo 1: Nermin assembling combat robot in arena -->
-            <div class="media-slot" data-slot-id="wrc-1">
-              <img src="images/wrc_nermin.jpg" alt="Nərmin Həmidzadə WRC Arenasında Robotu Yığarkən" loading="lazy">
+            <!-- Real Video 1: Power BI Desktop Dashboard -->
+            <div class="media-slot" data-slot-id="data-pbi">
+              <video src="images/powerbi_dashboard.mp4" autoplay muted loop playsinline></video>
               <div class="media-card-label">
-                <div class="media-card-tag">WRC Arena • Bakı</div>
-                <div class="media-card-title">Nərmin Həmidzadə döyüş robotunu hazırlayarkən</div>
+                <div class="media-card-tag">Power BI Desktop • DAX</div>
+                <div class="media-card-title">İnteraktiv Satış və Gəlir Analitikası Dashboardı</div>
               </div>
             </div>
 
-            <!-- Real photo 2: Internal hardware, motors, cutting disc -->
-            <div class="media-slot" data-slot-id="wrc-2">
+            <!-- Real Video 2: Data presentation -->
+            <div class="media-slot" data-slot-id="data-pres">
+              <video src="images/data_presentation.mp4" autoplay muted loop playsinline></video>
+              <div class="media-card-label">
+                <div class="media-card-tag">Apex Business School • Tədqiqat</div>
+                <div class="media-card-title">Python ilə Data Analitika və Paylanma Qrafikləri</div>
+              </div>
+            </div>
+
+            <!-- Real 3: Omnitrix Voice AI -->
+            <div class="media-slot" data-slot-id="data-omnitrix">
+              <img src="images/omnitrix_logo.jpg" alt="Omnitrix Voice AI" loading="lazy">
+              <div class="media-card-label">
+                <div class="media-card-tag">ADNSU & İRİA İnkubasiya</div>
+                <div class="media-card-title">Omnitrix: Voice AI Müştəri Xidmətləri Platforması</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Category 2: Robototexnika & Hardware -->
+        <div>
+          <h3 class="gal-category-title">🤖 Robototexnika & Mexatronika (WRC Bots Combat)</h3>
+          <div class="gallery-grid">
+            <!-- Real photo 1: Internal hardware, motors, cutting disc -->
+            <div class="media-slot" data-slot-id="wrc-hw">
               <img src="images/wrc_robot_hardware.jpg" alt="WRC Bots Combat Robot Quruluşu" loading="lazy">
               <div class="media-card-label">
-                <div class="media-card-tag">Hardware & Mexatronika</div>
+                <div class="media-card-tag">Hardware & Mexanika</div>
                 <div class="media-card-title">Döyüş robotunun daxili mexanizmi və motorları</div>
               </div>
             </div>
 
-            <!-- Real video: Combat robot testing -->
-            <div class="media-slot" data-slot-id="wrc-3">
-              <video src="images/wrc_robot_demo.mp4" autoplay muted loop playsinline></video>
+            <!-- Real photo 2: Arena preparation -->
+            <div class="media-slot" data-slot-id="wrc-arena">
+              <img src="images/wrc_nermin.jpg" alt="WRC Arena Hazırlığı" loading="lazy">
               <div class="media-card-label">
-                <div class="media-card-tag">Canlı Test Videosu</div>
-                <div class="media-card-title">Döyüş robotunun poliqonda manevr sınağı</div>
+                <div class="media-card-tag">WRC Arena • Bakı</div>
+                <div class="media-card-title">Yarış öncəsi döyüş robotunun qurulması və kalibrasiyası</div>
               </div>
             </div>
           </div>
         </div>
 
-        <!-- Category 2: Rəsmi Sertifikatlar -->
+        <!-- Category 3: Computer Vision & Təsvir Emalı -->
         <div>
-          <h3 class="gal-category-title">📜 Rəsmi Sertifikatlar və Diplomlar</h3>
-          <div class="gallery-grid">
-            <!-- Real Cert 1: Microsoft MOS-211 Excel Expert -->
-            <div class="media-slot" data-slot-id="cert-1">
-              <img src="images/cert_excel_expert.jpg" alt="Microsoft Excel Expert MOS-211 Sertifikatı" loading="lazy">
-              <div class="media-card-label">
-                <div class="media-card-tag">Microsoft Corporation</div>
-                <div class="media-card-title">MOS-211 Excel Expert (Satya Nadella İmzalı)</div>
-              </div>
-            </div>
-
-            <!-- Real Cert 2: WRC & Technest Certificate -->
-            <div class="media-slot" data-slot-id="cert-2">
-              <img src="images/cert_wrc.jpg" alt="Technoxian WRC və Technest Qalibiyyət Sertifikatı" loading="lazy">
-              <div class="media-card-label">
-                <div class="media-card-tag">Technoxian WRC & İRİA</div>
-                <div class="media-card-title">Dünya Robot Çempionatı və Technest Qalibiyyəti</div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Category 3: Data Analitika, AI & OpenCV Layihələri -->
-        <div>
-          <h3 class="gal-category-title">📊 Data Analitika, AI & Computer Vision</h3>
+          <h3 class="gal-category-title">🔬 Kompüter Görməsi & Təsvir Emalı (OpenCV)</h3>
           <div class="gallery-grid">
             <!-- Real project 1: OpenCV Skeleton processing -->
-            <div class="media-slot" data-slot-id="data-1">
+            <div class="media-slot" data-slot-id="cv-skeleton">
               <img src="images/opencv_skeleton.jpg" alt="ETİM OpenCV İnsan Skeleti Görüntü Emalı" loading="lazy">
               <div class="media-card-label">
-                <div class="media-card-tag">ETİM • OpenCV Project</div>
-                <div class="media-card-title">Təsvir emalı (Laplacian & Gaussian filtrləmə)</div>
+                <div class="media-card-tag">ETİM Müdafiə Sənayesi • OpenCV</div>
+                <div class="media-card-title">Tibb təsvirlərinin emalı: Laplacian və Qaus filtrləri</div>
               </div>
             </div>
 
             <!-- Real project 2: OpenCV VS Code -->
-            <div class="media-slot" data-slot-id="data-2">
+            <div class="media-slot" data-slot-id="cv-code">
               <img src="images/opencv_code.jpg" alt="VS Code OpenCV Adaptiv Filtrlər Kodu" loading="lazy">
               <div class="media-card-label">
                 <div class="media-card-tag">Python • Computer Vision</div>
-                <div class="media-card-title">Adaptiv filtrlər və görüntü alqoritmləri</div>
+                <div class="media-card-title">VS Code: Adaptiv filtrlər və görüntü alqoritmləri</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Category 4: Rəsmi Sertifikatlar -->
+        <div>
+          <h3 class="gal-category-title">📜 Rəsmi Sertifikatlar və Kvalifikasiyalar</h3>
+          <div class="gallery-grid">
+            <!-- Real Cert 1: Microsoft MOS-211 Excel Expert -->
+            <div class="media-slot" data-slot-id="cert-excel">
+              <img src="images/cert_excel_expert.jpg" alt="Microsoft Excel Expert MOS-211 Sertifikatı" loading="lazy">
+              <div class="media-card-label">
+                <div class="media-card-tag">Microsoft Corporation • MOS-211</div>
+                <div class="media-card-title">Microsoft Excel Expert (CEO Satya Nadella İmzalı)</div>
               </div>
             </div>
 
-            <!-- Real project 3: Omnitrix Team Logo -->
-            <div class="media-slot" data-slot-id="data-3">
-              <img src="images/omnitrix_logo.jpg" alt="Omnitrix AI Komandası Loqosu" loading="lazy">
+            <!-- Real Cert 2: WRC & Technest Certificate -->
+            <div class="media-slot" data-slot-id="cert-wrc">
+              <img src="images/cert_wrc.jpg" alt="Technoxian WRC və Technest Qalibiyyət Sertifikatı" loading="lazy">
               <div class="media-card-label">
-                <div class="media-card-tag">ADNSU & İRİA İnkubasiya</div>
-                <div class="media-card-title">Omnitrix Voice AI Layihə Komandası</div>
+                <div class="media-card-tag">Technoxian WRC & İRİA</div>
+                <div class="media-card-title">Dünya Robot Çempionatı və Technest Qalibiyyət Sertifikatı</div>
               </div>
             </div>
           </div>
